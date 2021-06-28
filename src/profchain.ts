@@ -86,7 +86,7 @@ export function bishopChain() {
 }
 
 export function embezzlerChain() {
-  if (get("_pocketProfessorLectures") < 13 && get("_photocopyUsed") === false) {
+  if (get("_pocketProfessorLectures") === 0 && get("_photocopyUsed") === false) {
     useFamiliar($familiar`pocket professor`);
     equip($item`pocket professor memory chip`);
     maximize("familiar weight +equip pocket professor memory chip", false);
@@ -94,12 +94,14 @@ export function embezzlerChain() {
     useSkill(2, $skill`blood bond`);
     useSkill(2, $skill`leash of linguini`);
     useSkill(2, $skill`empathy of the newt`);
-    useSkill(2, $skill`polka of plenty`);
-    useSkill(2, $skill`disco leer`);
-    sweetSynthesis($item`milk stud`, $item`swizzler`);
+    // useSkill(2, $skill`polka of plenty`);
+    // useSkill(2, $skill`disco leer`);
+    // sweetSynthesis($item`milk stud`, $item`swizzler`);
     cliExecute("witchess");
     cliExecute("beach head 10");
-    cliExecute("boombox meat");
+    if (get("boomBoxSong") !== "Total Eclipse of Your Meat") {
+      cliExecute("boombox meat");
+    }
     Macro.trySkill($skill`lecture on relativity`)
       .skill($skill`sing along`)
       .skill($skill`candyblast`)
@@ -117,11 +119,11 @@ export function embezzlerChain() {
     }
     setAutoAttack(0);
   } else {
-    print("I think you already copied embezzlers, bud");
+    print("I think you already copied embezzlers, bud", "red");
   }
 }
 
-embezzlerChain();
+// bishopChain();
 
 /*
 export function main(chainMob: string) {

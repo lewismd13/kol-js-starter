@@ -27,8 +27,8 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
-    "kolmafia": "^1.0.6",
-    "libram": "^0.0.5"
+    "kolmafia": "^1.0.11",
+    "libram": "^0.0.9"
   },
   "author": "Manendra 148308",
   "license": "ISC",

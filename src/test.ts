@@ -1,0 +1,46 @@
+import {
+  getProperty,
+  print,
+  toInt,
+  equip,
+  availableAmount,
+  setProperty,
+  adv1,
+  runCombat,
+  runChoice,
+  handlingChoice,
+  lastChoice,
+  containsText,
+  setAutoAttack,
+  useFamiliar,
+  visitUrl,
+  cliExecute,
+  haveEffect,
+  sweetSynthesis,
+  maximize,
+  use,
+} from "kolmafia";
+import {
+  $item,
+  adventureMacroAuto,
+  $location,
+  Macro,
+  get,
+  $monster,
+  $skill,
+  $familiar,
+  adventureMacro,
+  $effect,
+  $slot,
+} from "libram";
+import {
+  ensureEffect,
+  getPropertyInt,
+  gingerBread,
+  mapMonster,
+  randomPrank,
+  setChoice,
+  tryEquip,
+} from "./lib";
+
+randomPrank();

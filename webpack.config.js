@@ -5,9 +5,11 @@ var packageData = require("./package.json");
 module.exports = {
   entry: {
     // Point "entry" to scripts you want to be CLI-eligible.
-    barfday: "./src/main.ts",
+    barfday: "./src/barfday.ts",
     postloop: "./src/postloop.ts",
     profchain: "./src/profchain.ts",
+    test: "./src/test.ts",
+    macroConsult: "./src/macroConsult.ts",
   },
   mode: "development",
   devtool: false,

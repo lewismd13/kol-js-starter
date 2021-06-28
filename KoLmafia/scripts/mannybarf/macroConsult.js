@@ -1065,132 +1065,26 @@ var $thralls = createPluralConstant(Thrall);
 
 /***/ }),
 
-/***/ "./src/profchain.ts":
-/*!**************************!*\
-  !*** ./src/profchain.ts ***!
-  \**************************/
+/***/ "./src/macroConsult.ts":
+/*!*****************************!*\
+  !*** ./src/macroConsult.ts ***!
+  \*****************************/
 /*! namespace exports */
-/*! export bishopChain [provided] [maybe used in profchain (runtime-defined)] [usage prevents renaming] */
-/*! export embezzlerChain [provided] [maybe used in profchain (runtime-defined)] [usage prevents renaming] */
-/*! other exports [not provided] [maybe used in profchain (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/*! export main [provided] [maybe used in macroConsult (runtime-defined)] [usage prevents renaming] */
+/*! other exports [not provided] [maybe used in macroConsult (runtime-defined)] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "bishopChain": () => /* binding */ bishopChain,
-/* harmony export */   "embezzlerChain": () => /* binding */ embezzlerChain
+/* harmony export */   "main": () => /* binding */ main
 /* harmony export */ });
-/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/property.js");
-/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/template-string.js");
-/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/combat.js");
-/* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! kolmafia */ "kolmafia");
-/* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(kolmafia__WEBPACK_IMPORTED_MODULE_0__);
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19;
+/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/combat.js");
+// This is an example consult script using the macro handler in src/combat.ts.
 
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-/*
-if (get("_pocketProfessorLectures") === 0 && get("_photocopyUsed") === false) {
-  useFamiliar($familiar`pocket professor`);
-  equip($item`pocket professor memory chip`);
-  maximize("familiar weight +equip pocket professor memory chip, duct tape shirt", false);
-  useSkill(2, $skill`blood bond`);
-  useSkill(2, $skill`leash of linguini`);
-  useSkill(2, $skill`empathy of the newt`);
-  cliExecute("witchess");
-  faxbot($monster`knob goblin embezzler`);
-  wait(10);
-  const embezzlermacro = Macro.externalIf(
-    (get('_sourceTerminalDigitizeUses') === 0),
-    Macro.trySkill($skill`digitize`)
-    .trySkill($skill`sing along`)
-    .trySkill($skill`lecture on relativity`)
-    .trySkill($skill`candyblast`)
-    .repeat()
-    ) Macro.externalIf(
-      (get('_sourceTerminalDigitizeMonster') === $monster`knob goblin embezzler`),
-      Macro.trySkill($skill`lecture on relativity`)
-      .trySkill($skill`sing along`)
-      .trySkill($skill`candyblast`)
-      .repeat()
-    )
+function main() {
+  libram__WEBPACK_IMPORTED_MODULE_0__.Macro.load().submit();
 }
-*/
-
-function bishopChain() {
-  if ((0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_pocketProfessorLectures") < 13 && (0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_witchessFights") < 5) {
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject || (_templateObject = _taggedTemplateLiteral(["pocket professor"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["pocket professor memory chip"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.maximize)("familiar weight +equip pocket professor memory chip", false);
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["blood bond"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["leash of linguini"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["empathy of the newt"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("witchess");
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("beach head 10");
-    libram__WEBPACK_IMPORTED_MODULE_3__.Macro.trySkill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["lecture on relativity"])))).skill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["candyblast"])))).repeat().setAutoAttack();
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("campground.php?action=witchess");
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(1);
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("choice.php?option=1&pwd=" + (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myHash)() + "&whichchoice=1182&piece=1942", false);
-
-    while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.inMultiFight)()) {
-      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runCombat)();
-    }
-
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
-  }
-}
-function embezzlerChain() {
-  if ((0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_pocketProfessorLectures") === 0 && (0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_photocopyUsed") === false) {
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["pocket professor"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["pocket professor memory chip"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.maximize)("familiar weight +equip pocket professor memory chip", false);
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["duct tape shirt"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)(2, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["blood bond"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)(2, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["leash of linguini"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)(2, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["empathy of the newt"])))); // useSkill(2, $skill`polka of plenty`);
-    // useSkill(2, $skill`disco leer`);
-    // sweetSynthesis($item`milk stud`, $item`swizzler`);
-
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("witchess");
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("beach head 10");
-
-    if ((0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("boomBoxSong") !== "Total Eclipse of Your Meat") {
-      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("boombox meat");
-    }
-
-    libram__WEBPACK_IMPORTED_MODULE_3__.Macro.trySkill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["lecture on relativity"])))).skill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["sing along"])))).skill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral(["candyblast"])))).repeat().setAutoAttack();
-
-    if ((0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_photocopyUsed") === false && (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral(["photocopied monster"])))) === 0) {
-      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.faxbot)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$monster)(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["knob goblin embezzler"]))));
-    } // visitUrl("campground.php?action=witchess");
-    // runChoice(1);
-    // visitUrl("choice.php?option=1&pwd=" + myHash() + "&whichchoice=1182&piece=1942", false);
-
-
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral(["photocopied monster"]))));
-
-    while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.inMultiFight)()) {
-      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runCombat)();
-    }
-
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
-  } else {
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.print)("I think you already copied embezzlers, bud", "red");
-  }
-} // bishopChain();
-
-/*
-export function main(chainMob: string) {
-  if (chainMob === "bishop") {
-    bishopChain();
-  } else if (chainMob === "embezzler") {
-    embezzlerChain();
-  }
-}
-*/
 
 /***/ }),
 
@@ -1278,7 +1172,7 @@ module.exports = require("kolmafia");;
 /******/ 	// module exports must be returned from runtime so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__("./src/profchain.ts");
+/******/ 	return __webpack_require__("./src/macroConsult.ts");
 /******/ })()
 
 ));
