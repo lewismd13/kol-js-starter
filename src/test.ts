@@ -19,6 +19,7 @@ import {
   sweetSynthesis,
   maximize,
   use,
+  rollover,
 } from "kolmafia";
 import {
   $item,
@@ -37,10 +38,11 @@ import {
   ensureEffect,
   getPropertyInt,
   gingerBread,
+  mannyRollover,
   mapMonster,
   randomPrank,
   setChoice,
   tryEquip,
 } from "./lib";
 
-randomPrank();
+mannyRollover();

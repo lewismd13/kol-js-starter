@@ -8390,12 +8390,12 @@ if ((0,libram__WEBPACK_IMPORTED_MODULE_4__.get)("boomBoxSong") != "Food Vibratio
 /*! export incrementProperty [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export itemPriority [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export kill [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export mannyRollover [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export mapMonster [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export myFamiliarWeight [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export openSongSlot [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export pullIfPossible [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export randomPrank [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export rollover [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export sausageFightGuaranteed [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export setChoice [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export setClan [provided] [no usage info] [missing usage info prevents renaming] */
@@ -8445,7 +8445,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "kill": () => /* binding */ kill,
 /* harmony export */   "gingerBread": () => /* binding */ gingerBread,
 /* harmony export */   "randomPrank": () => /* binding */ randomPrank,
-/* harmony export */   "rollover": () => /* binding */ rollover
+/* harmony export */   "mannyRollover": () => /* binding */ mannyRollover
 /* harmony export */ });
 /* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! kolmafia */ "kolmafia");
 /* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(kolmafia__WEBPACK_IMPORTED_MODULE_0__);
@@ -8454,7 +8454,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/property.js");
 /* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/Clan.js");
 /* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/resources/Witchess.js");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _ref, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _ref, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59;
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -8812,7 +8812,7 @@ function gingerBread() {
       ensureOde(2);
       setChoice(1204, 1); // noon at the train station, get candies
 
-      setChoice(1203, 3); // midnight at the civic center, buy cigarettes
+      setChoice(1203, 4); // midnight at the civic center, buy cigarettes
 
       while ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("_gingerbreadCityTurns") < 5) {
         (0,libram__WEBPACK_IMPORTED_MODULE_2__.adventureMacro)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$location)(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["Gingerbread Train Station"]))), libram__WEBPACK_IMPORTED_MODULE_2__.Macro.step("runaway"));
@@ -8836,19 +8836,15 @@ function randomPrank() {
   var playerIDs = [1515124, 2548033, 2393910, 2705901, 892618, 1046951, 887028, 786069, 1197090, 437479, 2156370, 1901297, 644996, 1956005, 2264486, 1937905, 2766368, 2203016, 1972588];
 
   for (var i = 0; i < 15; i++) {
-    if ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("_timeSpinnerMinutesUsed") === 0) {
+    if ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("_timeSpinnerMinutesUsed") === 10) {
       break;
-    }
+    } // print("gonna prank " + playerIDs[getRandomInt(0, 18)]);
 
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.print)("gonna prank " + playerIDs[getRandomInt(0, 18)]); // cliExecute("timespinner prank " + playerIDs[getRandomInt(0, 18)]);
+
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("timespinner prank " + playerIDs[getRandomInt(0, 18)]);
   }
 }
-function rollover() {
-  /*
-  if (getClanId() != 40382) {
-    cliExecute("/whitelist alliance from hell");
-  }
-  */
+function mannyRollover() {
   libram__WEBPACK_IMPORTED_MODULE_4__.Clan.join("Alliance from Hell");
 
   while ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("_witchessFights") < 5) {
@@ -8859,15 +8855,54 @@ function rollover() {
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
 
   if ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("_glitchMonsterFights") === 0) {
-    libram__WEBPACK_IMPORTED_MODULE_2__.Macro.trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["saucestorm"])))).setAutoAttack();
+    libram__WEBPACK_IMPORTED_MODULE_2__.Macro.trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["saucegeyser"])))).setAutoAttack();
     (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("/glitch");
   }
 
+  while ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("_sourceTerminalEnhanceUses") < 3) {
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("terminal enhance meat.enh");
+  }
+
+  if ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("_claraBellUsed") === false && (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myAdventures)() > 0) {
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral(["clara's bell"]))));
+    setChoice(919, 1);
+
+    do {
+      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.adv1)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$location)(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral(["sloppy seconds diner"]))), -1, "");
+    } while ((0,libram__WEBPACK_IMPORTED_MODULE_3__.get)("lastEncounter") === "Nothing Could Be Finer");
+  }
+
+  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myInebriety)() === (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.inebrietyLimit)()) {
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$familiar)(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral(["stooper"]))));
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral(["the ode to booze"]))), 1);
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.drinksilent)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral(["elemental caipiroska"]))));
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.takeStash)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral(["tiny plastic sword"]))), 1);
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.create)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral(["grogtini"]))));
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.drinksilent)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral(["grogtini"]))));
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putStash)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral(["tiny plastic sword"]))), 1);
+  }
+
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.outfit)("PVP RO fites");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$familiar)(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral(["trick-or-treating tot"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral(["lil unicorn costume"]))));
+  /*
+  if (my_garden_type() == "thanksgarden" && !get_property("_mushroomGardenVisited").to_boolean()) {
+    cli_execute("garden pick");
+    use(1, $item[packet of tall grass seeds]);
+  }
+  */
+
+  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myGardenType)() != "grass") {
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)(1, (0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral(["packet of tall grass seeds"]))));
+  }
+
+  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myGardenType)() === "grass") {
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral(["9761"])))); // fertilizer
+
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral(["packet of thanksgarden seeds"]))));
+  }
+
   randomPrank(); // finish free fights
-  // stooper
-  // nightcap with TPS
-  // PJs
-  // tot with unicorn
 }
 
 /***/ }),

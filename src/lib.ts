@@ -38,11 +38,21 @@ import {
   maximize,
   getClanId,
   setAutoAttack,
+  myInebriety,
+  inebrietyLimit,
+  drinksilent,
+  takeStash,
+  outfit,
+  myGardenType,
+  adv1,
+  myAdventures,
+  putStash,
 } from "kolmafia";
 import {
   $effect,
   $effects,
   $familiar,
+  $familiars,
   $item,
   $location,
   $monster,
@@ -393,7 +403,7 @@ export function gingerBread() {
       ensureEffect($effect`empathy`);
       ensureOde(2);
       setChoice(1204, 1); // noon at the train station, get candies
-      setChoice(1203, 3); // midnight at the civic center, buy cigarettes
+      setChoice(1203, 4); // midnight at the civic center, buy cigarettes
       while (get("_gingerbreadCityTurns") < 5) {
         adventureMacro($location`Gingerbread Train Station`, Macro.step("runaway"));
       }
@@ -417,20 +427,15 @@ export function randomPrank() {
   ];
 
   for (let i = 0; i < 15; i++) {
-    if (get("_timeSpinnerMinutesUsed") === 0) {
+    if (get("_timeSpinnerMinutesUsed") === 10) {
       break;
     }
-    print("gonna prank " + playerIDs[getRandomInt(0, 18)]);
-    // cliExecute("timespinner prank " + playerIDs[getRandomInt(0, 18)]);
+    // print("gonna prank " + playerIDs[getRandomInt(0, 18)]);
+    cliExecute("timespinner prank " + playerIDs[getRandomInt(0, 18)]);
   }
 }
 
-export function rollover() {
-  /*
-  if (getClanId() != 40382) {
-    cliExecute("/whitelist alliance from hell");
-  }
-*/
+export function mannyRollover() {
   Clan.join("Alliance from Hell");
 
   while (get("_witchessFights") < 5) {
@@ -440,15 +445,50 @@ export function rollover() {
   setAutoAttack(0);
 
   if (get("_glitchMonsterFights") === 0) {
-    Macro.trySkillRepeat($skill`saucestorm`).setAutoAttack();
+    Macro.trySkillRepeat($skill`saucegeyser`).setAutoAttack();
     cliExecute("/glitch");
   }
 
-  randomPrank();
+  while (get("_sourceTerminalEnhanceUses") < 3) {
+    cliExecute("terminal enhance meat.enh");
+  }
 
+  if (get("_claraBellUsed") === false && myAdventures() > 0) {
+    use($item`clara's bell`);
+    setChoice(919, 1);
+    do {
+      adv1($location`sloppy seconds diner`, -1, "");
+    } while (get("lastEncounter") === "Nothing Could Be Finer");
+  }
+
+  if (myInebriety() === inebrietyLimit()) {
+    useFamiliar($familiar`stooper`);
+    useSkill($skill`the ode to booze`, 1);
+    drinksilent($item`elemental caipiroska`);
+    takeStash($item`tiny plastic sword`, 1);
+    create($item`grogtini`);
+    drinksilent($item`grogtini`);
+    putStash($item`tiny plastic sword`, 1);
+  }
+
+  outfit("PVP RO fites");
+  useFamiliar($familiar`trick-or-treating tot`);
+  equip($item`lil unicorn costume`);
+  /*
+  if (my_garden_type() == "thanksgarden" && !get_property("_mushroomGardenVisited").to_boolean()) {
+    cli_execute("garden pick");
+    use(1, $item[packet of tall grass seeds]);
+  }
+*/
+  if (myGardenType() != "grass") {
+    use(1, $item`packet of tall grass seeds`);
+  }
+
+  if (myGardenType() === "grass") {
+    use($item`9761`); // fertilizer
+    use($item`packet of thanksgarden seeds`);
+  }
+
+  randomPrank();
   // finish free fights
-  // stooper
-  // nightcap with TPS
-  // PJs
-  // tot with unicorn
 }
