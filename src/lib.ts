@@ -437,7 +437,7 @@ export function randomPrank() {
 
 export function mannyRollover() {
   Clan.join("Alliance from Hell");
-
+  // TODO: Make this work, errored as invalid piece or something?
   while (get("_witchessFights") < 5) {
     Macro.trySkillRepeat($skill`saucestorm`).setAutoAttack();
     Witchess.fightPiece($monster`witchess knight`);
@@ -474,12 +474,7 @@ export function mannyRollover() {
   outfit("PVP RO fites");
   useFamiliar($familiar`trick-or-treating tot`);
   equip($item`lil unicorn costume`);
-  /*
-  if (my_garden_type() == "thanksgarden" && !get_property("_mushroomGardenVisited").to_boolean()) {
-    cli_execute("garden pick");
-    use(1, $item[packet of tall grass seeds]);
-  }
-*/
+
   if (myGardenType() != "grass") {
     use(1, $item`packet of tall grass seeds`);
   }
@@ -487,6 +482,11 @@ export function mannyRollover() {
   if (myGardenType() === "grass") {
     use($item`9761`); // fertilizer
     use($item`packet of thanksgarden seeds`);
+  }
+
+  // check for a dggt if we haven't
+  if (get("_defectiveTokenChecked") === false) {
+    visitUrl("place.php?whichplace=arcade&action=arcade_plumber");
   }
 
   randomPrank();

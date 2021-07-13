@@ -33,6 +33,7 @@ import {
   adventureMacro,
   $effect,
   $slot,
+  Witchess,
 } from "libram";
 import {
   ensureEffect,

@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "kolmafia": "^1.0.11",
-    "libram": "^0.0.9"
+    "libram": "^0.0.8"
   },
   "author": "Manendra 148308",
   "license": "ISC",

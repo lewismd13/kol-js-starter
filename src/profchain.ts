@@ -32,6 +32,7 @@ import {
   print,
   use,
   wait,
+  chatPrivate,
 } from "kolmafia";
 
 /*
@@ -61,6 +62,26 @@ if (get("_pocketProfessorLectures") === 0 && get("_photocopyUsed") === false) {
     )
 }
 */
+
+function checkFax(): boolean {
+  cliExecute("fax receive");
+  if (get("photocopyMonster") === $monster`Knob Goblin Embezzler`) return true;
+  cliExecute("fax send");
+  return false;
+}
+
+export function faxEmbezzler(): void {
+  if (!get("_photocopyUsed")) {
+    if (checkFax()) return;
+    chatPrivate("cheesefax", "Knob Goblin Embezzler");
+    for (let i = 0; i < 3; i++) {
+      wait(10);
+      if (checkFax()) return;
+    }
+    throw "Failed to acquire photocopied Knob Goblin Embezzler.";
+  }
+}
+
 export function bishopChain() {
   if (get("_pocketProfessorLectures") < 13 && get("_witchessFights") < 5) {
     useFamiliar($familiar`pocket professor`);
@@ -107,9 +128,7 @@ export function embezzlerChain() {
       .skill($skill`candyblast`)
       .repeat()
       .setAutoAttack();
-    if (get("_photocopyUsed") === false && availableAmount($item`photocopied monster`) === 0) {
-      faxbot($monster`knob goblin embezzler`);
-    }
+    faxEmbezzler();
     // visitUrl("campground.php?action=witchess");
     // runChoice(1);
     // visitUrl("choice.php?option=1&pwd=" + myHash() + "&whichchoice=1182&piece=1942", false);

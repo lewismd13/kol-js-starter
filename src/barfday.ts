@@ -146,6 +146,8 @@ if (!get("_borrowedTimeUsed")) {
   use($item`Borrowed Time`);
 }
 
+// TODO: essential tofu (with price limit)
+
 //should probably put all this under individual if statements
 if (!get("_mimeArmyShotglassUsed") && !get("_syntheticDogHairPillUsed")) {
   use(1, $item`synthetic doghair pill`);
