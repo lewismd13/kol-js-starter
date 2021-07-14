@@ -61,8 +61,7 @@ import {
 } from "libram";
 import { getString } from "libram/dist/property";
 import { Digitize, getMaximumDigitizeUses } from "libram/dist/resources/SourceTerminal";
-import { gingerBread } from "./lib";
-import { embezzlerChain } from "./profchain";
+import { gingerBread, embezzlerChain } from "./lib";
 
 export function calculateFarmingTurns() {
   // Assess farming turns given available resources. Currently

@@ -62,7 +62,7 @@ if (get("_pocketProfessorLectures") === 0 && get("_photocopyUsed") === false) {
     )
 }
 */
-
+/*
 function checkFax(): boolean {
   cliExecute("fax receive");
   if (get("photocopyMonster") === $monster`Knob Goblin Embezzler`) return true;
@@ -141,7 +141,7 @@ export function embezzlerChain() {
     print("I think you already copied embezzlers, bud", "red");
   }
 }
-
+*/
 // bishopChain();
 
 /*
