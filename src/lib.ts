@@ -1,69 +1,68 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import {
-  getProperty,
-  toInt,
-  setProperty,
-  familiarWeight,
-  myFamiliar,
-  weightAdjustment,
+  adv1,
   availableAmount,
   buy,
-  use,
-  retrieveItem,
-  haveEffect,
-  cliExecute,
-  print,
-  myMp,
-  myMaxmp,
-  eat,
-  totalTurnsPlayed,
-  getClanName,
-  visitUrl,
-  getFuel,
-  create,
-  haveSkill,
-  useSkill,
-  toUrl,
   buyUsingStorage,
+  chatPrivate,
+  cliExecute,
+  create,
+  drinksilent,
+  eat,
   equip,
+  familiarWeight,
+  fullnessLimit,
+  getClanName,
+  getFuel,
+  getProperty,
+  haveEffect,
+  haveSkill,
+  inebrietyLimit,
+  inMultiFight,
+  maximize,
+  myAdventures,
+  myFamiliar,
+  myFullness,
+  myGardenType,
+  myHash,
+  myInebriety,
+  myLocation,
+  myMaxmp,
+  myMp,
+  outfit,
+  print,
   pullsRemaining,
+  putStash,
+  retrieveItem,
+  runChoice,
+  runCombat,
+  setAutoAttack,
+  setProperty,
   shopAmount,
   storageAmount,
   takeShop,
-  toString as toStringAsh,
-  toEffect,
-  toString,
-  myLocation,
-  runChoice,
-  useFamiliar,
-  maximize,
-  getClanId,
-  setAutoAttack,
-  myInebriety,
-  inebrietyLimit,
-  drinksilent,
   takeStash,
-  outfit,
-  myGardenType,
-  adv1,
-  myAdventures,
-  putStash,
-  inMultiFight,
-  chatPrivate,
-  myHash,
-  runCombat,
+  toEffect,
+  toInt,
+  toString as toStringAsh,
+  totalTurnsPlayed,
+  toUrl,
+  use,
+  useFamiliar,
+  useSkill,
+  visitUrl,
   wait,
+  weightAdjustment,
 } from "kolmafia";
 import {
   $effect,
   $effects,
   $familiar,
-  $familiars,
   $item,
   $location,
   $monster,
   $skill,
   adventureMacro,
-  adventureMacroAuto,
   Clan,
   get,
   Macro,
@@ -363,7 +362,7 @@ export function openSongSlot(song: Effect) {
   }
 }
 
-export function ensureSong(ef: Effect) {
+export function ensureSong(ef: Effect): void {
   if (haveEffect(ef) === 0) {
     openSongSlot(ef);
     if (!cliExecute(ef.default) || haveEffect(ef) === 0) {
@@ -374,7 +373,7 @@ export function ensureSong(ef: Effect) {
   }
 }
 
-export function ensureOde(turns: number) {
+export function ensureOde(turns: number): void {
   while (haveEffect($effect`Ode to Booze`) < turns) {
     ensureMpTonic(50);
     openSongSlot($effect`Ode to Booze`);
@@ -382,7 +381,7 @@ export function ensureOde(turns: number) {
   }
 }
 
-export function kill() {
+export function kill(): Macro {
   return Macro.trySkill($skill`Curse of Weaksauce`)
     .trySkill($skill`Micrometeorite`)
     .trySkill($skill`Sing Along`)
@@ -392,13 +391,14 @@ export function kill() {
     .attack();
 }
 
-export function gingerBread() {
+export function gingerBread(): void {
   // this is going to be all the gingerbread stuff, it is a work in progress
   cliExecute("ccs libramMacro");
+  setAutoAttack(0);
   if (get("_gingerbreadCityTurns") === 0) {
     if (!get("_gingerbreadClockAdvanced")) {
       visitUrl("adventure.php?snarfblat=477");
-      runChoice(1);
+      runChoice(1); // advance clock
     }
     if (get("_banderRunaways") < 5) {
       useFamiliar($familiar`frumious bandersnatch`);
@@ -420,7 +420,7 @@ export function gingerBread() {
   cliExecute("ccs default");
 }
 
-export function randomPrank() {
+export function randomPrank(): void {
   function getRandomInt(min: number, max: number): number {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -428,7 +428,8 @@ export function randomPrank() {
   }
   const playerIDs: number[] = [
     1515124, 2548033, 2393910, 2705901, 892618, 1046951, 887028, 786069, 1197090, 437479, 2156370,
-    1901297, 644996, 1956005, 2264486, 1937905, 2766368, 2203016, 1972588,
+    1901297, 644996, 1956005, 2264486, 1937905, 2766368, 2203016, 1972588, 3403404, 1729599,
+    2533291, 1741165, 1993636, 2339258,
   ];
 
   for (let i = 0; i < 15; i++) {
@@ -436,11 +437,11 @@ export function randomPrank() {
       break;
     }
     // print("gonna prank " + playerIDs[getRandomInt(0, 18)]);
-    cliExecute("timespinner prank " + playerIDs[getRandomInt(0, 18)]);
+    cliExecute(`timespinner prank ${playerIDs[getRandomInt(0, 18)]}`);
   }
 }
 
-export function mannyRollover() {
+export function mannyRollover(): void {
   Clan.join("Alliance from Hell");
   // TODO: Make this work, errored as invalid piece or something?
   while (get("_witchessFights") < 5) {
@@ -466,21 +467,26 @@ export function mannyRollover() {
     } while (get("lastEncounter") === "Nothing Could Be Finer");
   }
 
-  if (myInebriety() === inebrietyLimit()) {
-    useFamiliar($familiar`stooper`);
+  if (myInebriety() === inebrietyLimit() && myFullness() === fullnessLimit()) {
+    if (myFamiliar() !== $familiar`stooper`) {
+      useFamiliar($familiar`stooper`);
+      useSkill($skill`the ode to booze`, 1);
+      drinksilent($item`elemental caipiroska`);
+    }
     useSkill($skill`the ode to booze`, 1);
-    drinksilent($item`elemental caipiroska`);
     takeStash($item`tiny plastic sword`, 1);
     create($item`grogtini`);
     drinksilent($item`grogtini`);
     putStash($item`tiny plastic sword`, 1);
+  } else {
+    throw "are you sure you want to ascend? you have some open organ space";
   }
 
   outfit("PVP RO fites");
   useFamiliar($familiar`trick-or-treating tot`);
   equip($item`lil unicorn costume`);
 
-  if (myGardenType() != "grass") {
+  if (myGardenType() !== "grass") {
     use(1, $item`packet of tall grass seeds`);
   }
 
@@ -492,6 +498,10 @@ export function mannyRollover() {
   // check for a dggt if we haven't
   if (get("_defectiveTokenChecked") === false) {
     visitUrl("place.php?whichplace=arcade&action=arcade_plumber");
+  }
+
+  if (get("boomBoxSong") !== "Food Vibrations") {
+    cliExecute("boombox food");
   }
 
   randomPrank();
@@ -517,7 +527,7 @@ export function faxEmbezzler(): void {
   }
 }
 
-export function bishopChain() {
+export function bishopChain(): void {
   if (get("_pocketProfessorLectures") < 13 && get("_witchessFights") < 5) {
     useFamiliar($familiar`pocket professor`);
     equip($item`pocket professor memory chip`);
@@ -533,7 +543,7 @@ export function bishopChain() {
       .setAutoAttack();
     visitUrl("campground.php?action=witchess");
     runChoice(1);
-    visitUrl("choice.php?option=1&pwd=" + myHash() + "&whichchoice=1182&piece=1942", false);
+    visitUrl(`choice.php?option=1&pwd=${myHash()}&whichchoice=1182&piece=1942`, false);
     while (inMultiFight()) {
       runCombat();
     }
@@ -541,7 +551,7 @@ export function bishopChain() {
   }
 }
 
-export function embezzlerChain() {
+export function embezzlerChain(): void {
   if (get("_pocketProfessorLectures") === 0 && get("_photocopyUsed") === false) {
     useFamiliar($familiar`pocket professor`);
     equip($item`pocket professor memory chip`);

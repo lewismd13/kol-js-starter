@@ -1,15 +1,16 @@
-var path = require("path");
-var webpack = require("webpack");
-var packageData = require("./package.json");
+const path = require("path");
+const webpack = require("webpack");
+const packageData = require("./package.json");
 
 module.exports = {
   entry: {
     // Point "entry" to scripts you want to be CLI-eligible.
     barfday: "./src/barfday.ts",
     postloop: "./src/postloop.ts",
-    profchain: "./src/profchain.ts",
     test: "./src/test.ts",
     macroConsult: "./src/macroConsult.ts",
+    hoboDay: "./src/hoboDay.ts",
+    mannyRoll: "./src/mannyRoll.ts",
   },
   mode: "development",
   devtool: false,

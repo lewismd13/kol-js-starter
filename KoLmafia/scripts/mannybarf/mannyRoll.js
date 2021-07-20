@@ -44548,17 +44548,17 @@ function embezzlerChain() {
 
 /***/ }),
 
-/***/ "./src/test.ts":
-/*!*********************!*\
-  !*** ./src/test.ts ***!
-  \*********************/
+/***/ "./src/mannyRoll.ts":
+/*!**************************!*\
+  !*** ./src/mannyRoll.ts ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib */ "./src/lib.ts");
 
-(0,_lib__WEBPACK_IMPORTED_MODULE_0__.mannyRollover)(); // gingerBread();
+(0,_lib__WEBPACK_IMPORTED_MODULE_0__.mannyRollover)();
 
 /***/ }),
 
@@ -44677,7 +44677,7 @@ module.exports = require("kolmafia");
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(__webpack_require__.s = "./src/test.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__(__webpack_require__.s = "./src/mannyRoll.ts");
 /******/ 	var __webpack_export_target__ = exports;
 /******/ 	for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
 /******/ 	if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
