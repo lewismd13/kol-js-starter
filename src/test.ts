@@ -1,5 +1,5 @@
-import { mannyRollover } from "./lib";
+import { mannyQuestVolcoino } from "./lib";
 
-mannyRollover();
-
+// mannyRollover();
+mannyQuestVolcoino();
 // gingerBread();

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import {
   adv1,
+  autosell,
   availableAmount,
   buy,
   buyUsingStorage,
@@ -19,6 +20,7 @@ import {
   haveSkill,
   inebrietyLimit,
   inMultiFight,
+  itemAmount,
   maximize,
   myAdventures,
   myFamiliar,
@@ -32,6 +34,7 @@ import {
   outfit,
   print,
   pullsRemaining,
+  putShop,
   putStash,
   retrieveItem,
   runChoice,
@@ -467,6 +470,8 @@ export function mannyRollover(): void {
     } while (get("lastEncounter") === "Nothing Could Be Finer");
   }
 
+  // TODO: check to see if we can still use banderruns to get gingerbread cigs
+
   if (myInebriety() === inebrietyLimit() && myFullness() === fullnessLimit()) {
     if (myFamiliar() !== $familiar`stooper`) {
       useFamiliar($familiar`stooper`);
@@ -485,6 +490,25 @@ export function mannyRollover(): void {
   outfit("PVP RO fites");
   useFamiliar($familiar`trick-or-treating tot`);
   equip($item`lil unicorn costume`);
+
+  while (availableAmount($item`Poké-Gro fertilizer`) > 1) {
+    cliExecute("grow");
+  }
+
+  if (get("boomBoxSong") !== "Food Vibrations") {
+    cliExecute("boombox food");
+  }
+
+  autosell($item`cheap sunglasses`, availableAmount($item`cheap sunglasses`) - 1);
+  autosell($item`filthy child leash`, availableAmount($item`filthy child leash`));
+  use(availableAmount($item`bag of park garbage`) - 30, $item`bag of park garbage`);
+  use(availableAmount($item`Gathered Meat-Clip`), $item`Gathered Meat-Clip`);
+  autosell($item`expensive camera`, availableAmount($item`expensive camera`));
+  autosell($item`bag of gross foreign snacks`, availableAmount($item`bag of gross foreign snacks`));
+  putShop(300, 0, availableAmount($item`gold nuggets`), $item`gold nuggets`);
+  putShop(0, 0, availableAmount($item`cornucopia`), $item`cornucopia`);
+  putShop(0, 0, availableAmount($item`elemental sugarcube`), $item`elemental sugarcube`);
+  autosell($item`meat stack`, itemAmount($item`meat stack`));
 
   if (myGardenType() !== "grass") {
     use(1, $item`packet of tall grass seeds`);
@@ -508,7 +532,7 @@ export function mannyRollover(): void {
   // finish free fights
 }
 
-function checkFax(): boolean {
+export function checkFax(): boolean {
   cliExecute("fax receive");
   if (get("photocopyMonster") === $monster`Knob Goblin Embezzler`) return true;
   cliExecute("fax send");
@@ -584,5 +608,50 @@ export function embezzlerChain(): void {
     setAutoAttack(0);
   } else {
     print("I think you already copied embezzlers, bud", "red");
+  }
+}
+
+export function mannyQuestVolcoino() {
+  visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+  if (get("_volcanoItem2") === 8425) {
+    retrieveItem(5, $item`new age healing crystal`);
+    visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+    runChoice(2);
+  } else if (get("_volcanoItem3") === 8446) {
+    retrieveItem(1, $item`SMOOCH bottlecap`);
+    visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+    runChoice(3);
+  } else if (get("_volcanoItem3") === 8517) {
+    retrieveItem(3, $item`SMOOCH bracers`);
+    visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+    runChoice(3);
+  } else if (get("_volcanoItem1") === 8470) {
+    retrieveItem(5, $item`gooey lava globs`);
+    visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+    runChoice(1);
+  } else if (get("_volcanoItem1") === 8516) {
+    retrieveItem(3, $item`smooth velvet bra`);
+    visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+    runChoice(1);
+  } else if (get("_volcanoItem1") === 8523) {
+    if (!get("_claraBellUsed") && itemAmount($item`fused fuse`) === 0) {
+      use($item`clara's bell`);
+      setChoice(1091, 7);
+      while (itemAmount($item`fused fuse`) === 0) {
+        adv1($location`lavaco lamp factory`, -1, "");
+      }
+      visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+      runChoice(1);
+    } else if (!get("_freePillKeeperUsed")) {
+      cliExecute("pillkeeper free noncombat");
+      setChoice(1091, 7);
+      while (itemAmount($item`fused fuse`) === 0) {
+        adv1($location`lavaco lamp factory`, -1, "");
+      }
+      visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
+      runChoice(1);
+    } else {
+      print("You need a fused fuse but can't force a NC for free. :(", "red");
+    }
   }
 }

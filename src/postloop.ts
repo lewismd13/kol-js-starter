@@ -20,6 +20,7 @@ import {
   putStash,
   retrieveItem,
   runChoice,
+  runCombat,
   setAutoAttack,
   setProperty,
   takeStorage,
@@ -30,7 +31,7 @@ import {
   visitUrl,
 } from "kolmafia";
 
-import { setChoice } from "./lib";
+import { mannyQuestVolcoino, setChoice } from "./lib";
 
 //Get Free Volcoino
 function getVolcoino() {
@@ -130,6 +131,9 @@ cliExecute("pull * ice hotel bell");
 cliExecute("pull * magical mystery juice");
 cliExecute("pull * New Age healing crystal");
 cliExecute("pull * lucky cat's paw");
+cliExecute("pull * magical mystery juice");
+cliExecute("pull * toggle switch (bartend)");
+cliExecute("pull * toggle switch (bounce)");
 cliExecute("pull 1000000 meat");
 
 cliExecute("refresh all");
@@ -173,7 +177,19 @@ cliExecute("terminal enquiry familiar.enq");
 setChoice(1414, 2);
 useSkill(1, $skill`lock picking`);
 cliExecute("create 1 jarlsberg's key lime");
-cliExecute("cheat ancestral recall");
+putShop(0, 0, $item`jarlsberg's key lime`);
+
+if (get("_deckCardsDrawn") < 11) {
+  useFamiliar($familiar`robortender`);
+  cliExecute("cheat phylum elf");
+  runCombat(
+    Macro.skill($skill`curse of weaksauce`)
+      .trySkillRepeat($skill`saucegeyser`)
+      .toString()
+  );
+  putShop(0, 0, $item`peppermint sprig`);
+}
+// cliExecute("cheat ancestral recall");
 // cli_execute("cheat island");
 // cli_execute("cheat gift card");
 
@@ -223,3 +239,4 @@ getFunFunds();
 
 cliExecute("breakfast");
 putShop(6845, 0, availableAmount($item`battery (AAA)`), $item`battery (AAA)`);
+mannyQuestVolcoino();

@@ -59,6 +59,7 @@ export function calculateFarmingTurns(): number {
   //   just going to use an approximation; I'm making this a
   //   function so that I can make it more effective later!
   //  for now, need to figure out diet/spleen for 510 turns
+  // TODO: If organs full, set to whatever actual adv are
   if (inebrietyLimit() === 20) {
     return 540;
   } else {
@@ -175,12 +176,7 @@ while (
 while (haveEffect($effect`Driving Observantly`) < calculateFarmingTurns()) {
   cliExecute("asdonmartin drive observantly");
 }
-/*
-// using half a purse, so get 450 turns of smithsness whatever
-while (haveEffect($effect`Merry Smithsness`) < calculateFarmingTurns()) {
-  use(1, $item`Flaskfull of Hollow`);
-}
-*/
+
 while (haveEffect($effect`How to Scam Tourists`) < calculateFarmingTurns()) {
   use(1, $item`how to avoid scams`);
 }
@@ -257,15 +253,6 @@ if (get("_pantsgivingCount") > 4 && get("_pantsgivingFullness") === 0) {
   takeStash(1, $item`pantsgiving`);
   equip($item`pantsgiving`);
 }
-/*
-while (availableAmount($item`Li\'l pirate costume`) < 1) {
-  adventureMacro(
-    $location`Pirates of the Garbage Barges`,
-    Macro.trySkill($skill`gingerbread mob hit`)
-      .trySkill($skill`saucestorm`)
-      .repeat()
-  );
-} */
 
 if (get("_witchessFights") < 5) {
   Witchess.fightPiece($monster`Witchess Knight`);
@@ -315,15 +302,6 @@ if (haveEffect($effect`greedy resolve`) === 0) {
 embezzlerChain();
 
 // useFamiliar($familiar`trick-or-treating tot`);
-
-/*
-// figure out digitize that doesn't break mafia
-Macro.externalIf(
-  get("_sourceTerminalDigitizeMonster") != $monster`Knob Goblin Embezzler` &&
-    get("_sourceTerminalDigitizeUses") < 3,
-  Macro.trySkill($skill`digitize`)
-)
-*/
 
 setAutoAttack(0);
 useFamiliar($familiar`robortender`);
