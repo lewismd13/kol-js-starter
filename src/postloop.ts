@@ -1,4 +1,4 @@
-import { $effect, $familiar, $item, $location, $skill, get, Macro } from "libram";
+import { $effect, $familiar, $item, $location, $skill, get, Macro, SourceTerminal } from "libram";
 
 import {
   adv1,
@@ -200,7 +200,11 @@ cliExecute("farfuture gin");
 // chat_private('reverkiller', 'you done just got PRANKED!');
 
 while (toInt(getProperty("_sourceTerminalExtrudes")) < 3) {
-  cliExecute("terminal extrude booze");
+  // cliExecute("terminal extrude booze");
+  SourceTerminal.extrude($item`hacked gibson`);
+}
+while (get("_clipartSummons") < 3) {
+  cliExecute("create 1 box of familiar jacks");
 }
 
 // dupe a Karma shawarma
@@ -240,3 +244,7 @@ getFunFunds();
 cliExecute("breakfast");
 putShop(6845, 0, availableAmount($item`battery (AAA)`), $item`battery (AAA)`);
 mannyQuestVolcoino();
+
+if (get("_unaccompaniedMinerUsed") === 0) {
+  cliExecute("minevolcano 5");
+}

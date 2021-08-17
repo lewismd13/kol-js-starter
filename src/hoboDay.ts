@@ -221,6 +221,7 @@ function hoboPrep() {
 
   useSkill($skill`ode to booze`, 3);
   useFamiliar($familiar`frumious bandersnatch`);
+  equip($item`none`, $slot`weapon`);
   equip($item`hobo code binder`);
   maximize("familiar weight -offhand", false);
   equip($item`camouflage t-shirt`);
