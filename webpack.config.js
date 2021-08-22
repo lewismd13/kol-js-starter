@@ -11,6 +11,7 @@ module.exports = {
     macroConsult: "./src/macroConsult.ts",
     hoboDay: "./src/hoboDay.ts",
     mannyRoll: "./src/mannyRoll.ts",
+    mannyBreakfast: "./src/mannyBreakfast.ts",
   },
   mode: "development",
   devtool: false,

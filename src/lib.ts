@@ -423,12 +423,13 @@ export function gingerBread(): void {
   cliExecute("ccs default");
 }
 
+function getRandomInt(min: number, max: number): number {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export function randomPrank(): void {
-  function getRandomInt(min: number, max: number): number {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
   const playerIDs: number[] = [
     1515124, 2548033, 2393910, 2705901, 892618, 1046951, 887028, 786069, 1197090, 437479, 2156370,
     1901297, 644996, 1956005, 2264486, 1937905, 2766368, 2203016, 1972588, 3403404, 1729599,
@@ -441,6 +442,40 @@ export function randomPrank(): void {
     }
     // print("gonna prank " + playerIDs[getRandomInt(0, 18)]);
     cliExecute(`timespinner prank ${playerIDs[getRandomInt(0, 18)]}`);
+  }
+}
+
+export function randomSafari() {
+  const playerIDs: string[] = [
+    "phreddrickkv2",
+    "2548033",
+    "Phillammon",
+    "2705901",
+    "892618",
+    "1046951",
+    "887028",
+    "786069",
+    "1197090",
+    "437479",
+    "playultm8",
+    "1901297",
+    "644996",
+    "1956005",
+    "2264486",
+    "1937905",
+    "2766368",
+    "2203016",
+    "1972588",
+    "Butts McGruff",
+    "burningbman",
+    "2533291",
+    "1741165",
+    "1993636",
+    "2339258",
+  ];
+
+  while ($skill`Experience Safari`.timescast < get("skillLevel180")) {
+    useSkill($skill`Experience Safari`, 1, playerIDs[getRandomInt(0, 18)]);
   }
 }
 
@@ -529,6 +564,7 @@ export function mannyRollover(): void {
   }
 
   randomPrank();
+  randomSafari();
   // finish free fights
 }
 

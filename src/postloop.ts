@@ -1,4 +1,4 @@
-import { $effect, $familiar, $item, $location, $skill, get, Macro, SourceTerminal } from "libram";
+import { $effect, $familiar, $item, $location, $skill, get, Macro } from "libram";
 
 import {
   adv1,
@@ -18,6 +18,7 @@ import {
   putDisplay,
   putShop,
   putStash,
+  restoreMp,
   retrieveItem,
   runChoice,
   runCombat,
@@ -62,7 +63,9 @@ function getFunFunds() {
 print("I really hope this works!", "blue");
 
 cliExecute("pull * cold hi mein");
-cliExecute("pull * karma shawarma");
+// cliExecute("pull * karma shawarma");
+// cliExecute("pull * warbear gyro");
+cliExecute("pull 1 bottle of greedy dog");
 cliExecute("pull * lime");
 cliExecute("pull * magical sausage");
 cliExecute("pull * bottle of gin");
@@ -134,6 +137,7 @@ cliExecute("pull * lucky cat's paw");
 cliExecute("pull * magical mystery juice");
 cliExecute("pull * toggle switch (bartend)");
 cliExecute("pull * toggle switch (bounce)");
+cliExecute("pull 1 etched hourglass");
 cliExecute("pull 1000000 meat");
 
 cliExecute("refresh all");
@@ -142,11 +146,17 @@ setProperty("autoSatisfyWithNPCs", "true");
 buy(1, $item`Queue Du Coq cocktailcrafting kit`);
 use(1, $item`Queue Du Coq cocktailcrafting kit`);
 
+cliExecute("ccs libramMacro");
+
 if (get("_clipartSummons") === 0) {
   cliExecute("create 3 box of familiar jacks");
 }
 
 cliExecute("make 23 magical sausage");
+
+if (get("_etchedHourglassUsed") === false) {
+  use($item`etched hourglass`);
+}
 
 use(1, $item`packet of tall grass seeds`);
 
@@ -181,13 +191,16 @@ putShop(0, 0, $item`jarlsberg's key lime`);
 
 if (get("_deckCardsDrawn") < 11) {
   useFamiliar($familiar`robortender`);
+  retrieveItem($item`toggle switch (bartend)`);
+  equip($item`toggle switch (bartend)`);
+  restoreMp(150);
+  Macro.skill($skill`curse of weaksauce`)
+    .trySkillRepeat($skill`saucegeyser`)
+    .setAutoAttack();
   cliExecute("cheat phylum elf");
-  runCombat(
-    Macro.skill($skill`curse of weaksauce`)
-      .trySkillRepeat($skill`saucegeyser`)
-      .toString()
-  );
-  putShop(0, 0, $item`peppermint sprig`);
+  runCombat();
+  setAutoAttack(0);
+  // putShop(0, 0, $item`peppermint sprig`);
 }
 // cliExecute("cheat ancestral recall");
 // cli_execute("cheat island");
@@ -200,27 +213,25 @@ cliExecute("farfuture gin");
 // chat_private('reverkiller', 'you done just got PRANKED!');
 
 while (toInt(getProperty("_sourceTerminalExtrudes")) < 3) {
-  // cliExecute("terminal extrude booze");
-  SourceTerminal.extrude($item`hacked gibson`);
+  cliExecute("terminal extrude booze");
+  // SourceTerminal.extrude($item`hacked gibson`);
 }
 while (get("_clipartSummons") < 3) {
   cliExecute("create 1 box of familiar jacks");
 }
 
-// dupe a Karma shawarma
-if (
-  toInt(getProperty("encountersUntilDMTChoice")) === 0 &&
-  availableAmount($item`Karma shawarma`) > 0
-) {
+// dupe a greedy dog
+const dupeTarget = $item`bottle of greedy dog`;
+if (toInt(getProperty("encountersUntilDMTChoice")) === 0 && availableAmount(dupeTarget) > 0) {
   useFamiliar($familiar`machine elf`);
   setChoice(1119, 4);
   // setProperty("choiceAdventure1119", "4");
-  setProperty("choiceAdventure1125", "1&iid=7797");
+  setProperty("choiceAdventure1125", `1&iid=${toInt(dupeTarget)}`);
   adv1($location`the deep machine tunnels`, -1, "");
-  putShop(0, 0, 1, $item`Karma shawarma`);
-  putCloset(1, $item`Karma shawarma`);
+  // putShop(0, 0, 1, $item`Karma shawarma`);
+  putCloset(2, dupeTarget);
 } else {
-  print("Something went wrong duping a shawarma", "red");
+  print(`Something went wrong duping a ${dupeTarget.name}`, "red");
 }
 
 // TODO: get doggie volcoino and superduper
@@ -248,3 +259,5 @@ mannyQuestVolcoino();
 if (get("_unaccompaniedMinerUsed") === 0) {
   cliExecute("minevolcano 5");
 }
+
+cliExecute("ccs default");

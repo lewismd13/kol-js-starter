@@ -127,6 +127,8 @@ function hoboPrep() {
     getProperty("lastCopyableMonster") === $monster`black crayon crimbo elf`.name
   ) {
     useFamiliar($familiar`robortender`);
+    retrieveItem($item`toggle switch (bartend)`);
+    equip($item`toggle switch (bartend)`);
     equip($slot`acc1`, $item`backup camera`);
     adventureMacroAuto(
       $location`noob cave`,
@@ -161,6 +163,8 @@ function hoboPrep() {
     Witchess.fightPiece($monster`witchess knight`);
     setAutoAttack(0);
   }
+
+  // TODO: Profchain witchess mobs
 
   while (haveEffect($effect`leash of linguini`) < 30) {
     useSkill($skill`leash of linguini`, 3);

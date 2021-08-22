@@ -19217,26 +19217,132 @@ function mannyQuestVolcoino() {
 
 /***/ }),
 
-/***/ "./src/postloop.ts":
-/*!*************************!*\
-  !*** ./src/postloop.ts ***!
-  \*************************/
+/***/ "./src/mannyBreakfast.ts":
+/*!*******************************!*\
+  !*** ./src/mannyBreakfast.ts ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/index.js");
-/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(libram__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! kolmafia */ "kolmafia");
 /* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(kolmafia__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libram */ "./node_modules/libram/dist/index.js");
+/* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(libram__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib */ "./src/lib.ts");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
- //Get Free Volcoino
+
+
+function buyRaffle(ticketQty) {
+  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject || (_templateObject = _taggedTemplateLiteral(["raffle ticket"])))) < ticketQty && (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myName)() === "manendra" && (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.containsText)((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("main.php"), "map7beach.gif") && (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myPath)() !== "Zombie Slayer") (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("raffle ".concat(ticketQty).concat((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.canInteract)() ? " inventory" : " storage"));
+  return (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["raffle ticket"])))) >= ticketQty;
+} // TODO: set snojo, learn terminal skills, make re-entrant
+
+
+libram__WEBPACK_IMPORTED_MODULE_2__.Clan.join(40382);
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("ccs libramMacro");
+
+if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_clipartSummons") === 0) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("create 1 borrowed time");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("create 2 box of familiar jacks");
+}
+
+if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.toInt)((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getProperty)("_daycareGymScavenges")) === 0) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("place.php?whichplace=town_wrong&action=townwrong_boxingdaycare");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(3);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(2);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(1);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(4);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(5);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(4);
+}
+
+var raffleTix = 5 + (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.random)(5);
+buyRaffle(raffleTix);
+
+if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_sausagesMade") === 0) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("make 23 magical sausage");
+}
+
+if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_etchedHourglassUsed") === false) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["etched hourglass"]))));
+} // TODO: Use robort and fight an elf instead of the mickey card
+
+
+if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_deckCardsDrawn") === 0) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("cheat ancestral recall"); // cliExecute("cheat 1952");
+
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("cheat island");
+}
+
+if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_deckCardsDrawn") < 11) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["robortender"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.retrieveItem)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["toggle switch (bartend)"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["toggle switch (bartend)"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.restoreMp)(150);
+  libram__WEBPACK_IMPORTED_MODULE_2__.Macro.skill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["curse of weaksauce"])))).trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["saucestorm"])))).setAutoAttack();
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("cheat phylum elf");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runCombat)(); // putShop(0, 0, $item`peppermint sprig`);
+}
+
+if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_chateauMonsterFought") === false) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["robortender"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.retrieveItem)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["toggle switch (bartend)"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["toggle switch (bartend)"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.restoreMp)(150);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)("gnat extract mortar weak");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("place.php?whichplace=chateau&action=chateau_painting", false);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runCombat)();
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0); // putShop(0, 0, 1, $item`peppermint sprig`);
+}
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("shower hot");
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("bastille mainstat brutalist gesture");
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("briefcase collect");
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("farfuture gin"); // cli_execute('timespinner prank phillanthropist');
+// chat_private('reverkiller', 'you done just got PRANKED!');
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("detective solver");
+
+while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.toInt)((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getProperty)("_sourceTerminalExtrudes")) < 3) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("terminal extrude booze"); // SourceTerminal.extrude($item`hacked gibson`);
+} // Chateau desk, assuming meat
+
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("place.php?whichplace=chateau&action=chateau_desk1"); // Upgrade saber for fam wt
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("main.php?action=may4");
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(4);
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.retrieveItem)(5, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["abstraction:thought"])))); // TODO: Make this not break when you run out of macros
+
+while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.toInt)((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getProperty)("_machineTunnelsAdv")) < 5) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["machine elf"])))); // setAutoAttack("melfgetcertainty");
+
+  libram__WEBPACK_IMPORTED_MODULE_2__.Macro.if_("monsterid 1965", libram__WEBPACK_IMPORTED_MODULE_2__.Macro.trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["saucestorm"]))))).while_("!monstername perceiver of sensations && hasskill macrometeorite", libram__WEBPACK_IMPORTED_MODULE_2__.Macro.trySkill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["macrometeorite"])))).skill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral(["summon love mosquito"]))))).if_("monstername perceiver of sensations", libram__WEBPACK_IMPORTED_MODULE_2__.Macro.tryItem((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral(["abstraction:thought"])))).trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["saucestorm"]))))).trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral(["saucestorm"])))).setAutoAttack();
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.adv1)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$location)(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral(["The Deep Machine Tunnels"]))), -1, "");
+}
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral(["rogue program"]))));
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.takeStash)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["pantsgiving"]))));
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral(["pantsgiving"]))));
+
+while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.toInt)((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getProperty)("_snojoFreeFights")) < 10) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)("gnat extract mortar weak");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.adv1)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$location)(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral(["x-32 combat training snowman"]))), -1, "");
+}
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$slot)(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral(["pants"]))), (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral(["none"]))));
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putStash)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral(["pantsgiving"]))));
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral(["Bird-a-Day Calendar"])))); // cheesefax fortune
+//BafH
+//Get Free Volcoino
 
 function getVolcoino() {
   if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_infernoDiscoVisited") === true) return;
@@ -19252,204 +19358,62 @@ function getFunFunds() {
   if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_dinseyGarbageDisposed") === true) return;
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.print)("Attempting to turn in garbage...");
 
-  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.itemAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject || (_templateObject = _taggedTemplateLiteral(["bag of park garbage"])))) < 1) {
+  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.itemAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral(["bag of park garbage"])))) < 1) {
     if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.canInteract)()) {
-      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.buy)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["bag of park garbage"]))));
+      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.buy)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral(["bag of park garbage"]))));
     } else {
-      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.takeStorage)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["bag of park garbage"]))));
+      (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.takeStorage)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral(["bag of park garbage"]))));
     }
   }
 
-  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.itemAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["bag of park garbage"])))) >= 1) {
+  if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.itemAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["bag of park garbage"])))) >= 1) {
     (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("place.php?whichplace=airport_stench&action=airport3_tunnels");
     (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runChoice)(6);
   } else (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.print)("Failed to claim FunFunds.", "red");
 }
 
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.print)("I really hope this works!", "blue");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * cold hi mein"); // cliExecute("pull * karma shawarma");
-// cliExecute("pull * warbear gyro");
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull 1 bottle of greedy dog");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * lime");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * magical sausage");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * bottle of gin");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * bottle of rum");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * elemental caipiroska");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * abstraction: thought");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * fish sauce");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * stench jelly");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Asdon Martin keyfob");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * bag of park garbage");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * borrowed time");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * brick");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Clara's bell");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * fishy pipe");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Freddy Kruegerand");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * heat-resistant sheet metal");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * magical sausage casing");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * mime army shotglass");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * packet of tall grass seeds");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * packet of thanksgarden seeds");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * packet of winter seeds");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Poke gro fertilizer");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * School of Hard Knocks Diploma");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * plexiglass pith helmet");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Source essence");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Special Seasoning");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * sprinkles");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * subscription cocoa dispenser");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * glitch season reward name");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * bauxite beret");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * dreadful fedora");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * hemlock helm");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * papier-mitre");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * PirateRealm party hat");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * smooth velvet hat");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * The Crown of Ed the Undying");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * dreadful glove");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * high-temperature mining drill");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * plexiglass pikestaff");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Red Roger's red right hand");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Staff of Simmering Hatred");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Drunkula's wineglass");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * hobo code binder");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Red Roger's red left hand");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * bauxite boxers");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * psychic's pslacks");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * smooth velvet pants");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * bauxite bow-tie");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Crimbolex watch");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Dreadsylvania Auditor's badge");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * gold skull ring");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * lucky gold ring");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * mafia pinky ring");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * mafia pointer finger ring");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * mafia thumb ring");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Mr. Cheeng's spectacles");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * offensive moustache");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Red Roger's red left foot");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Red Roger's red right foot");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * smooth velvet hanky");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * smooth velvet pocket square");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * smooth velvet socks");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * li'l unicorn costume");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * Pocket Professor memory chip");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * ice hotel bell");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * magical mystery juice");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * New Age healing crystal");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * lucky cat's paw");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * magical mystery juice");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * toggle switch (bartend)");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull * toggle switch (bounce)");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull 1 etched hourglass");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("pull 1000000 meat");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("refresh all");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setProperty)("autoSatisfyWithNPCs", "true");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.buy)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Queue Du Coq cocktailcrafting kit"]))));
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Queue Du Coq cocktailcrafting kit"]))));
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("ccs libramMacro");
-
-if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_clipartSummons") === 0) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("create 3 box of familiar jacks");
-}
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("make 23 magical sausage");
-
-if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_etchedHourglassUsed") === false) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["etched hourglass"]))));
-}
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["packet of tall grass seeds"]))));
-
-if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getWorkshed)() !== (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["asdon martin keyfob"])))) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["asdon martin keyfob"]))));
-}
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putStash)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["Little Geneticist DNA-Splicing Lab"]))));
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putDisplay)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Thwaitgold termite statuette"]))));
-
-if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.haveEffect)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$effect)(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["feeling lost"])))) !== 0) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("uneffect feeling lost");
-}
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.visitUrl)("peevpee.php?action=smashstone&confirm=on");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.print)("Stone smashed. Get your PVP on!", "green");
-
-if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["blood-drive sticker"])))) > 10) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(0, 0, 1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["blood-drive sticker"]))));
-}
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(0, 0, 1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral(["vintage smart drink"]))));
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(0, 0, 1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral(["emergency margarita"]))));
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(0, 0, 1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["bag of grain"])))); // put_shop(0, 0, 1, $item[squeaky toy rose]);
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(49995, 0, 3, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral(["pocket wish"]))));
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("terminal enquiry familiar.enq");
-(0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1414, 2);
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral(["lock picking"]))));
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("create 1 jarlsberg's key lime");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(0, 0, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral(["jarlsberg's key lime"]))));
-
-if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_deckCardsDrawn") < 11) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["robortender"]))));
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.retrieveItem)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral(["toggle switch (bartend)"]))));
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral(["toggle switch (bartend)"]))));
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.restoreMp)(150);
-  libram__WEBPACK_IMPORTED_MODULE_2__.Macro.skill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral(["curse of weaksauce"])))).trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral(["saucegeyser"])))).setAutoAttack();
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("cheat phylum elf");
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.runCombat)();
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0); // putShop(0, 0, $item`peppermint sprig`);
-} // cliExecute("cheat ancestral recall");
-// cli_execute("cheat island");
-// cli_execute("cheat gift card");
-
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("briefcase collect");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("farfuture gin"); // cli_execute('timespinner prank reverkiller');
-// chat_private('reverkiller', 'you done just got PRANKED!');
-
-while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.toInt)((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getProperty)("_sourceTerminalExtrudes")) < 3) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("terminal extrude booze"); // SourceTerminal.extrude($item`hacked gibson`);
-}
-
-while ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_clipartSummons") < 3) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("create 1 box of familiar jacks");
-} // dupe a greedy dog
-
-
-var dupeTarget = (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral(["bottle of greedy dog"])));
-
-if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.toInt)((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getProperty)("encountersUntilDMTChoice")) === 0 && (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)(dupeTarget) > 0) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral(["machine elf"]))));
-  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1119, 4); // setProperty("choiceAdventure1119", "4");
-
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setProperty)("choiceAdventure1125", "1&iid=".concat((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.toInt)(dupeTarget)));
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.adv1)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$location)(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral(["the deep machine tunnels"]))), -1, ""); // putShop(0, 0, 1, $item`Karma shawarma`);
-
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putCloset)(2, dupeTarget);
-} else {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.print)("Something went wrong duping a ".concat(dupeTarget.name), "red");
-} // TODO: get doggie volcoino and superduper
-
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.retrieveItem)(20, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral(["heat-resistant sheet metal"])))); // setAutoAttack("gnat extract mortar weak");
-
-libram__WEBPACK_IMPORTED_MODULE_2__.Macro.trySkill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral(["curse of weaksauce"])))).trySkill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["stuffed mortar shell"])))).trySkill((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral(["extract"])))).setAutoAttack();
-
-while (!(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.containsText)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$location)(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["bubblin' caldera"], ["bubblin\\' caldera"]))).noncombatQueue, "Lava Dogs")) {
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["mini-hipster"]))));
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral(["Kramco Sausage-o-Matic"]))));
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.adv1)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$location)(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral(["bubblin' caldera"], ["bubblin\\' caldera"]))));
-}
-
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("soak");
 getVolcoino();
 getFunFunds();
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("breakfast");
-(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(6845, 0, (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral(["battery (AAA)"])))), (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["battery (AAA)"]))));
 (0,_lib__WEBPACK_IMPORTED_MODULE_1__.mannyQuestVolcoino)();
+
+if (!(0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_loveTunnelUsed")) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$familiar)(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral(["golden monkey"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["fourth of may cosplay saber"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["carol of the bulls"]))));
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$skill)(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral(["carol of the hells"]))));
+  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1222, 1); // Entrance
+
+  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1223, 1); // Fight LOV Enforcer
+
+  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1224, 2); // LOV Epaulettes
+
+  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1225, 1); // Fight LOV Engineer
+
+  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1226, 2); // Open Heart Surgery
+
+  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1227, 1); // Fight LOV Equivocator
+
+  (0,_lib__WEBPACK_IMPORTED_MODULE_1__.setChoice)(1228, 2); // Take emotionalizer
+
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)("HCCS_LOV_tunnel");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.adv1)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$location)(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral(["The Tunnel of L.O.V.E."]))), -1, "");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
+}
+
+if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.myGardenType)() === "thanksgarden" && !(0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_mushroomGardenVisited")) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("garden pick");
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)(1, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral(["packet of tall grass seeds"]))));
+}
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(6845, 0, (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["battery (AAA)"])))), (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral(["battery (AAA)"]))));
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(0, 0, (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["cornucopia"])))), (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral(["cornucopia"]))));
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(49995, 0, 3, (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral(["pocket wish"]))));
+
+if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_cargoPocketEmptied") === false && !(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.containsText)((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("cargoPocketsEmptied"), "533")) {
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("cargo 533");
+}
+
+(0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putShop)(50000, 0, (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.availableAmount)((0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral(["greasy desk bell"])))), (0,libram__WEBPACK_IMPORTED_MODULE_2__.$item)(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["greasy desk bell"]))));
 
 if ((0,libram__WEBPACK_IMPORTED_MODULE_2__.get)("_unaccompaniedMinerUsed") === 0) {
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("minevolcano 5");
@@ -19569,7 +19533,7 @@ module.exports = require("kolmafia");
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(__webpack_require__.s = "./src/postloop.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__(__webpack_require__.s = "./src/mannyBreakfast.ts");
 /******/ 	var __webpack_export_target__ = exports;
 /******/ 	for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
 /******/ 	if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
