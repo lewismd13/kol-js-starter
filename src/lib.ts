@@ -511,7 +511,11 @@ export function mannyRollover(): void {
     if (myFamiliar() !== $familiar`stooper`) {
       useFamiliar($familiar`stooper`);
       useSkill($skill`the ode to booze`, 1);
-      drinksilent($item`elemental caipiroska`);
+      if (availableAmount($item`astral pilsner`) > 0) {
+        drinksilent($item`astral pilsner`);
+      } else {
+        drinksilent($item`splendid martini`);
+      }
     }
     useSkill($skill`the ode to booze`, 1);
     takeStash($item`tiny plastic sword`, 1);
@@ -519,7 +523,8 @@ export function mannyRollover(): void {
     drinksilent($item`grogtini`);
     putStash($item`tiny plastic sword`, 1);
   } else {
-    throw "are you sure you want to ascend? you have some open organ space";
+    throw "are you sure you want to overdrink? you have some open organ space";
+    // print("I hope you overdrank on purpose");
   }
 
   outfit("PVP RO fites");
@@ -538,11 +543,15 @@ export function mannyRollover(): void {
   autosell($item`filthy child leash`, availableAmount($item`filthy child leash`));
   use(availableAmount($item`bag of park garbage`) - 30, $item`bag of park garbage`);
   use(availableAmount($item`Gathered Meat-Clip`), $item`Gathered Meat-Clip`);
+  use(availableAmount($item`old coin purse`), $item`old coin purse`);
+  use(availableAmount($item`old leather wallet`), $item`old leather wallet`);
   autosell($item`expensive camera`, availableAmount($item`expensive camera`));
   autosell($item`bag of gross foreign snacks`, availableAmount($item`bag of gross foreign snacks`));
   putShop(300, 0, availableAmount($item`gold nuggets`), $item`gold nuggets`);
   putShop(0, 0, availableAmount($item`cornucopia`), $item`cornucopia`);
   putShop(0, 0, availableAmount($item`elemental sugarcube`), $item`elemental sugarcube`);
+  putShop(0, 0, availableAmount($item`gingerbread cigarette`), $item`gingerbread cigarette`);
+  putShop(0, 0, availableAmount($item`abandoned candy`), $item`abandoned candy`);
   autosell($item`meat stack`, itemAmount($item`meat stack`));
 
   if (myGardenType() !== "grass") {

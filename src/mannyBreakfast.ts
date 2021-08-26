@@ -18,6 +18,7 @@ import {
   random,
   restoreMp,
   retrieveItem,
+  reverseNumberology,
   runChoice,
   runCombat,
   setAutoAttack,
@@ -41,6 +42,31 @@ function buyRaffle(ticketQty: number) {
   )
     cliExecute(`raffle ${ticketQty}${canInteract() ? " inventory" : " storage"}`);
   return availableAmount($item`raffle ticket`) >= ticketQty;
+}
+
+function getVolcoino() {
+  if (get("_infernoDiscoVisited") === true) return;
+  print("Attempting to rock Disco Style...");
+  if (outfit("Velvet")) {
+    visitUrl("place.php?whichplace=airport_hot&action=airport4_zone1");
+    runChoice(7);
+  } else print("Failed to claim Volcoino.", "red");
+}
+
+function getFunFunds() {
+  if (get("_dinseyGarbageDisposed") === true) return;
+  print("Attempting to turn in garbage...");
+  if (itemAmount($item`bag of park garbage`) < 1) {
+    if (canInteract()) {
+      buy(1, $item`bag of park garbage`);
+    } else {
+      takeStorage(1, $item`bag of park garbage`);
+    }
+  }
+  if (itemAmount($item`bag of park garbage`) >= 1) {
+    visitUrl("place.php?whichplace=airport_stench&action=airport3_tunnels");
+    runChoice(6);
+  } else print("Failed to claim FunFunds.", "red");
 }
 
 // TODO: set snojo, learn terminal skills, make re-entrant
@@ -71,8 +97,22 @@ if (get("_sausagesMade") === 0) {
   cliExecute("make 23 magical sausage");
 }
 
+while (
+  Object.keys(reverseNumberology()).includes("69") &&
+  get("_universeCalculated") < get("skillLevel144")
+) {
+  cliExecute("numberology 69");
+}
+
 if (get("_etchedHourglassUsed") === false) {
   use($item`etched hourglass`);
+}
+
+while (
+  Object.keys(reverseNumberology()).includes("69") &&
+  get("_universeCalculated") < get("skillLevel144")
+) {
+  cliExecute("numberology 69");
 }
 
 // TODO: Use robort and fight an elf instead of the mickey card
@@ -107,12 +147,13 @@ if (get("_chateauMonsterFought") === false) {
   // putShop(0, 0, 1, $item`peppermint sprig`);
 }
 
-cliExecute("shower hot");
+cliExecute("shower cold");
 cliExecute("bastille mainstat brutalist gesture");
 cliExecute("briefcase collect");
-cliExecute("farfuture gin");
-// cli_execute('timespinner prank phillanthropist');
-// chat_private('reverkiller', 'you done just got PRANKED!');
+
+if (!get("_timeSpinnerReplicatorUsed")) {
+  cliExecute("farfuture gin");
+}
 
 cliExecute("detective solver");
 
@@ -125,9 +166,10 @@ while (toInt(getProperty("_sourceTerminalExtrudes")) < 3) {
 visitUrl("place.php?whichplace=chateau&action=chateau_desk1");
 
 // Upgrade saber for fam wt
-visitUrl("main.php?action=may4");
-runChoice(4);
-
+if (get("_saberMod") === 0) {
+  visitUrl("main.php?action=may4");
+  runChoice(4);
+}
 retrieveItem(5, $item`abstraction:thought`);
 
 // TODO: Make this not break when you run out of macros
@@ -152,7 +194,9 @@ setAutoAttack(0);
 
 useFamiliar($familiar`rogue program`);
 
-takeStash(1, $item`pantsgiving`);
+if (availableAmount($item`pantsgiving`) === 0) {
+  takeStash(1, $item`pantsgiving`);
+}
 equip($item`pantsgiving`);
 
 while (toInt(getProperty("_snojoFreeFights")) < 10) {
@@ -162,7 +206,9 @@ while (toInt(getProperty("_snojoFreeFights")) < 10) {
 
 setAutoAttack(0);
 equip($slot`pants`, $item`none`);
-putStash(1, $item`pantsgiving`);
+if (availableAmount($item`pantsgiving`) > 0) {
+  putStash(1, $item`pantsgiving`);
+}
 
 use(1, $item`Bird-a-Day Calendar`);
 
@@ -171,30 +217,6 @@ use(1, $item`Bird-a-Day Calendar`);
 //BafH
 
 //Get Free Volcoino
-function getVolcoino() {
-  if (get("_infernoDiscoVisited") === true) return;
-  print("Attempting to rock Disco Style...");
-  if (outfit("Velvet")) {
-    visitUrl("place.php?whichplace=airport_hot&action=airport4_zone1");
-    runChoice(7);
-  } else print("Failed to claim Volcoino.", "red");
-}
-
-function getFunFunds() {
-  if (get("_dinseyGarbageDisposed") === true) return;
-  print("Attempting to turn in garbage...");
-  if (itemAmount($item`bag of park garbage`) < 1) {
-    if (canInteract()) {
-      buy(1, $item`bag of park garbage`);
-    } else {
-      takeStorage(1, $item`bag of park garbage`);
-    }
-  }
-  if (itemAmount($item`bag of park garbage`) >= 1) {
-    visitUrl("place.php?whichplace=airport_stench&action=airport3_tunnels");
-    runChoice(6);
-  } else print("Failed to claim FunFunds.", "red");
-}
 
 getVolcoino();
 getFunFunds();
@@ -228,9 +250,8 @@ putShop(49995, 0, 3, $item`pocket wish`);
 
 if (get("_cargoPocketEmptied") === false && !containsText(get("cargoPocketsEmptied"), "533")) {
   cliExecute("cargo 533");
+  putShop(50000, 0, availableAmount($item`greasy desk bell`), $item`greasy desk bell`);
 }
-
-putShop(50000, 0, availableAmount($item`greasy desk bell`), $item`greasy desk bell`);
 
 if (get("_unaccompaniedMinerUsed") === 0) {
   cliExecute("minevolcano 5");

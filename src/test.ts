@@ -5,6 +5,7 @@ import {
   retrieveItem,
   runCombat,
   useFamiliar,
+  userConfirm,
   visitUrl,
 } from "kolmafia";
 import { $familiar, $item, $skill, get, Macro } from "libram";
@@ -36,20 +37,4 @@ ascend(
 );
 */
 
-if (get("_chateauMonsterFought") === false) {
-  useFamiliar($familiar`robortender`);
-  retrieveItem($item`toggle switch (bartend)`);
-  equip($item`toggle switch (bartend)`);
-  restoreMp(150);
-  // setAutoAttack("gnat extract mortar weak");
-  cliExecute("ccs twiddle");
-  visitUrl("place.php?whichplace=chateau&action=chateau_painting", false);
-  runCombat(
-    Macro.skill($skill`curse of weaksauce`)
-      .trySkillRepeat("saucestorm")
-      .toString()
-  );
-  cliExecute("ccs default");
-  // setAutoAttack(0);
-  // putShop(0, 0, 1, $item`peppermint sprig`);
-}
+userConfirm("did you click the button?");

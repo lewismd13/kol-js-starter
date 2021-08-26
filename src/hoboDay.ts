@@ -122,14 +122,16 @@ function hoboPrep() {
     setAutoAttack(0);
   }
 
+  useFamiliar($familiar`robortender`);
+  retrieveItem($item`toggle switch (bartend)`);
+  equip($item`toggle switch (bartend)`);
+  equip($slot`acc1`, $item`backup camera`);
+
+  // TODO: add in 5 copies using the spooky putty from hell stash
   while (
     get("_backUpUses") < 11 &&
     getProperty("lastCopyableMonster") === $monster`black crayon crimbo elf`.name
   ) {
-    useFamiliar($familiar`robortender`);
-    retrieveItem($item`toggle switch (bartend)`);
-    equip($item`toggle switch (bartend)`);
-    equip($slot`acc1`, $item`backup camera`);
     adventureMacroAuto(
       $location`noob cave`,
       Macro.trySkill($skill`back-up to your last enemy`).trySkillRepeat($skill`saucestorm`)
@@ -221,7 +223,14 @@ function hoboPrep() {
     useSkill($skill`feel lonely`);
   }
 
-  // TODO fave bird, affirmation
+  if (haveEffect($effect`blessing of your favorite bird`) === 0) {
+    useSkill($skill`visit your favorite bird`);
+  }
+
+  if (haveEffect($effect`become superficially interested`) === 0) {
+    retrieveItem($item`Daily Affirmation: Be Superficially interested`);
+    use($item`Daily Affirmation: Be Superficially interested`);
+  }
 
   useSkill($skill`ode to booze`, 3);
   useFamiliar($familiar`frumious bandersnatch`);
