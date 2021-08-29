@@ -135,18 +135,6 @@ if (get("_deckCardsDrawn") < 11) {
   // putShop(0, 0, $item`peppermint sprig`);
 }
 
-if (get("_chateauMonsterFought") === false) {
-  useFamiliar($familiar`robortender`);
-  retrieveItem($item`toggle switch (bartend)`);
-  equip($item`toggle switch (bartend)`);
-  restoreMp(150);
-  setAutoAttack("gnat extract mortar weak");
-  visitUrl("place.php?whichplace=chateau&action=chateau_painting", false);
-  runCombat();
-  setAutoAttack(0);
-  // putShop(0, 0, 1, $item`peppermint sprig`);
-}
-
 cliExecute("shower cold");
 cliExecute("bastille mainstat brutalist gesture");
 cliExecute("briefcase collect");
@@ -251,6 +239,19 @@ putShop(49995, 0, 3, $item`pocket wish`);
 if (get("_cargoPocketEmptied") === false && !containsText(get("cargoPocketsEmptied"), "533")) {
   cliExecute("cargo 533");
   putShop(50000, 0, availableAmount($item`greasy desk bell`), $item`greasy desk bell`);
+}
+
+if (get("_chateauMonsterFought") === false) {
+  useFamiliar($familiar`robortender`);
+  retrieveItem($item`toggle switch (bartend)`);
+  equip($item`toggle switch (bartend)`);
+  equip($item`lucky gold ring`, $slot`acc1`);
+  restoreMp(150);
+  setAutoAttack("gnat extract mortar weak");
+  visitUrl("place.php?whichplace=chateau&action=chateau_painting", false);
+  runCombat();
+  setAutoAttack(0);
+  // putShop(0, 0, 1, $item`peppermint sprig`);
 }
 
 if (get("_unaccompaniedMinerUsed") === 0) {

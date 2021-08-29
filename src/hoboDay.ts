@@ -17,6 +17,7 @@ import {
   retrieveItem,
   setAutoAttack,
   takeCloset,
+  takeStash,
   use,
   useFamiliar,
   useSkill,
@@ -108,14 +109,19 @@ function hoboPrep() {
       }
     }
   }
+  // takeStash(1, $item`spooky putty sheet`);
+  useFamiliar($familiar`robortender`);
+  retrieveItem($item`toggle switch (bartend)`);
+  equip($item`toggle switch (bartend)`);
+  equip($slot`acc1`, $item`backup camera`);
 
   if (
     have($item`photocopied monster`, 1) &&
     get("photocopyMonster") === $monster`black crayon crimbo elf`
   ) {
-    useFamiliar($familiar`robortender`);
     equip($item`staff of simmering hatred`);
     Macro.skill($skill`curse of weaksauce`)
+      //  .item($item`spooky putty sheet`)
       .trySkillRepeat($skill`saucestorm`)
       .setAutoAttack();
     use($item`photocopied monster`);

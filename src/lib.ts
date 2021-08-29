@@ -31,7 +31,6 @@ import {
   myLocation,
   myMaxmp,
   myMp,
-  outfit,
   print,
   pullsRemaining,
   putShop,
@@ -527,9 +526,10 @@ export function mannyRollover(): void {
     // print("I hope you overdrank on purpose");
   }
 
-  outfit("PVP RO fites");
+  // outfit("PVP RO fites");
   useFamiliar($familiar`trick-or-treating tot`);
-  equip($item`lil unicorn costume`);
+  maximize("adv", false);
+  // equip($item`lil unicorn costume`);
 
   while (availableAmount($item`Poké-Gro fertilizer`) > 1) {
     cliExecute("grow");
@@ -539,19 +539,23 @@ export function mannyRollover(): void {
     cliExecute("boombox food");
   }
 
-  autosell($item`cheap sunglasses`, availableAmount($item`cheap sunglasses`) - 1);
-  autosell($item`filthy child leash`, availableAmount($item`filthy child leash`));
-  use(availableAmount($item`bag of park garbage`) - 30, $item`bag of park garbage`);
-  use(availableAmount($item`Gathered Meat-Clip`), $item`Gathered Meat-Clip`);
-  use(availableAmount($item`old coin purse`), $item`old coin purse`);
-  use(availableAmount($item`old leather wallet`), $item`old leather wallet`);
-  autosell($item`expensive camera`, availableAmount($item`expensive camera`));
-  autosell($item`bag of gross foreign snacks`, availableAmount($item`bag of gross foreign snacks`));
-  putShop(300, 0, availableAmount($item`gold nuggets`), $item`gold nuggets`);
-  putShop(0, 0, availableAmount($item`cornucopia`), $item`cornucopia`);
-  putShop(0, 0, availableAmount($item`elemental sugarcube`), $item`elemental sugarcube`);
-  putShop(0, 0, availableAmount($item`gingerbread cigarette`), $item`gingerbread cigarette`);
-  putShop(0, 0, availableAmount($item`abandoned candy`), $item`abandoned candy`);
+  if (get("_freeBeachWalksUsed") < 11) {
+    cliExecute("combbeach free");
+  }
+
+  autosell($item`cheap sunglasses`, itemAmount($item`cheap sunglasses`) - 1);
+  autosell($item`filthy child leash`, itemAmount($item`filthy child leash`));
+  use(itemAmount($item`bag of park garbage`) - 30, $item`bag of park garbage`);
+  use(itemAmount($item`Gathered Meat-Clip`), $item`Gathered Meat-Clip`);
+  use(itemAmount($item`old coin purse`), $item`old coin purse`);
+  use(itemAmount($item`old leather wallet`), $item`old leather wallet`);
+  autosell($item`expensive camera`, itemAmount($item`expensive camera`));
+  autosell($item`bag of gross foreign snacks`, itemAmount($item`bag of gross foreign snacks`));
+  putShop(300, 0, itemAmount($item`gold nuggets`), $item`gold nuggets`);
+  putShop(0, 0, itemAmount($item`cornucopia`), $item`cornucopia`);
+  putShop(0, 0, itemAmount($item`elemental sugarcube`), $item`elemental sugarcube`);
+  putShop(0, 0, itemAmount($item`gingerbread cigarette`), $item`gingerbread cigarette`);
+  putShop(0, 0, itemAmount($item`abandoned candy`), $item`abandoned candy`);
   autosell($item`meat stack`, itemAmount($item`meat stack`));
 
   if (myGardenType() !== "grass") {
