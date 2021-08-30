@@ -14,7 +14,9 @@ import {
   maximize,
   myFullness,
   myInebriety,
+  putStash,
   retrieveItem,
+  runCombat,
   setAutoAttack,
   takeCloset,
   takeStash,
@@ -42,6 +44,8 @@ function hoboPrep() {
   if (getClanId() !== 40382) {
     cliExecute("/whitelist alliance from hell");
   }
+
+  cliExecute("ccs twiddle");
 
   if (get("boomBoxSong") !== "Food Vibrations") {
     cliExecute("boombox food");
@@ -91,8 +95,8 @@ function hoboPrep() {
   if (!get("_mimeArmyShotglassUsed") && !get("_syntheticDogHairPillUsed")) {
     useSkill($skill`ode to booze`, 1);
     use(1, $item`synthetic doghair pill`);
-    equip($item`mafia pinky ring`);
-    drinksilent(2, $item`sacramento wine`);
+    equip($item`tuxedo shirt`);
+    drinksilent(2, $item`splendid martini`);
   }
 
   if (
@@ -109,7 +113,7 @@ function hoboPrep() {
       }
     }
   }
-  // takeStash(1, $item`spooky putty sheet`);
+  takeStash(1, $item`spooky putty sheet`);
   useFamiliar($familiar`robortender`);
   retrieveItem($item`toggle switch (bartend)`);
   equip($item`toggle switch (bartend)`);
@@ -121,7 +125,7 @@ function hoboPrep() {
   ) {
     equip($item`staff of simmering hatred`);
     Macro.skill($skill`curse of weaksauce`)
-      //  .item($item`spooky putty sheet`)
+      .item($item`spooky putty sheet`)
       .trySkillRepeat($skill`saucestorm`)
       .setAutoAttack();
     use($item`photocopied monster`);
@@ -140,11 +144,29 @@ function hoboPrep() {
   ) {
     adventureMacroAuto(
       $location`noob cave`,
-      Macro.trySkill($skill`back-up to your last enemy`).trySkillRepeat($skill`saucestorm`)
+      Macro.trySkill($skill`back-up to your last enemy`)
+        .tryItem($item`spooky putty sheet`)
+        .trySkillRepeat($skill`saucestorm`)
     );
   }
 
+  while (
+    get("spookyPuttyCopiesMade") < 5 &&
+    get("photocopyMonster") === $monster`black crayon crimbo elf` &&
+    have($item`spooky putty monster`) &&
+    get("spookyPuttyMonster") === $monster`black crayon crimbo elf`
+  ) {
+    use($item`spooky putty monster`);
+    runCombat(
+      Macro.skill($skill`curse of weaksauce`)
+        .tryItem($item`spooky putty sheet`)
+        .trySkillRepeat($skill`saucestorm`)
+        .toString()
+    );
+  }
   setAutoAttack(0);
+
+  putStash(1, $item`spooky putty sheet`);
   /*
   if (
     get("_backUpUses") === 10 &&
@@ -238,6 +260,10 @@ function hoboPrep() {
     use($item`Daily Affirmation: Be Superficially interested`);
   }
 
+  if (haveEffect($effect`silent running`) < 20) {
+    cliExecute("swim noncombat");
+  }
+
   useSkill($skill`ode to booze`, 3);
   useFamiliar($familiar`frumious bandersnatch`);
   equip($item`none`, $slot`weapon`);
@@ -247,6 +273,7 @@ function hoboPrep() {
   equip($item`protonic accelerator pack`);
 
   setAutoAttack("sewers-banderrun");
+  cliExecute("ccs default");
 }
 
 hoboPrep();
