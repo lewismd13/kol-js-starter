@@ -66,7 +66,8 @@ function hoboPrep() {
 
   if (myFullness() === 0 && myInebriety() === 0) {
     chew(5, $item`voodoo snuff`);
-    useSkill($skill`cheat code: triple size`, 1);
+    // useSkill($skill`cheat code: triple size`, 1);
+    maximize("HP", false);
     use($item`milk of magnesium`);
     eatsilent(2, $item`ol' scratch's salad fork`);
     eatsilent(2, $item`extra-greasy slider`);
@@ -132,11 +133,6 @@ function hoboPrep() {
     setAutoAttack(0);
   }
 
-  useFamiliar($familiar`robortender`);
-  retrieveItem($item`toggle switch (bartend)`);
-  equip($item`toggle switch (bartend)`);
-  equip($slot`acc1`, $item`backup camera`);
-
   // TODO: add in 5 copies using the spooky putty from hell stash
   while (
     get("_backUpUses") < 11 &&
@@ -150,21 +146,21 @@ function hoboPrep() {
     );
   }
 
+  setAutoAttack(0);
+
   while (
     get("spookyPuttyCopiesMade") < 5 &&
-    get("photocopyMonster") === $monster`black crayon crimbo elf` &&
     have($item`spooky putty monster`) &&
     get("spookyPuttyMonster") === $monster`black crayon crimbo elf`
   ) {
     use($item`spooky putty monster`);
     runCombat(
       Macro.skill($skill`curse of weaksauce`)
-        .tryItem($item`spooky putty sheet`)
+        .if_("hascombatitem spooky putty sheet", Macro.item($item`spooky putty sheet`))
         .trySkillRepeat($skill`saucestorm`)
         .toString()
     );
   }
-  setAutoAttack(0);
 
   putStash(1, $item`spooky putty sheet`);
   /*
@@ -185,8 +181,7 @@ function hoboPrep() {
 */
   if (!get("_sourceTerminalDigitizeMonster")) {
     useFamiliar($familiar`reanimated reanimator`);
-    Macro.trySkill($skill`back-up to your last enemy`)
-      .trySkill($skill`digitize`)
+    Macro.trySkill($skill`digitize`)
       .trySkill($skill`7168`) // wink
       .trySkillRepeat($skill`saucestorm`)
       .setAutoAttack();
