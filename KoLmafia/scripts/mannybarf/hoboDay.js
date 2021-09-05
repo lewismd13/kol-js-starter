@@ -17497,6 +17497,9 @@ module.exports = toPlainObject;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "sewerPrep": () => (/* binding */ sewerPrep)
+/* harmony export */ });
 /* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1664);
 /* harmony import */ var kolmafia__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(kolmafia__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var libram__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9803);
@@ -17506,7 +17509,10 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-
+ // TODO: split out diet, with userConfirm for marketplace, more dynamic handling so it can do post-loop
+// TODO: split out sewers prep
+// TODO: split out crimbo elves
+// TODO: split out digitize/winking witchess
 
 function hoboPrep() {
   if ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.getClanId)() !== 40382) {
@@ -17599,7 +17605,7 @@ function hoboPrep() {
     (0,libram__WEBPACK_IMPORTED_MODULE_1__.adventureMacroAuto)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$location)(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral(["noob cave"]))), libram__WEBPACK_IMPORTED_MODULE_1__.Macro.trySkill((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral(["back-up to your last enemy"])))).tryItem((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["spooky putty sheet"])))).trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral(["saucestorm"])))));
   }
 
-  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
+  (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0); // TODO: fix this combat. macro goes into infinite loop?
 
   while ((0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("spookyPuttyCopiesMade") < 5 && (0,libram__WEBPACK_IMPORTED_MODULE_1__.have)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral(["spooky putty monster"])))) && (0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("spookyPuttyMonster") === (0,libram__WEBPACK_IMPORTED_MODULE_1__.$monster)(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral(["black crayon crimbo elf"])))) {
     (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.use)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral(["spooky putty monster"]))));
@@ -17607,6 +17613,15 @@ function hoboPrep() {
   }
 
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.putStash)(1, (0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral(["spooky putty sheet"]))));
+
+  if (!(0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_sourceTerminalDigitizeMonster")) {
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$familiar)(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral(["reanimated reanimator"]))));
+    libram__WEBPACK_IMPORTED_MODULE_1__.Macro.trySkill((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral(["digitize"])))).trySkill((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral(["7168"])))) // wink
+    .trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral(["saucestorm"])))).setAutoAttack();
+    libram__WEBPACK_IMPORTED_MODULE_1__.Witchess.fightPiece((0,libram__WEBPACK_IMPORTED_MODULE_1__.$monster)(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral(["witchess knight"]))));
+    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
+  } // TODO: Profchain witchess mobs
+
   /*
   if (
     get("_backUpUses") === 10 &&
@@ -17624,15 +17639,9 @@ function hoboPrep() {
   }
   */
 
-  if (!(0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_sourceTerminalDigitizeMonster")) {
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useFamiliar)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$familiar)(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral(["reanimated reanimator"]))));
-    libram__WEBPACK_IMPORTED_MODULE_1__.Macro.trySkill((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral(["digitize"])))).trySkill((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral(["7168"])))) // wink
-    .trySkillRepeat((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral(["saucestorm"])))).setAutoAttack();
-    libram__WEBPACK_IMPORTED_MODULE_1__.Witchess.fightPiece((0,libram__WEBPACK_IMPORTED_MODULE_1__.$monster)(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral(["witchess knight"]))));
-    (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)(0);
-  } // TODO: Profchain witchess mobs
+}
 
-
+function sewerPrep() {
   while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.haveEffect)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$effect)(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral(["leash of linguini"])))) < 30) {
     (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral(["leash of linguini"]))), 3);
   }
@@ -17712,7 +17721,6 @@ function hoboPrep() {
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)("sewers-banderrun");
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("ccs default");
 }
-
 hoboPrep();
 /*
 function scobos() {

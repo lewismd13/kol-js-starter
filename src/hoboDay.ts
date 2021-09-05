@@ -40,6 +40,14 @@ import {
   Witchess,
 } from "libram";
 
+// TODO: split out diet, with userConfirm for marketplace, more dynamic handling so it can do post-loop
+
+// TODO: split out sewers prep
+
+// TODO: split out crimbo elves
+
+// TODO: split out digitize/winking witchess
+
 function hoboPrep() {
   if (getClanId() !== 40382) {
     cliExecute("/whitelist alliance from hell");
@@ -57,7 +65,7 @@ function hoboPrep() {
   }
 
   if (!get("_borrowedTimeUsed")) {
-    use($item`Borrowed Time`);
+    use($item`borrowed time`);
   }
 
   if (get("_sausagesEaten") === 0) {
@@ -69,17 +77,17 @@ function hoboPrep() {
     // useSkill($skill`cheat code: triple size`, 1);
     maximize("HP", false);
     use($item`milk of magnesium`);
-    eatsilent(2, $item`ol' scratch's salad fork`);
+    eatsilent(2, $item`Ol' Scratch's salad fork`);
     eatsilent(2, $item`extra-greasy slider`);
-    useSkill($skill`ode to booze`, 1);
-    drinksilent(1, $item`frosty\'s frosty mug`);
+    useSkill($skill`The Ode to Booze`, 1);
+    drinksilent(1, $item`Frosty's frosty mug`);
     drinksilent(1, $item`jar of fermented pickle juice`);
     chew(5, $item`voodoo snuff`);
     // chew(1, $item`antimatter wad`);
     // chew(1, $item`beggin\' cologne`);
     if (myFullness() === 10 && myInebriety() === 5) {
-      useSkill($skill`ode to booze`, 1);
-      drinksilent(1, $item`frosty\'s frosty mug`);
+      useSkill($skill`The Ode to Booze`, 1);
+      drinksilent(1, $item`Frosty's frosty mug`);
       drinksilent(1, $item`jar of fermented pickle juice`);
       chew(1, $item`voodoo snuff`);
       chew(1, $item`antimatter wad`);
@@ -94,8 +102,8 @@ function hoboPrep() {
 
   //should probably put all this under individual if statements
   if (!get("_mimeArmyShotglassUsed") && !get("_syntheticDogHairPillUsed")) {
-    useSkill($skill`ode to booze`, 1);
-    use(1, $item`synthetic doghair pill`);
+    useSkill($skill`The Ode to Booze`, 1);
+    use(1, $item`synthetic dog hair pill`);
     equip($item`tuxedo shirt`);
     drinksilent(2, $item`splendid martini`);
   }
@@ -103,31 +111,31 @@ function hoboPrep() {
   if (
     !get("_photocopyUsed") &&
     !have($item`photocopied monster`) &&
-    getProperty("lastCopyableMonster") !== $monster`black crayon crimbo elf`.name
+    getProperty("lastCopyableMonster") !== $monster`Black Crayon Crimbo Elf`.name
   ) {
     chatPrivate("cheesefax", "Black Crayon Crimbo Elf");
     for (let i = 0; i < 3; i++) {
       wait(10);
       cliExecute("fax receive");
-      if (get("photocopyMonster") !== $monster`black crayon crimbo elf`) {
+      if (get("photocopyMonster") !== $monster`Black Crayon Crimbo Elf`) {
         throw "Failed to acquire photocopied black crayon crimbo elf.";
       }
     }
   }
-  takeStash(1, $item`spooky putty sheet`);
-  useFamiliar($familiar`robortender`);
-  retrieveItem($item`toggle switch (bartend)`);
-  equip($item`toggle switch (bartend)`);
+  takeStash(1, $item`Spooky Putty sheet`);
+  useFamiliar($familiar`Robortender`);
+  retrieveItem($item`toggle switch (Bartend)`);
+  equip($item`toggle switch (Bartend)`);
   equip($slot`acc1`, $item`backup camera`);
 
   if (
     have($item`photocopied monster`, 1) &&
-    get("photocopyMonster") === $monster`black crayon crimbo elf`
+    get("photocopyMonster") === $monster`Black Crayon Crimbo Elf`
   ) {
-    equip($item`staff of simmering hatred`);
-    Macro.skill($skill`curse of weaksauce`)
-      .item($item`spooky putty sheet`)
-      .trySkillRepeat($skill`saucestorm`)
+    equip($item`Staff of Simmering Hatred`);
+    Macro.skill($skill`Curse of Weaksauce`)
+      .item($item`Spooky Putty sheet`)
+      .trySkillRepeat($skill`Saucestorm`)
       .setAutoAttack();
     use($item`photocopied monster`);
     setAutoAttack(0);
@@ -136,33 +144,47 @@ function hoboPrep() {
   // TODO: add in 5 copies using the spooky putty from hell stash
   while (
     get("_backUpUses") < 11 &&
-    getProperty("lastCopyableMonster") === $monster`black crayon crimbo elf`.name
+    getProperty("lastCopyableMonster") === $monster`Black Crayon Crimbo Elf`.name
   ) {
     adventureMacroAuto(
-      $location`noob cave`,
-      Macro.trySkill($skill`back-up to your last enemy`)
-        .tryItem($item`spooky putty sheet`)
-        .trySkillRepeat($skill`saucestorm`)
+      $location`Noob Cave`,
+      Macro.trySkill($skill`Back-Up to your Last Enemy`)
+        .tryItem($item`Spooky Putty sheet`)
+        .trySkillRepeat($skill`Saucestorm`)
     );
   }
 
   setAutoAttack(0);
-
+  // TODO: fix this combat. macro goes into infinite loop?
   while (
     get("spookyPuttyCopiesMade") < 5 &&
-    have($item`spooky putty monster`) &&
-    get("spookyPuttyMonster") === $monster`black crayon crimbo elf`
+    have($item`Spooky Putty monster`) &&
+    get("spookyPuttyMonster") === $monster`Black Crayon Crimbo Elf`
   ) {
-    use($item`spooky putty monster`);
+    use($item`Spooky Putty monster`);
     runCombat(
-      Macro.skill($skill`curse of weaksauce`)
-        .if_("hascombatitem spooky putty sheet", Macro.item($item`spooky putty sheet`))
-        .trySkillRepeat($skill`saucestorm`)
+      Macro.skill($skill`Curse of Weaksauce`)
+        .if_("hascombatitem spooky putty sheet", Macro.item($item`Spooky Putty sheet`))
+        .trySkillRepeat($skill`Saucestorm`)
         .toString()
     );
   }
 
-  putStash(1, $item`spooky putty sheet`);
+  putStash(1, $item`Spooky Putty sheet`);
+
+  if (!get("_sourceTerminalDigitizeMonster")) {
+    useFamiliar($familiar`Reanimated Reanimator`);
+    Macro.trySkill($skill`Digitize`)
+      // eslint-disable-next-line libram/verify-constants
+      .trySkill($skill`7168`) // wink
+      .trySkillRepeat($skill`Saucestorm`)
+      .setAutoAttack();
+    Witchess.fightPiece($monster`Witchess Knight`);
+    setAutoAttack(0);
+  }
+
+  // TODO: Profchain witchess mobs
+
   /*
   if (
     get("_backUpUses") === 10 &&
@@ -179,49 +201,40 @@ function hoboPrep() {
     setAutoAttack(0);
   }
 */
-  if (!get("_sourceTerminalDigitizeMonster")) {
-    useFamiliar($familiar`reanimated reanimator`);
-    Macro.trySkill($skill`digitize`)
-      .trySkill($skill`7168`) // wink
-      .trySkillRepeat($skill`saucestorm`)
-      .setAutoAttack();
-    Witchess.fightPiece($monster`witchess knight`);
-    setAutoAttack(0);
+}
+
+export function sewerPrep(): void {
+  while (haveEffect($effect`Leash of Linguini`) < 30) {
+    useSkill($skill`Leash of Linguini`, 3);
   }
 
-  // TODO: Profchain witchess mobs
-
-  while (haveEffect($effect`leash of linguini`) < 30) {
-    useSkill($skill`leash of linguini`, 3);
+  while (haveEffect($effect`Empathy`) < 30) {
+    useSkill($skill`Empathy of the Newt`, 3);
   }
 
-  while (haveEffect($effect`empathy`) < 30) {
-    useSkill($skill`empathy of the newt`, 3);
+  while (haveEffect($effect`Blood Bond`) < 30) {
+    useSkill($skill`Cannelloni Cocoon`);
+    useSkill($skill`Blood Bond`, 10);
   }
 
-  while (haveEffect($effect`blood bond`) < 30) {
-    useSkill($skill`cannelloni cocoon`);
-    useSkill($skill`blood bond`, 10);
+  while (haveEffect($effect`Smooth Movements`) < 30) {
+    useSkill($skill`Smooth Movement`, 3);
   }
 
-  while (haveEffect($effect`smooth movements`) < 30) {
-    useSkill($skill`smooth movement`, 3);
+  while (haveEffect($effect`The Sonata of Sneakiness`) < 30) {
+    useSkill($skill`The Sonata of Sneakiness`, 3);
   }
 
-  while (haveEffect($effect`the sonata of sneakiness`) < 30) {
-    useSkill($skill`the sonata of sneakiness`, 3);
-  }
-
-  equip($item`powerful glove`, $slot`acc1`);
-  while (haveEffect($effect`Invisible avatar`) < 30) {
-    useSkill($skill`CHEAT CODE: Invisible avatar`, 3);
+  equip($item`Powerful Glove`, $slot`acc1`);
+  while (haveEffect($effect`Invisible Avatar`) < 30) {
+    useSkill($skill`CHEAT CODE: Invisible Avatar`, 3);
   }
 
   while (get("_poolGames") < 3) {
     cliExecute("pool aggressive");
   }
 
-  if (!haveEffect($effect`a girl named sue`) && !get("_clanFortuneBuffUsed")) {
+  if (!haveEffect($effect`A Girl Named Sue`) && !get("_clanFortuneBuffUsed")) {
     cliExecute("fortune buff familiar");
   }
 
@@ -233,38 +246,38 @@ function hoboPrep() {
     cliExecute("beach head 10");
   }
 
-  if (haveEffect($effect`driving stealthily`) < 30) {
+  if (haveEffect($effect`Driving Stealthily`) < 30) {
     cliExecute("asdonmartin fuel 1 pie man was not meant to eat");
     cliExecute("asdonmartin drive stealthily");
   }
 
-  if (haveEffect($effect`gummed shoe`) === 0) {
+  if (haveEffect($effect`Gummed Shoes`) === 0) {
     use($item`shoe gum`);
   }
 
-  if (haveEffect($effect`feeling lonely`) === 0 && get("_feelLonelyUsed") < 3) {
-    useSkill($skill`feel lonely`);
+  if (haveEffect($effect`Feeling Lonely`) === 0 && get("_feelLonelyUsed") < 3) {
+    useSkill($skill`Feel Lonely`);
   }
 
-  if (haveEffect($effect`blessing of your favorite bird`) === 0) {
-    useSkill($skill`visit your favorite bird`);
+  if (haveEffect($effect`Blessing of your favorite Bird`) === 0) {
+    useSkill($skill`Visit your Favorite Bird`);
   }
 
-  if (haveEffect($effect`become superficially interested`) === 0) {
+  if (haveEffect($effect`Become Superficially interested`) === 0) {
     retrieveItem($item`Daily Affirmation: Be Superficially interested`);
     use($item`Daily Affirmation: Be Superficially interested`);
   }
 
-  if (haveEffect($effect`silent running`) < 20) {
+  if (haveEffect($effect`Silent Running`) < 20) {
     cliExecute("swim noncombat");
   }
 
-  useSkill($skill`ode to booze`, 3);
-  useFamiliar($familiar`frumious bandersnatch`);
+  useSkill($skill`The Ode to Booze`, 3);
+  useFamiliar($familiar`Frumious Bandersnatch`);
   equip($item`none`, $slot`weapon`);
   equip($item`hobo code binder`);
   maximize("familiar weight -offhand", false);
-  equip($item`camouflage t-shirt`);
+  equip($item`camouflage T-shirt`);
   equip($item`protonic accelerator pack`);
 
   setAutoAttack("sewers-banderrun");

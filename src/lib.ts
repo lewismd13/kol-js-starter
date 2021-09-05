@@ -282,7 +282,7 @@ export function mapMonster(location: Location, monster: Monster) {
   const fightPage = visitUrl(
     `choice.php?pwd&whichchoice=1435&option=1&heyscriptswhatsupwinkwink=${monster.id}`
   );
-  if (!fightPage.includes("You're fighting") && myLocation() !== $location`the haiku dungeon`)
+  if (!fightPage.includes("You're fighting") && myLocation() !== $location`The Haiku Dungeon`)
     throw "Something went wrong starting the fight.";
 }
 
@@ -403,11 +403,11 @@ export function gingerBread(): void {
       runChoice(1); // advance clock
     }
     if (get("_banderRunaways") < 5) {
-      useFamiliar($familiar`frumious bandersnatch`);
+      useFamiliar($familiar`Frumious Bandersnatch`);
       maximize("familiar weight", false);
-      ensureEffect($effect`blood bond`);
-      ensureEffect($effect`leash of linguini`);
-      ensureEffect($effect`empathy`);
+      ensureEffect($effect`Blood Bond`);
+      ensureEffect($effect`Leash of Linguini`);
+      ensureEffect($effect`Empathy`);
       ensureOde(2);
       setChoice(1204, 1); // noon at the train station, get candies
       setChoice(1203, 4); // midnight at the civic center, buy cigarettes
@@ -415,7 +415,7 @@ export function gingerBread(): void {
         adventureMacro($location`Gingerbread Train Station`, Macro.step("runaway"));
       }
       while (get("_gingerbreadCityTurns") < 15) {
-        adventureMacro($location`Gingerbread civic center`, Macro.step("runaway"));
+        adventureMacro($location`Gingerbread Civic Center`, Macro.step("runaway"));
       }
     }
   }
@@ -451,15 +451,15 @@ export function randomSafari() {
     "Phillammon",
     "2705901",
     "892618",
-    "1046951",
+    "beldur",
     "887028",
     "786069",
     "1197090",
     "437479",
     "playultm8",
-    "1901297",
+    "busta_rhymes",
     "644996",
-    "1956005",
+    "kenny kamAKAzi",
     "2264486",
     "1937905",
     "2766368",
@@ -482,52 +482,54 @@ export function mannyRollover(): void {
   Clan.join("Alliance from Hell");
   // TODO: Make this work, errored as invalid piece or something?
   while (get("_witchessFights") < 5) {
-    Macro.trySkillRepeat($skill`saucestorm`).setAutoAttack();
-    Witchess.fightPiece($monster`witchess knight`);
+    Macro.trySkillRepeat($skill`Saucestorm`).setAutoAttack();
+    Witchess.fightPiece($monster`Witchess Knight`);
   }
   setAutoAttack(0);
-
+  /*
   if (get("_glitchMonsterFights") === 0) {
     Macro.trySkillRepeat($skill`saucegeyser`).setAutoAttack();
     cliExecute("/glitch");
   }
-
+*/
   while (get("_sourceTerminalEnhanceUses") < 3) {
     cliExecute("terminal enhance meat.enh");
   }
 
   if (get("_claraBellUsed") === false && myAdventures() > 0) {
-    use($item`clara's bell`);
+    use($item`Clara's bell`);
     setChoice(919, 1);
     do {
-      adv1($location`sloppy seconds diner`, -1, "");
+      adv1($location`Sloppy Seconds Diner`, -1, "");
     } while (get("lastEncounter") === "Nothing Could Be Finer");
   }
 
   // TODO: check to see if we can still use banderruns to get gingerbread cigs
 
   if (myInebriety() === inebrietyLimit() && myFullness() === fullnessLimit()) {
-    if (myFamiliar() !== $familiar`stooper`) {
-      useFamiliar($familiar`stooper`);
-      useSkill($skill`the ode to booze`, 1);
+    if (myFamiliar() !== $familiar`Stooper`) {
+      useFamiliar($familiar`Stooper`);
+      useSkill($skill`The Ode to Booze`, 1);
       if (availableAmount($item`astral pilsner`) > 0) {
         drinksilent($item`astral pilsner`);
       } else {
         drinksilent($item`splendid martini`);
       }
     }
-    useSkill($skill`the ode to booze`, 1);
+    useSkill($skill`The Ode to Booze`, 1);
     takeStash($item`tiny plastic sword`, 1);
     create($item`grogtini`);
     drinksilent($item`grogtini`);
     putStash($item`tiny plastic sword`, 1);
+  } else if (myInebriety() > inebrietyLimit() && myFullness() === fullnessLimit()) {
+    print("you're all good in the hood");
   } else {
     throw "are you sure you want to overdrink? you have some open organ space";
     // print("I hope you overdrank on purpose");
   }
 
   // outfit("PVP RO fites");
-  useFamiliar($familiar`trick-or-treating tot`);
+  useFamiliar($familiar`Trick-or-Treating Tot`);
   maximize("adv", false);
   // equip($item`lil unicorn costume`);
 
@@ -563,7 +565,7 @@ export function mannyRollover(): void {
   }
 
   if (myGardenType() === "grass") {
-    use($item`9761`); // fertilizer
+    use($item`Poké-Gro fertilizer`); // fertilizer
     use($item`packet of thanksgarden seeds`);
   }
 
@@ -602,16 +604,16 @@ export function faxEmbezzler(): void {
 
 export function bishopChain(): void {
   if (get("_pocketProfessorLectures") < 13 && get("_witchessFights") < 5) {
-    useFamiliar($familiar`pocket professor`);
-    equip($item`pocket professor memory chip`);
+    useFamiliar($familiar`Pocket Professor`);
+    equip($item`Pocket Professor memory chip`);
     maximize("familiar weight +equip pocket professor memory chip", false);
-    useSkill(1, $skill`blood bond`);
-    useSkill(1, $skill`leash of linguini`);
-    useSkill(1, $skill`empathy of the newt`);
+    useSkill(1, $skill`Blood Bond`);
+    useSkill(1, $skill`Leash of Linguini`);
+    useSkill(1, $skill`Empathy of the Newt`);
     cliExecute("witchess");
     cliExecute("beach head 10");
     Macro.trySkill($skill`lecture on relativity`)
-      .skill($skill`candyblast`)
+      .skill($skill`Candyblast`)
       .repeat()
       .setAutoAttack();
     visitUrl("campground.php?action=witchess");
@@ -626,13 +628,13 @@ export function bishopChain(): void {
 
 export function embezzlerChain(): void {
   if (get("_pocketProfessorLectures") === 0 && get("_photocopyUsed") === false) {
-    useFamiliar($familiar`pocket professor`);
-    equip($item`pocket professor memory chip`);
+    useFamiliar($familiar`Pocket Professor`);
+    equip($item`Pocket Professor memory chip`);
     maximize("familiar weight +equip pocket professor memory chip", false);
     equip($item`duct tape shirt`);
-    useSkill(2, $skill`blood bond`);
-    useSkill(2, $skill`leash of linguini`);
-    useSkill(2, $skill`empathy of the newt`);
+    useSkill(2, $skill`Blood Bond`);
+    useSkill(2, $skill`Leash of Linguini`);
+    useSkill(2, $skill`Empathy of the Newt`);
     // useSkill(2, $skill`polka of plenty`);
     // useSkill(2, $skill`disco leer`);
     // sweetSynthesis($item`milk stud`, $item`swizzler`);
@@ -642,8 +644,8 @@ export function embezzlerChain(): void {
       cliExecute("boombox meat");
     }
     Macro.trySkill($skill`lecture on relativity`)
-      .skill($skill`sing along`)
-      .skill($skill`candyblast`)
+      .skill($skill`Sing Along`)
+      .skill($skill`Candyblast`)
       .repeat()
       .setAutoAttack();
     faxEmbezzler();
@@ -663,7 +665,7 @@ export function embezzlerChain(): void {
 export function mannyQuestVolcoino() {
   visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
   if (get("_volcanoItem2") === 8425) {
-    retrieveItem(5, $item`new age healing crystal`);
+    retrieveItem(5, $item`New Age healing crystal`);
     visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
     runChoice(2);
   } else if (get("_volcanoItem3") === 8446) {
@@ -684,10 +686,10 @@ export function mannyQuestVolcoino() {
     runChoice(1);
   } else if (get("_volcanoItem1") === 8523) {
     if (!get("_claraBellUsed") && itemAmount($item`fused fuse`) === 0) {
-      use($item`clara's bell`);
+      use($item`Clara's bell`);
       setChoice(1091, 7);
       while (itemAmount($item`fused fuse`) === 0) {
-        adv1($location`lavaco lamp factory`, -1, "");
+        adv1($location`LavaCo™ Lamp Factory`, -1, "");
       }
       visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
       runChoice(1);
@@ -695,7 +697,7 @@ export function mannyQuestVolcoino() {
       cliExecute("pillkeeper free noncombat");
       setChoice(1091, 7);
       while (itemAmount($item`fused fuse`) === 0) {
-        adv1($location`lavaco lamp factory`, -1, "");
+        adv1($location`LavaCo™ Lamp Factory`, -1, "");
       }
       visitUrl("place.php?whichplace=airport_hot&action=airport4_questhub");
       runChoice(1);

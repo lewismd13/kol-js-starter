@@ -160,14 +160,14 @@ if (get("_etchedHourglassUsed") === false) {
 
 use(1, $item`packet of tall grass seeds`);
 
-if (getWorkshed() !== $item`asdon martin keyfob`) {
-  use(1, $item`asdon martin keyfob`);
+if (getWorkshed() !== $item`Asdon Martin keyfob`) {
+  use(1, $item`Asdon Martin keyfob`);
 }
 
 putStash(1, $item`Little Geneticist DNA-Splicing Lab`);
 putDisplay(1, $item`Thwaitgold termite statuette`);
 
-if (haveEffect($effect`feeling lost`) !== 0) {
+if (haveEffect($effect`Feeling Lost`) !== 0) {
   cliExecute("uneffect feeling lost");
 }
 
@@ -177,25 +177,25 @@ print("Stone smashed. Get your PVP on!", "green");
 if (availableAmount($item`blood-drive sticker`) > 10) {
   putShop(0, 0, 1, $item`blood-drive sticker`);
 }
-putShop(0, 0, 1, $item`vintage smart drink`);
-putShop(0, 0, 1, $item`emergency margarita`);
+// putShop(0, 0, 1, $item`vintage smart drink`);
+// putShop(0, 0, 1, $item`emergency margarita`);
 putShop(0, 0, 1, $item`bag of grain`);
 // put_shop(0, 0, 1, $item[squeaky toy rose]);
 putShop(49995, 0, 3, $item`pocket wish`);
 cliExecute("terminal enquiry familiar.enq");
 
 setChoice(1414, 2);
-useSkill(1, $skill`lock picking`);
+useSkill(1, $skill`Lock Picking`);
 cliExecute("create 1 jarlsberg's key lime");
-putShop(0, 0, $item`jarlsberg's key lime`);
+putShop(0, 0, $item`Jarlsberg's key lime`);
 
 if (get("_deckCardsDrawn") < 11) {
-  useFamiliar($familiar`robortender`);
-  retrieveItem($item`toggle switch (bartend)`);
-  equip($item`toggle switch (bartend)`);
+  useFamiliar($familiar`Robortender`);
+  retrieveItem($item`toggle switch (Bartend)`);
+  equip($item`toggle switch (Bartend)`);
   restoreMp(150);
-  Macro.skill($skill`curse of weaksauce`)
-    .trySkillRepeat($skill`saucegeyser`)
+  Macro.skill($skill`Curse of Weaksauce`)
+    .trySkillRepeat($skill`Saucegeyser`)
     .setAutoAttack();
   cliExecute("cheat phylum elf");
   runCombat();
@@ -221,13 +221,13 @@ while (get("_clipartSummons") < 3) {
 }
 
 // dupe a greedy dog
-const dupeTarget = $item`bottle of greedy dog`;
+const dupeTarget = $item`bottle of Greedy Dog`;
 if (toInt(getProperty("encountersUntilDMTChoice")) === 0 && availableAmount(dupeTarget) > 0) {
-  useFamiliar($familiar`machine elf`);
+  useFamiliar($familiar`Machine Elf`);
   setChoice(1119, 4);
   // setProperty("choiceAdventure1119", "4");
   setProperty("choiceAdventure1125", `1&iid=${toInt(dupeTarget)}`);
-  adv1($location`the deep machine tunnels`, -1, "");
+  adv1($location`The Deep Machine Tunnels`, -1, "");
   // putShop(0, 0, 1, $item`Karma shawarma`);
   putCloset(2, dupeTarget);
 } else {
@@ -237,14 +237,14 @@ if (toInt(getProperty("encountersUntilDMTChoice")) === 0 && availableAmount(dupe
 // TODO: get doggie volcoino and superduper
 retrieveItem(20, $item`heat-resistant sheet metal`);
 // setAutoAttack("gnat extract mortar weak");
-Macro.trySkill($skill`curse of weaksauce`)
-  .trySkill($skill`stuffed mortar shell`)
-  .trySkill($skill`extract`)
+Macro.trySkill($skill`Curse of Weaksauce`)
+  .trySkill($skill`Stuffed Mortar Shell`)
+  .trySkill($skill`Extract`)
   .setAutoAttack();
-while (!containsText($location`bubblin\' caldera`.noncombatQueue, "Lava Dogs")) {
-  useFamiliar($familiar`mini-hipster`);
-  equip($item`Kramco Sausage-o-Matic`);
-  adv1($location`bubblin\' caldera`);
+while (!containsText($location`The Bubblin' Caldera`.noncombatQueue, "Lava Dogs")) {
+  useFamiliar($familiar`Mini-Hipster`);
+  equip($item`Kramco Sausage-o-Matic™`);
+  adv1($location`The Bubblin' Caldera`);
 }
 setAutoAttack(0);
 cliExecute("soak");

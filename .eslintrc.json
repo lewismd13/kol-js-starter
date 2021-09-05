@@ -21,7 +21,7 @@
     "node/no-unpublished-import": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "libram/verify-constants": "off"
+    "libram/verify-constants": "error"
   },
   "parserOptions": {
     "ecmaVersion": 2020,

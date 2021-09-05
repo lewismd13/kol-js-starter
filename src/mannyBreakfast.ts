@@ -123,12 +123,12 @@ if (get("_deckCardsDrawn") === 0) {
 }
 
 if (get("_deckCardsDrawn") < 11) {
-  useFamiliar($familiar`robortender`);
-  retrieveItem($item`toggle switch (bartend)`);
-  equip($item`toggle switch (bartend)`);
+  useFamiliar($familiar`Robortender`);
+  retrieveItem($item`toggle switch (Bartend)`);
+  equip($item`toggle switch (Bartend)`);
   restoreMp(150);
-  Macro.skill($skill`curse of weaksauce`)
-    .trySkillRepeat($skill`saucestorm`)
+  Macro.skill($skill`Curse of Weaksauce`)
+    .trySkillRepeat($skill`Saucestorm`)
     .setAutoAttack();
   cliExecute("cheat phylum elf");
   runCombat();
@@ -158,47 +158,47 @@ if (get("_saberMod") === 0) {
   visitUrl("main.php?action=may4");
   runChoice(4);
 }
-retrieveItem(5, $item`abstraction:thought`);
+retrieveItem(5, $item`abstraction: thought`);
 
 // TODO: Make this not break when you run out of macros
 while (toInt(getProperty("_machineTunnelsAdv")) < 5) {
-  useFamiliar($familiar`machine elf`);
+  useFamiliar($familiar`Machine Elf`);
   // setAutoAttack("melfgetcertainty");
-  Macro.if_("monsterid 1965", Macro.trySkillRepeat($skill`saucestorm`))
+  Macro.if_("monsterid 1965", Macro.trySkillRepeat($skill`Saucestorm`))
     .while_(
       "!monstername perceiver of sensations && hasskill macrometeorite",
-      Macro.trySkill($skill`macrometeorite`).skill($skill`summon love mosquito`)
+      Macro.trySkill($skill`Macrometeorite`).skill($skill`Summon Love Mosquito`)
     )
     .if_(
       "monstername perceiver of sensations",
-      Macro.tryItem($item`abstraction:thought`).trySkillRepeat($skill`saucestorm`)
+      Macro.tryItem($item`abstraction: thought`).trySkillRepeat($skill`Saucestorm`)
     )
-    .trySkillRepeat($skill`saucestorm`)
+    .trySkillRepeat($skill`Saucestorm`)
     .setAutoAttack();
   adv1($location`The Deep Machine Tunnels`, -1, "");
 }
 
 setAutoAttack(0);
 
-useFamiliar($familiar`rogue program`);
+useFamiliar($familiar`Rogue Program`);
 
-if (availableAmount($item`pantsgiving`) === 0) {
-  takeStash(1, $item`pantsgiving`);
+if (availableAmount($item`Pantsgiving`) === 0) {
+  takeStash(1, $item`Pantsgiving`);
 }
-equip($item`pantsgiving`);
+equip($item`Pantsgiving`);
 
 while (toInt(getProperty("_snojoFreeFights")) < 10) {
   setAutoAttack("gnat extract mortar weak");
-  adv1($location`x-32 combat training snowman`, -1, "");
+  adv1($location`The X-32-F Combat Training Snowman`, -1, "");
 }
 
 setAutoAttack(0);
 equip($slot`pants`, $item`none`);
-if (availableAmount($item`pantsgiving`) > 0) {
-  putStash(1, $item`pantsgiving`);
+if (availableAmount($item`Pantsgiving`) > 0) {
+  putStash(1, $item`Pantsgiving`);
 }
 
-use(1, $item`Bird-a-Day Calendar`);
+use(1, $item`Bird-a-Day calendar`);
 
 // cheesefax fortune
 
@@ -211,10 +211,10 @@ getFunFunds();
 mannyQuestVolcoino();
 
 if (!get("_loveTunnelUsed")) {
-  useFamiliar($familiar`golden monkey`);
-  equip($item`fourth of may cosplay saber`);
-  useSkill($skill`carol of the bulls`);
-  useSkill($skill`carol of the hells`);
+  useFamiliar($familiar`Golden Monkey`);
+  equip($item`Fourth of May Cosplay Saber`);
+  useSkill($skill`Carol of the Bulls`);
+  useSkill($skill`Carol of the Hells`);
   setChoice(1222, 1); // Entrance
   setChoice(1223, 1); // Fight LOV Enforcer
   setChoice(1224, 2); // LOV Epaulettes
@@ -242,9 +242,9 @@ if (get("_cargoPocketEmptied") === false && !containsText(get("cargoPocketsEmpti
 }
 
 if (get("_chateauMonsterFought") === false) {
-  useFamiliar($familiar`robortender`);
-  retrieveItem($item`toggle switch (bartend)`);
-  equip($item`toggle switch (bartend)`);
+  useFamiliar($familiar`Robortender`);
+  retrieveItem($item`toggle switch (Bartend)`);
+  equip($item`toggle switch (Bartend)`);
   equip($item`lucky gold ring`, $slot`acc1`);
   restoreMp(150);
   setAutoAttack("gnat extract mortar weak");
@@ -259,3 +259,14 @@ if (get("_unaccompaniedMinerUsed") === 0) {
 }
 
 cliExecute("ccs default");
+
+if (get("_questPartyFairQuest") === "") {
+  setChoice(1322, 6); // Leave
+  adv1($location`The Neverending Party`, -1, "");
+}
+
+if (get("_questPartyFairQuest") === "food") {
+  print("Hey, go talk to Geraldine, time for another sliderpocalypse!", "blue");
+} else if (get("_questPartyFairQuest") === "booze") {
+  print("Hey, go talk to Gerald, get that jarmageddon!", "blue");
+}
