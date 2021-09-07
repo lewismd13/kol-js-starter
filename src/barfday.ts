@@ -87,16 +87,16 @@ if (itemAmount($item`hobo nickel`) > 0) {
 }
 
 while (
-  haveEffect($effect`synthesis: greed`) < calculateFarmingTurns() &&
+  haveEffect($effect`Synthesis: Greed`) < calculateFarmingTurns() &&
   mySpleenUse() < spleenLimit()
 ) {
   sweetSynthesis($item`box of Dweebs`, $item`PEEZ dispenser`);
 }
 
 if (myFullness() === 0) {
-  useSkill($skill`cheat code: triple size`, 1);
+  useSkill($skill`CHEAT CODE: Triple Size`, 1);
   use($item`milk of magnesium`);
-  eatsilent(3, $item`ol' scratch's salad fork`);
+  eatsilent(3, $item`Ol' Scratch's salad fork`);
   eatsilent(3, $item`extra-greasy slider`);
   chew(5, $item`voodoo snuff`);
   // chew(1, $item`antimatter wad`);
@@ -104,7 +104,7 @@ if (myFullness() === 0) {
 }
 
 if (myInebriety() === 0) {
-  useSkill($skill`ode to booze`, 2);
+  useSkill($skill`The Ode to Booze`, 2);
   drinksilent(3, $item`frosty\'s frosty mug`);
   drinksilent(3, $item`jar of fermented pickle juice`);
   chew(4, $item`voodoo snuff`);
@@ -132,11 +132,11 @@ if (
 }
 
 if (get("_loveChocolatesUsed") === 0) {
-  use($item`LOV extraterrestrial chocolate`);
+  use($item`LOV Extraterrestrial Chocolate`);
 }
 
 if (!get("_borrowedTimeUsed")) {
-  use($item`Borrowed Time`);
+  use($item`borrowed time`);
 }
 
 // TODO: essential tofu (with price limit)
@@ -150,10 +150,10 @@ if (!get("_mimeArmyShotglassUsed") && !get("_syntheticDogHairPillUsed")) {
   use(1, $item`synthetic doghair pill`);
   equip($item`mafia pinky ring`);
   if (haveEffect($effect`Ode to Booze`) > 1) {
-    drinksilent(2, $item`sacramento wine`);
+    drinksilent(2, $item`Sacramento wine`);
   } else {
     useSkill($skill`The Ode to Booze`, 1);
-    drinksilent(2, $item`sacramento wine`);
+    drinksilent(2, $item`Sacramento wine`);
   }
 }
 
@@ -178,23 +178,23 @@ while (haveEffect($effect`Driving Observantly`) < calculateFarmingTurns()) {
 }
 
 while (haveEffect($effect`How to Scam Tourists`) < calculateFarmingTurns()) {
-  use(1, $item`how to avoid scams`);
+  use(1, $item`How to Avoid Scams`);
 }
 
 while (get("_sourceTerminalEnhanceUses") < 3) {
   cliExecute("terminal enhance meat.enh");
 }
 
-while (haveEffect($effect`polka of plenty`) < calculateFarmingTurns()) {
-  useSkill($skill`polka of plenty`, 5);
+while (haveEffect($effect`Polka of Plenty`) < calculateFarmingTurns()) {
+  useSkill($skill`The Polka of Plenty`, 5);
 }
 
 while (haveEffect($effect`Disco Leer`) < calculateFarmingTurns()) {
   useSkill($skill`Disco Leer`, 5);
 }
 
-while (haveEffect($effect`Singer\'s Faithful Ocelot`) < calculateFarmingTurns()) {
-  useSkill($skill`Singer\'s Faithful Ocelot`, 5);
+while (haveEffect($effect`Singer's Faithful Ocelot`) < calculateFarmingTurns()) {
+  useSkill($skill`Singer's Faithful Ocelot`, 5);
 }
 // MP refill
 if (get("_sausagesEaten") === 20) {
@@ -205,28 +205,28 @@ while (haveEffect($effect`Fat Leon\'s Phat Loot Lyric`) < calculateFarmingTurns(
   useSkill($skill`Fat Leon\'s Phat Loot Lyric`, 5);
 }
 
-while (haveEffect($effect`leash of linguini`) < calculateFarmingTurns()) {
-  useSkill($skill`leash of linguini`, 5);
+while (haveEffect($effect`Leash of Linguini`) < calculateFarmingTurns()) {
+  useSkill($skill`Leash of Linguini`, 5);
 }
 
-while (haveEffect($effect`empathy`) < calculateFarmingTurns()) {
-  useSkill($skill`empathy of the newt`, 5);
+while (haveEffect($effect`Empathy`) < calculateFarmingTurns()) {
+  useSkill($skill`Empathy of the Newt`, 5);
 }
 
-while (haveEffect($effect`blood bond`) < calculateFarmingTurns()) {
-  useSkill($skill`cannelloni cocoon`);
-  useSkill($skill`blood bond`, 10);
+while (haveEffect($effect`Blood Bond`) < calculateFarmingTurns()) {
+  useSkill($skill`Cannelloni Cocoon`);
+  useSkill($skill`Blood Bond`, 10);
 }
 
 while (get("_poolGames") < 3) {
   cliExecute("pool aggressive");
 }
 
-if (myClass() === $class`pastamancer`) {
+if (myClass() === $class`Pastamancer`) {
   useSkill($skill`Bind Lasagmbie`);
 }
 
-if (!haveEffect($effect`meet the meat`) && !get("_clanFortuneBuffUsed")) {
+if (!haveEffect($effect`Meet the Meat`) && !get("_clanFortuneBuffUsed")) {
   cliExecute("fortune buff meat");
 }
 
@@ -241,26 +241,26 @@ if (!get("_daycareSpa")) {
 gingerBread();
 
 while (get("_kgbClicksUsed") < 21) {
-  if (haveEffect($effect`A View to some Meat`) === 0) {
+  if (haveEffect($effect`A View to Some Meat`) === 0) {
     cliExecute("briefcase buff identify");
-  } else if (haveEffect($effect`A View to some Meat`) !== 0) {
+  } else if (haveEffect($effect`A View to Some Meat`) !== 0) {
     cliExecute("briefcase buff meat");
   }
 }
 // TODO: robort changes a lot of this. might fight something for a good drop while getting pantsgiving full?
 // should have charged pantsgiving in breakfast script, get that fullness when getting pirate outfit
 if (get("_pantsgivingCount") > 4 && get("_pantsgivingFullness") === 0) {
-  takeStash(1, $item`pantsgiving`);
-  equip($item`pantsgiving`);
+  takeStash(1, $item`Pantsgiving`);
+  equip($item`Pantsgiving`);
 }
 
 if (get("_witchessFights") < 5) {
   Witchess.fightPiece($monster`Witchess Knight`);
 }
 
-if (availableAmount($item`pantsgiving`) > 0) {
+if (availableAmount($item`Pantsgiving`) > 0) {
   equip($item`none`, $slot`pants`);
-  putStash(1, $item`pantsgiving`);
+  putStash(1, $item`Pantsgiving`);
 }
 
 if (get("_pantsgivingFullness") === 1 && myFullness() < fullnessLimit()) {
@@ -273,16 +273,16 @@ if (get("_pantsgivingFullness") === 1 && myFullness() < fullnessLimit()) {
 }
 
 if (itemAmount($item`amulet coin`) === 0) {
-  useFamiliar($familiar`cornbeefadon`);
-  use($item`box of familiar jacks`, 1);
+  useFamiliar($familiar`Cornbeefadon`);
+  use($item`box of Familiar Jacks`, 1);
 }
 
-useFamiliar($familiar`robortender`);
+useFamiliar($familiar`Robortender`);
 equip($item`amulet coin`);
 
 for (const drink of $items`Newark, drive-by shooting, Feliz Navidad, single entendre`) {
   if (get("_roboDrinks").includes(drink.name)) continue;
-  useFamiliar($familiar`robortender`);
+  useFamiliar($familiar`Robortender`);
   if (itemAmount(drink) === 0) retrieveItem(1, drink);
   print(`Feeding robortender ${drink}.`, "blue");
   visitUrl(`inventory.php?action=robooze&which=1&whichitem=${toInt(drink)}`);
@@ -295,7 +295,7 @@ if (get("_mummeryMods") !== "Meat Drop: [30*fam(Robortender)],") {
 // equip($item`Li\'l pirate costume`);
 
 // TODO: buff up more for this
-if (haveEffect($effect`greedy resolve`) === 0) {
+if (haveEffect($effect`Greedy Resolve`) === 0) {
   use(1, $item`resolution: be wealthier`);
 }
 
@@ -304,7 +304,7 @@ embezzlerChain();
 // useFamiliar($familiar`trick-or-treating tot`);
 
 setAutoAttack(0);
-useFamiliar($familiar`robortender`);
+useFamiliar($familiar`Robortender`);
 
 if (get("_saberMod") === 0) {
   visitUrl("main.php?action=may4");
@@ -313,8 +313,8 @@ if (get("_saberMod") === 0) {
   throw "Your saber isn't set to famwt.";
 }
 
-if (availableAmount($item`buddy bjorn`) === 0) {
-  takeStash($item`buddy bjorn`, 1);
+if (availableAmount($item`Buddy Bjorn`) === 0) {
+  takeStash($item`Buddy Bjorn`, 1);
 }
 
 if (availableAmount($item`haiku katana`) === 0) {
@@ -324,19 +324,19 @@ if (availableAmount($item`haiku katana`) === 0) {
 cliExecute("fold wad of used tape");
 // TODO: switch to some famwt, possibly for offhand and pants. hat if level is high, but probably not
 equip($item`wad of used tape`);
-equip($item`buddy bjorn`);
+equip($item`Buddy Bjorn`);
 equip($item`duct tape shirt`);
 // equip($item`garbage sticker`);
 equip($item`haiku katana`);
 // equip($item`half a purse`);
-equip($item`fourth of may cosplay saber`, $slot`offhand`);
+equip($item`Fourth of May Cosplay Saber`, $slot`offhand`);
 equip($item`pantogram pants`);
 equip($item`lucky gold ring`, $slot`acc1`);
 equip($item`mafia thumb ring`, $slot`acc2`);
 // equip($item`cheap sunglasses`, $slot`acc3`);
 equip($item`mafia pointer finger ring`, $slot`acc3`);
 
-bjornifyFamiliar($familiar`golden monkey`);
+bjornifyFamiliar($familiar`Golden Monkey`);
 
 // fax embezzler, profchain, digitize, wink?
 
@@ -348,11 +348,11 @@ while (
   getProperty("lastCopyableMonster") === $monster`Knob Goblin Embezzler`.name
 ) {
   adventureMacroAuto(
-    $location`noob cave`,
-    Macro.trySkill($skill`back-up to your last enemy`)
-      .trySkill($skill`sing along`)
-      .skill($skill`summer siesta`)
-      .trySkillRepeat($skill`candyblast`)
+    $location`Noob Cave`,
+    Macro.trySkill($skill`Back-Up to your Last Enemy`)
+      .trySkill($skill`Sing Along`)
+      .skill($skill`Summer Siesta`)
+      .trySkillRepeat($skill`Candyblast`)
   );
 }
 
@@ -362,22 +362,22 @@ if (
   get("_backUpUses") === 10 &&
   getProperty("lastCopyableMonster") === $monster`Knob Goblin Embezzler`.name
 ) {
-  useFamiliar($familiar`reanimated reanimator`);
+  useFamiliar($familiar`Reanimated Reanimator`);
   adventureMacroAuto(
-    $location`noob cave`,
-    Macro.trySkill($skill`back-up to your last enemy`)
-      .trySkill($skill`digitize`)
+    $location`Noob Cave`,
+    Macro.trySkill($skill`Back-Up to your Last Enemy`)
+      .trySkill($skill`Digitize`)
       .trySkill($skill`7168`) // wink
-      .trySkill($skill`sing along`)
-      .skill($skill`summer siesta`)
-      .trySkillRepeat($skill`candyblast`)
+      .trySkill($skill`Sing Along`)
+      .skill($skill`Summer Siesta`)
+      .trySkillRepeat($skill`Candyblast`)
   );
   setAutoAttack(0);
 }
 
 equip($item`lucky gold ring`, $slot`acc1`);
 // useFamiliar($familiar`trick-or-treating tot`);
-useFamiliar($familiar`robortender`);
+useFamiliar($familiar`Robortender`);
 
 // maybe set it to use pantsgiving for first 50 turns, then eat horseradish, then switch to pantogram
 /*
@@ -406,26 +406,26 @@ while (myAdventures() > 1 && haveEffect($effect`synthesis: greed`) > 1) {
 setAutoAttack(0);
 */
 
-while (myAdventures() > 1 && haveEffect($effect`synthesis: greed`) > 1) {
+while (myAdventures() > 1 && haveEffect($effect`Synthesis: Greed`) > 1) {
   adventureMacroAuto(
-    $location`barf mountain`,
+    $location`Barf Mountain`,
     Macro.externalIf(
       !have($effect`On the Trail`),
       Macro.if_(
         "monstername garbage tourist",
-        Macro.skill($skill`curse of weaksauce`)
-          .skill($skill`transcendent olfaction`)
+        Macro.skill($skill`Curse of Weaksauce`)
+          .skill($skill`Transcendent Olfaction`)
           .skill($skill`Gallapagosian Mating Call`)
-          .skill($skill`sing along`)
-          .skill($skill`summer siesta`)
-          .skill($skill`candyblast`)
+          .skill($skill`Sing Along`)
+          .skill($skill`Summer Siesta`)
+          .skill($skill`Candyblast`)
           .repeat()
       )
     )
-      .skill($skill`curse of weaksauce`)
-      .skill($skill`sing along`)
-      .skill($skill`summer siesta`)
-      .skill($skill`candyblast`)
+      .skill($skill`Curse of Weaksauce`)
+      .skill($skill`Sing Along`)
+      .skill($skill`Summer Siesta`)
+      .skill($skill`Candyblast`)
       .repeat()
   );
 }
@@ -440,8 +440,8 @@ if (availableAmount($item`haiku katana`) > 0) {
   putStash($item`haiku katana`, 1);
 }
 
-if (availableAmount($item`buddy bjorn`) > 0) {
-  putStash($item`buddy bjorn`, 1);
+if (availableAmount($item`Buddy Bjorn`) > 0) {
+  putStash($item`Buddy Bjorn`, 1);
 }
 
 // make cornucopias, this uses a mafia alias

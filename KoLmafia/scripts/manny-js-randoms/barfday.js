@@ -18181,21 +18181,21 @@ if ((0,external_kolmafia_.itemAmount)((0,dist.$item)(barfday_templateObject3 || 
   (0,external_kolmafia_.putCloset)((0,external_kolmafia_.itemAmount)((0,dist.$item)(barfday_templateObject4 || (barfday_templateObject4 = barfday_taggedTemplateLiteral(["hobo nickel"])))), (0,dist.$item)(barfday_templateObject5 || (barfday_templateObject5 = barfday_taggedTemplateLiteral(["hobo nickel"]))));
 }
 
-while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject6 || (barfday_templateObject6 = barfday_taggedTemplateLiteral(["synthesis: greed"])))) < calculateFarmingTurns() && (0,external_kolmafia_.mySpleenUse)() < (0,external_kolmafia_.spleenLimit)()) {
+while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject6 || (barfday_templateObject6 = barfday_taggedTemplateLiteral(["Synthesis: Greed"])))) < calculateFarmingTurns() && (0,external_kolmafia_.mySpleenUse)() < (0,external_kolmafia_.spleenLimit)()) {
   (0,external_kolmafia_.sweetSynthesis)((0,dist.$item)(barfday_templateObject7 || (barfday_templateObject7 = barfday_taggedTemplateLiteral(["box of Dweebs"]))), (0,dist.$item)(barfday_templateObject8 || (barfday_templateObject8 = barfday_taggedTemplateLiteral(["PEEZ dispenser"]))));
 }
 
 if ((0,external_kolmafia_.myFullness)() === 0) {
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject9 || (barfday_templateObject9 = barfday_taggedTemplateLiteral(["cheat code: triple size"]))), 1);
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject9 || (barfday_templateObject9 = barfday_taggedTemplateLiteral(["CHEAT CODE: Triple Size"]))), 1);
   (0,external_kolmafia_.use)((0,dist.$item)(barfday_templateObject10 || (barfday_templateObject10 = barfday_taggedTemplateLiteral(["milk of magnesium"]))));
-  (0,external_kolmafia_.eatsilent)(3, (0,dist.$item)(barfday_templateObject11 || (barfday_templateObject11 = barfday_taggedTemplateLiteral(["ol' scratch's salad fork"]))));
+  (0,external_kolmafia_.eatsilent)(3, (0,dist.$item)(barfday_templateObject11 || (barfday_templateObject11 = barfday_taggedTemplateLiteral(["Ol' Scratch's salad fork"]))));
   (0,external_kolmafia_.eatsilent)(3, (0,dist.$item)(barfday_templateObject12 || (barfday_templateObject12 = barfday_taggedTemplateLiteral(["extra-greasy slider"]))));
   (0,external_kolmafia_.chew)(5, (0,dist.$item)(barfday_templateObject13 || (barfday_templateObject13 = barfday_taggedTemplateLiteral(["voodoo snuff"])))); // chew(1, $item`antimatter wad`);
   // chew(1, $item`beggin\' cologne`);
 }
 
 if ((0,external_kolmafia_.myInebriety)() === 0) {
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject14 || (barfday_templateObject14 = barfday_taggedTemplateLiteral(["ode to booze"]))), 2);
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject14 || (barfday_templateObject14 = barfday_taggedTemplateLiteral(["The Ode to Booze"]))), 2);
   (0,external_kolmafia_.drinksilent)(3, (0,dist.$item)(barfday_templateObject15 || (barfday_templateObject15 = barfday_taggedTemplateLiteral(["frosty's frosty mug"], ["frosty\\'s frosty mug"]))));
   (0,external_kolmafia_.drinksilent)(3, (0,dist.$item)(barfday_templateObject16 || (barfday_templateObject16 = barfday_taggedTemplateLiteral(["jar of fermented pickle juice"]))));
   (0,external_kolmafia_.chew)(4, (0,dist.$item)(barfday_templateObject17 || (barfday_templateObject17 = barfday_taggedTemplateLiteral(["voodoo snuff"]))));
@@ -18220,11 +18220,11 @@ if ((0,external_kolmafia_.mySpleenUse)() === (0,external_kolmafia_.spleenLimit)(
 }
 
 if ((0,dist.get)("_loveChocolatesUsed") === 0) {
-  (0,external_kolmafia_.use)((0,dist.$item)(barfday_templateObject36 || (barfday_templateObject36 = barfday_taggedTemplateLiteral(["LOV extraterrestrial chocolate"]))));
+  (0,external_kolmafia_.use)((0,dist.$item)(barfday_templateObject36 || (barfday_templateObject36 = barfday_taggedTemplateLiteral(["LOV Extraterrestrial Chocolate"]))));
 }
 
 if (!(0,dist.get)("_borrowedTimeUsed")) {
-  (0,external_kolmafia_.use)((0,dist.$item)(barfday_templateObject37 || (barfday_templateObject37 = barfday_taggedTemplateLiteral(["Borrowed Time"]))));
+  (0,external_kolmafia_.use)((0,dist.$item)(barfday_templateObject37 || (barfday_templateObject37 = barfday_taggedTemplateLiteral(["borrowed time"]))));
 } // TODO: essential tofu (with price limit)
 
 
@@ -18239,10 +18239,10 @@ if (!(0,dist.get)("_mimeArmyShotglassUsed") && !(0,dist.get)("_syntheticDogHairP
   (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject41 || (barfday_templateObject41 = barfday_taggedTemplateLiteral(["mafia pinky ring"]))));
 
   if ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject42 || (barfday_templateObject42 = barfday_taggedTemplateLiteral(["Ode to Booze"])))) > 1) {
-    (0,external_kolmafia_.drinksilent)(2, (0,dist.$item)(barfday_templateObject43 || (barfday_templateObject43 = barfday_taggedTemplateLiteral(["sacramento wine"]))));
+    (0,external_kolmafia_.drinksilent)(2, (0,dist.$item)(barfday_templateObject43 || (barfday_templateObject43 = barfday_taggedTemplateLiteral(["Sacramento wine"]))));
   } else {
     (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject44 || (barfday_templateObject44 = barfday_taggedTemplateLiteral(["The Ode to Booze"]))), 1);
-    (0,external_kolmafia_.drinksilent)(2, (0,dist.$item)(barfday_templateObject45 || (barfday_templateObject45 = barfday_taggedTemplateLiteral(["sacramento wine"]))));
+    (0,external_kolmafia_.drinksilent)(2, (0,dist.$item)(barfday_templateObject45 || (barfday_templateObject45 = barfday_taggedTemplateLiteral(["Sacramento wine"]))));
   }
 }
 
@@ -18263,23 +18263,23 @@ while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject
 }
 
 while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject49 || (barfday_templateObject49 = barfday_taggedTemplateLiteral(["How to Scam Tourists"])))) < calculateFarmingTurns()) {
-  (0,external_kolmafia_.use)(1, (0,dist.$item)(barfday_templateObject50 || (barfday_templateObject50 = barfday_taggedTemplateLiteral(["how to avoid scams"]))));
+  (0,external_kolmafia_.use)(1, (0,dist.$item)(barfday_templateObject50 || (barfday_templateObject50 = barfday_taggedTemplateLiteral(["How to Avoid Scams"]))));
 }
 
 while ((0,dist.get)("_sourceTerminalEnhanceUses") < 3) {
   (0,external_kolmafia_.cliExecute)("terminal enhance meat.enh");
 }
 
-while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject51 || (barfday_templateObject51 = barfday_taggedTemplateLiteral(["polka of plenty"])))) < calculateFarmingTurns()) {
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject52 || (barfday_templateObject52 = barfday_taggedTemplateLiteral(["polka of plenty"]))), 5);
+while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject51 || (barfday_templateObject51 = barfday_taggedTemplateLiteral(["Polka of Plenty"])))) < calculateFarmingTurns()) {
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject52 || (barfday_templateObject52 = barfday_taggedTemplateLiteral(["The Polka of Plenty"]))), 5);
 }
 
 while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject53 || (barfday_templateObject53 = barfday_taggedTemplateLiteral(["Disco Leer"])))) < calculateFarmingTurns()) {
   (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject54 || (barfday_templateObject54 = barfday_taggedTemplateLiteral(["Disco Leer"]))), 5);
 }
 
-while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject55 || (barfday_templateObject55 = barfday_taggedTemplateLiteral(["Singer's Faithful Ocelot"], ["Singer\\'s Faithful Ocelot"])))) < calculateFarmingTurns()) {
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject56 || (barfday_templateObject56 = barfday_taggedTemplateLiteral(["Singer's Faithful Ocelot"], ["Singer\\'s Faithful Ocelot"]))), 5);
+while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject55 || (barfday_templateObject55 = barfday_taggedTemplateLiteral(["Singer's Faithful Ocelot"])))) < calculateFarmingTurns()) {
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject56 || (barfday_templateObject56 = barfday_taggedTemplateLiteral(["Singer's Faithful Ocelot"]))), 5);
 } // MP refill
 
 
@@ -18291,28 +18291,28 @@ while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject
   (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject59 || (barfday_templateObject59 = barfday_taggedTemplateLiteral(["Fat Leon's Phat Loot Lyric"], ["Fat Leon\\'s Phat Loot Lyric"]))), 5);
 }
 
-while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject60 || (barfday_templateObject60 = barfday_taggedTemplateLiteral(["leash of linguini"])))) < calculateFarmingTurns()) {
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject61 || (barfday_templateObject61 = barfday_taggedTemplateLiteral(["leash of linguini"]))), 5);
+while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject60 || (barfday_templateObject60 = barfday_taggedTemplateLiteral(["Leash of Linguini"])))) < calculateFarmingTurns()) {
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject61 || (barfday_templateObject61 = barfday_taggedTemplateLiteral(["Leash of Linguini"]))), 5);
 }
 
-while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject62 || (barfday_templateObject62 = barfday_taggedTemplateLiteral(["empathy"])))) < calculateFarmingTurns()) {
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject63 || (barfday_templateObject63 = barfday_taggedTemplateLiteral(["empathy of the newt"]))), 5);
+while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject62 || (barfday_templateObject62 = barfday_taggedTemplateLiteral(["Empathy"])))) < calculateFarmingTurns()) {
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject63 || (barfday_templateObject63 = barfday_taggedTemplateLiteral(["Empathy of the Newt"]))), 5);
 }
 
-while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject64 || (barfday_templateObject64 = barfday_taggedTemplateLiteral(["blood bond"])))) < calculateFarmingTurns()) {
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject65 || (barfday_templateObject65 = barfday_taggedTemplateLiteral(["cannelloni cocoon"]))));
-  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject66 || (barfday_templateObject66 = barfday_taggedTemplateLiteral(["blood bond"]))), 10);
+while ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject64 || (barfday_templateObject64 = barfday_taggedTemplateLiteral(["Blood Bond"])))) < calculateFarmingTurns()) {
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject65 || (barfday_templateObject65 = barfday_taggedTemplateLiteral(["Cannelloni Cocoon"]))));
+  (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject66 || (barfday_templateObject66 = barfday_taggedTemplateLiteral(["Blood Bond"]))), 10);
 }
 
 while ((0,dist.get)("_poolGames") < 3) {
   (0,external_kolmafia_.cliExecute)("pool aggressive");
 }
 
-if ((0,external_kolmafia_.myClass)() === (0,dist.$class)(barfday_templateObject67 || (barfday_templateObject67 = barfday_taggedTemplateLiteral(["pastamancer"])))) {
+if ((0,external_kolmafia_.myClass)() === (0,dist.$class)(barfday_templateObject67 || (barfday_templateObject67 = barfday_taggedTemplateLiteral(["Pastamancer"])))) {
   (0,external_kolmafia_.useSkill)((0,dist.$skill)(barfday_templateObject68 || (barfday_templateObject68 = barfday_taggedTemplateLiteral(["Bind Lasagmbie"]))));
 }
 
-if (!(0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject69 || (barfday_templateObject69 = barfday_taggedTemplateLiteral(["meet the meat"])))) && !(0,dist.get)("_clanFortuneBuffUsed")) {
+if (!(0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject69 || (barfday_templateObject69 = barfday_taggedTemplateLiteral(["Meet the Meat"])))) && !(0,dist.get)("_clanFortuneBuffUsed")) {
   (0,external_kolmafia_.cliExecute)("fortune buff meat");
 } // get Unencumbered for +item
 
@@ -18327,9 +18327,9 @@ if (!(0,dist.get)("_daycareSpa")) {
 gingerBread();
 
 while ((0,dist.get)("_kgbClicksUsed") < 21) {
-  if ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject70 || (barfday_templateObject70 = barfday_taggedTemplateLiteral(["A View to some Meat"])))) === 0) {
+  if ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject70 || (barfday_templateObject70 = barfday_taggedTemplateLiteral(["A View to Some Meat"])))) === 0) {
     (0,external_kolmafia_.cliExecute)("briefcase buff identify");
-  } else if ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject71 || (barfday_templateObject71 = barfday_taggedTemplateLiteral(["A View to some Meat"])))) !== 0) {
+  } else if ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject71 || (barfday_templateObject71 = barfday_taggedTemplateLiteral(["A View to Some Meat"])))) !== 0) {
     (0,external_kolmafia_.cliExecute)("briefcase buff meat");
   }
 } // TODO: robort changes a lot of this. might fight something for a good drop while getting pantsgiving full?
@@ -18337,17 +18337,17 @@ while ((0,dist.get)("_kgbClicksUsed") < 21) {
 
 
 if ((0,dist.get)("_pantsgivingCount") > 4 && (0,dist.get)("_pantsgivingFullness") === 0) {
-  (0,external_kolmafia_.takeStash)(1, (0,dist.$item)(barfday_templateObject72 || (barfday_templateObject72 = barfday_taggedTemplateLiteral(["pantsgiving"]))));
-  (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject73 || (barfday_templateObject73 = barfday_taggedTemplateLiteral(["pantsgiving"]))));
+  (0,external_kolmafia_.takeStash)(1, (0,dist.$item)(barfday_templateObject72 || (barfday_templateObject72 = barfday_taggedTemplateLiteral(["Pantsgiving"]))));
+  (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject73 || (barfday_templateObject73 = barfday_taggedTemplateLiteral(["Pantsgiving"]))));
 }
 
 if ((0,dist.get)("_witchessFights") < 5) {
   dist.Witchess.fightPiece((0,dist.$monster)(barfday_templateObject74 || (barfday_templateObject74 = barfday_taggedTemplateLiteral(["Witchess Knight"]))));
 }
 
-if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(barfday_templateObject75 || (barfday_templateObject75 = barfday_taggedTemplateLiteral(["pantsgiving"])))) > 0) {
+if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(barfday_templateObject75 || (barfday_templateObject75 = barfday_taggedTemplateLiteral(["Pantsgiving"])))) > 0) {
   (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject76 || (barfday_templateObject76 = barfday_taggedTemplateLiteral(["none"]))), (0,dist.$slot)(barfday_templateObject77 || (barfday_templateObject77 = barfday_taggedTemplateLiteral(["pants"]))));
-  (0,external_kolmafia_.putStash)(1, (0,dist.$item)(barfday_templateObject78 || (barfday_templateObject78 = barfday_taggedTemplateLiteral(["pantsgiving"]))));
+  (0,external_kolmafia_.putStash)(1, (0,dist.$item)(barfday_templateObject78 || (barfday_templateObject78 = barfday_taggedTemplateLiteral(["Pantsgiving"]))));
 }
 
 if ((0,dist.get)("_pantsgivingFullness") === 1 && (0,external_kolmafia_.myFullness)() < (0,external_kolmafia_.fullnessLimit)()) {
@@ -18360,11 +18360,11 @@ if ((0,dist.get)("_pantsgivingFullness") === 1 && (0,external_kolmafia_.myFullne
 }
 
 if ((0,external_kolmafia_.itemAmount)((0,dist.$item)(barfday_templateObject82 || (barfday_templateObject82 = barfday_taggedTemplateLiteral(["amulet coin"])))) === 0) {
-  (0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject83 || (barfday_templateObject83 = barfday_taggedTemplateLiteral(["cornbeefadon"]))));
-  (0,external_kolmafia_.use)((0,dist.$item)(barfday_templateObject84 || (barfday_templateObject84 = barfday_taggedTemplateLiteral(["box of familiar jacks"]))), 1);
+  (0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject83 || (barfday_templateObject83 = barfday_taggedTemplateLiteral(["Cornbeefadon"]))));
+  (0,external_kolmafia_.use)((0,dist.$item)(barfday_templateObject84 || (barfday_templateObject84 = barfday_taggedTemplateLiteral(["box of Familiar Jacks"]))), 1);
 }
 
-(0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject85 || (barfday_templateObject85 = barfday_taggedTemplateLiteral(["robortender"]))));
+(0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject85 || (barfday_templateObject85 = barfday_taggedTemplateLiteral(["Robortender"]))));
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject86 || (barfday_templateObject86 = barfday_taggedTemplateLiteral(["amulet coin"]))));
 
 var _iterator = barfday_createForOfIteratorHelper((0,dist.$items)(_templateObject170 || (_templateObject170 = barfday_taggedTemplateLiteral(["Newark, drive-by shooting, Feliz Navidad, single entendre"])))),
@@ -18374,7 +18374,7 @@ try {
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     var drink = _step.value;
     if ((0,dist.get)("_roboDrinks").includes(drink.name)) continue;
-    (0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(_templateObject171 || (_templateObject171 = barfday_taggedTemplateLiteral(["robortender"]))));
+    (0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(_templateObject171 || (_templateObject171 = barfday_taggedTemplateLiteral(["Robortender"]))));
     if ((0,external_kolmafia_.itemAmount)(drink) === 0) (0,external_kolmafia_.retrieveItem)(1, drink);
     (0,external_kolmafia_.print)("Feeding robortender ".concat(drink, "."), "blue");
     (0,external_kolmafia_.visitUrl)("inventory.php?action=robooze&which=1&whichitem=".concat((0,external_kolmafia_.toInt)(drink)));
@@ -18391,14 +18391,14 @@ if ((0,dist.get)("_mummeryMods") !== "Meat Drop: [30*fam(Robortender)],") {
 // TODO: buff up more for this
 
 
-if ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject87 || (barfday_templateObject87 = barfday_taggedTemplateLiteral(["greedy resolve"])))) === 0) {
+if ((0,external_kolmafia_.haveEffect)((0,dist.$effect)(barfday_templateObject87 || (barfday_templateObject87 = barfday_taggedTemplateLiteral(["Greedy Resolve"])))) === 0) {
   (0,external_kolmafia_.use)(1, (0,dist.$item)(barfday_templateObject88 || (barfday_templateObject88 = barfday_taggedTemplateLiteral(["resolution: be wealthier"]))));
 }
 
 embezzlerChain(); // useFamiliar($familiar`trick-or-treating tot`);
 
 (0,external_kolmafia_.setAutoAttack)(0);
-(0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject89 || (barfday_templateObject89 = barfday_taggedTemplateLiteral(["robortender"]))));
+(0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject89 || (barfday_templateObject89 = barfday_taggedTemplateLiteral(["Robortender"]))));
 
 if ((0,dist.get)("_saberMod") === 0) {
   (0,external_kolmafia_.visitUrl)("main.php?action=may4");
@@ -18407,8 +18407,8 @@ if ((0,dist.get)("_saberMod") === 0) {
   throw "Your saber isn't set to famwt.";
 }
 
-if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(barfday_templateObject90 || (barfday_templateObject90 = barfday_taggedTemplateLiteral(["buddy bjorn"])))) === 0) {
-  (0,external_kolmafia_.takeStash)((0,dist.$item)(barfday_templateObject91 || (barfday_templateObject91 = barfday_taggedTemplateLiteral(["buddy bjorn"]))), 1);
+if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(barfday_templateObject90 || (barfday_templateObject90 = barfday_taggedTemplateLiteral(["Buddy Bjorn"])))) === 0) {
+  (0,external_kolmafia_.takeStash)((0,dist.$item)(barfday_templateObject91 || (barfday_templateObject91 = barfday_taggedTemplateLiteral(["Buddy Bjorn"]))), 1);
 }
 
 if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(barfday_templateObject92 || (barfday_templateObject92 = barfday_taggedTemplateLiteral(["haiku katana"])))) === 0) {
@@ -18418,38 +18418,38 @@ if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(barfday_templateObject
 (0,external_kolmafia_.cliExecute)("fold wad of used tape"); // TODO: switch to some famwt, possibly for offhand and pants. hat if level is high, but probably not
 
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject94 || (barfday_templateObject94 = barfday_taggedTemplateLiteral(["wad of used tape"]))));
-(0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject95 || (barfday_templateObject95 = barfday_taggedTemplateLiteral(["buddy bjorn"]))));
+(0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject95 || (barfday_templateObject95 = barfday_taggedTemplateLiteral(["Buddy Bjorn"]))));
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject96 || (barfday_templateObject96 = barfday_taggedTemplateLiteral(["duct tape shirt"])))); // equip($item`garbage sticker`);
 
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject97 || (barfday_templateObject97 = barfday_taggedTemplateLiteral(["haiku katana"])))); // equip($item`half a purse`);
 
-(0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject98 || (barfday_templateObject98 = barfday_taggedTemplateLiteral(["fourth of may cosplay saber"]))), (0,dist.$slot)(barfday_templateObject99 || (barfday_templateObject99 = barfday_taggedTemplateLiteral(["offhand"]))));
+(0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject98 || (barfday_templateObject98 = barfday_taggedTemplateLiteral(["Fourth of May Cosplay Saber"]))), (0,dist.$slot)(barfday_templateObject99 || (barfday_templateObject99 = barfday_taggedTemplateLiteral(["offhand"]))));
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject100 || (barfday_templateObject100 = barfday_taggedTemplateLiteral(["pantogram pants"]))));
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject101 || (barfday_templateObject101 = barfday_taggedTemplateLiteral(["lucky gold ring"]))), (0,dist.$slot)(barfday_templateObject102 || (barfday_templateObject102 = barfday_taggedTemplateLiteral(["acc1"]))));
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject103 || (barfday_templateObject103 = barfday_taggedTemplateLiteral(["mafia thumb ring"]))), (0,dist.$slot)(barfday_templateObject104 || (barfday_templateObject104 = barfday_taggedTemplateLiteral(["acc2"])))); // equip($item`cheap sunglasses`, $slot`acc3`);
 
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject105 || (barfday_templateObject105 = barfday_taggedTemplateLiteral(["mafia pointer finger ring"]))), (0,dist.$slot)(barfday_templateObject106 || (barfday_templateObject106 = barfday_taggedTemplateLiteral(["acc3"]))));
-(0,external_kolmafia_.bjornifyFamiliar)((0,dist.$familiar)(barfday_templateObject107 || (barfday_templateObject107 = barfday_taggedTemplateLiteral(["golden monkey"])))); // fax embezzler, profchain, digitize, wink?
+(0,external_kolmafia_.bjornifyFamiliar)((0,dist.$familiar)(barfday_templateObject107 || (barfday_templateObject107 = barfday_taggedTemplateLiteral(["Golden Monkey"])))); // fax embezzler, profchain, digitize, wink?
 
 (0,external_kolmafia_.equip)((0,dist.$item)(barfday_templateObject108 || (barfday_templateObject108 = barfday_taggedTemplateLiteral(["backup camera"]))), (0,dist.$slot)(barfday_templateObject109 || (barfday_templateObject109 = barfday_taggedTemplateLiteral(["acc1"]))));
 (0,external_kolmafia_.cliExecute)("backupcamera meat");
 
 while ((0,dist.get)("_backUpUses") < 10 && (0,external_kolmafia_.getProperty)("lastCopyableMonster") === (0,dist.$monster)(barfday_templateObject110 || (barfday_templateObject110 = barfday_taggedTemplateLiteral(["Knob Goblin Embezzler"]))).name) {
-  (0,dist.adventureMacroAuto)((0,dist.$location)(barfday_templateObject111 || (barfday_templateObject111 = barfday_taggedTemplateLiteral(["noob cave"]))), dist.Macro.trySkill((0,dist.$skill)(barfday_templateObject112 || (barfday_templateObject112 = barfday_taggedTemplateLiteral(["back-up to your last enemy"])))).trySkill((0,dist.$skill)(barfday_templateObject113 || (barfday_templateObject113 = barfday_taggedTemplateLiteral(["sing along"])))).skill((0,dist.$skill)(barfday_templateObject114 || (barfday_templateObject114 = barfday_taggedTemplateLiteral(["summer siesta"])))).trySkillRepeat((0,dist.$skill)(barfday_templateObject115 || (barfday_templateObject115 = barfday_taggedTemplateLiteral(["candyblast"])))));
+  (0,dist.adventureMacroAuto)((0,dist.$location)(barfday_templateObject111 || (barfday_templateObject111 = barfday_taggedTemplateLiteral(["Noob Cave"]))), dist.Macro.trySkill((0,dist.$skill)(barfday_templateObject112 || (barfday_templateObject112 = barfday_taggedTemplateLiteral(["Back-Up to your Last Enemy"])))).trySkill((0,dist.$skill)(barfday_templateObject113 || (barfday_templateObject113 = barfday_taggedTemplateLiteral(["Sing Along"])))).skill((0,dist.$skill)(barfday_templateObject114 || (barfday_templateObject114 = barfday_taggedTemplateLiteral(["Summer Siesta"])))).trySkillRepeat((0,dist.$skill)(barfday_templateObject115 || (barfday_templateObject115 = barfday_taggedTemplateLiteral(["Candyblast"])))));
 }
 
 (0,external_kolmafia_.setAutoAttack)(0);
 
 if ((0,dist.get)("_backUpUses") === 10 && (0,external_kolmafia_.getProperty)("lastCopyableMonster") === (0,dist.$monster)(barfday_templateObject116 || (barfday_templateObject116 = barfday_taggedTemplateLiteral(["Knob Goblin Embezzler"]))).name) {
-  (0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject117 || (barfday_templateObject117 = barfday_taggedTemplateLiteral(["reanimated reanimator"]))));
-  (0,dist.adventureMacroAuto)((0,dist.$location)(barfday_templateObject118 || (barfday_templateObject118 = barfday_taggedTemplateLiteral(["noob cave"]))), dist.Macro.trySkill((0,dist.$skill)(barfday_templateObject119 || (barfday_templateObject119 = barfday_taggedTemplateLiteral(["back-up to your last enemy"])))).trySkill((0,dist.$skill)(barfday_templateObject120 || (barfday_templateObject120 = barfday_taggedTemplateLiteral(["digitize"])))).trySkill((0,dist.$skill)(barfday_templateObject121 || (barfday_templateObject121 = barfday_taggedTemplateLiteral(["7168"])))) // wink
-  .trySkill((0,dist.$skill)(_templateObject122 || (_templateObject122 = barfday_taggedTemplateLiteral(["sing along"])))).skill((0,dist.$skill)(_templateObject123 || (_templateObject123 = barfday_taggedTemplateLiteral(["summer siesta"])))).trySkillRepeat((0,dist.$skill)(_templateObject124 || (_templateObject124 = barfday_taggedTemplateLiteral(["candyblast"])))));
+  (0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(barfday_templateObject117 || (barfday_templateObject117 = barfday_taggedTemplateLiteral(["Reanimated Reanimator"]))));
+  (0,dist.adventureMacroAuto)((0,dist.$location)(barfday_templateObject118 || (barfday_templateObject118 = barfday_taggedTemplateLiteral(["Noob Cave"]))), dist.Macro.trySkill((0,dist.$skill)(barfday_templateObject119 || (barfday_templateObject119 = barfday_taggedTemplateLiteral(["Back-Up to your Last Enemy"])))).trySkill((0,dist.$skill)(barfday_templateObject120 || (barfday_templateObject120 = barfday_taggedTemplateLiteral(["Digitize"])))).trySkill((0,dist.$skill)(barfday_templateObject121 || (barfday_templateObject121 = barfday_taggedTemplateLiteral(["7168"])))) // wink
+  .trySkill((0,dist.$skill)(_templateObject122 || (_templateObject122 = barfday_taggedTemplateLiteral(["Sing Along"])))).skill((0,dist.$skill)(_templateObject123 || (_templateObject123 = barfday_taggedTemplateLiteral(["Summer Siesta"])))).trySkillRepeat((0,dist.$skill)(_templateObject124 || (_templateObject124 = barfday_taggedTemplateLiteral(["Candyblast"])))));
   (0,external_kolmafia_.setAutoAttack)(0);
 }
 
 (0,external_kolmafia_.equip)((0,dist.$item)(_templateObject125 || (_templateObject125 = barfday_taggedTemplateLiteral(["lucky gold ring"]))), (0,dist.$slot)(_templateObject126 || (_templateObject126 = barfday_taggedTemplateLiteral(["acc1"])))); // useFamiliar($familiar`trick-or-treating tot`);
 
-(0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(_templateObject127 || (_templateObject127 = barfday_taggedTemplateLiteral(["robortender"])))); // maybe set it to use pantsgiving for first 50 turns, then eat horseradish, then switch to pantogram
+(0,external_kolmafia_.useFamiliar)((0,dist.$familiar)(_templateObject127 || (_templateObject127 = barfday_taggedTemplateLiteral(["Robortender"])))); // maybe set it to use pantsgiving for first 50 turns, then eat horseradish, then switch to pantogram
 
 /*
 while (myAdventures() > 1 && haveEffect($effect`synthesis: greed`) > 1) {
@@ -18477,8 +18477,8 @@ while (myAdventures() > 1 && haveEffect($effect`synthesis: greed`) > 1) {
 setAutoAttack(0);
 */
 
-while ((0,external_kolmafia_.myAdventures)() > 1 && (0,external_kolmafia_.haveEffect)((0,dist.$effect)(_templateObject128 || (_templateObject128 = barfday_taggedTemplateLiteral(["synthesis: greed"])))) > 1) {
-  (0,dist.adventureMacroAuto)((0,dist.$location)(_templateObject129 || (_templateObject129 = barfday_taggedTemplateLiteral(["barf mountain"]))), dist.Macro.externalIf(!(0,dist.have)((0,dist.$effect)(_templateObject130 || (_templateObject130 = barfday_taggedTemplateLiteral(["On the Trail"])))), dist.Macro.if_("monstername garbage tourist", dist.Macro.skill((0,dist.$skill)(_templateObject131 || (_templateObject131 = barfday_taggedTemplateLiteral(["curse of weaksauce"])))).skill((0,dist.$skill)(_templateObject132 || (_templateObject132 = barfday_taggedTemplateLiteral(["transcendent olfaction"])))).skill((0,dist.$skill)(_templateObject133 || (_templateObject133 = barfday_taggedTemplateLiteral(["Gallapagosian Mating Call"])))).skill((0,dist.$skill)(_templateObject134 || (_templateObject134 = barfday_taggedTemplateLiteral(["sing along"])))).skill((0,dist.$skill)(_templateObject135 || (_templateObject135 = barfday_taggedTemplateLiteral(["summer siesta"])))).skill((0,dist.$skill)(_templateObject136 || (_templateObject136 = barfday_taggedTemplateLiteral(["candyblast"])))).repeat())).skill((0,dist.$skill)(_templateObject137 || (_templateObject137 = barfday_taggedTemplateLiteral(["curse of weaksauce"])))).skill((0,dist.$skill)(_templateObject138 || (_templateObject138 = barfday_taggedTemplateLiteral(["sing along"])))).skill((0,dist.$skill)(_templateObject139 || (_templateObject139 = barfday_taggedTemplateLiteral(["summer siesta"])))).skill((0,dist.$skill)(_templateObject140 || (_templateObject140 = barfday_taggedTemplateLiteral(["candyblast"])))).repeat());
+while ((0,external_kolmafia_.myAdventures)() > 1 && (0,external_kolmafia_.haveEffect)((0,dist.$effect)(_templateObject128 || (_templateObject128 = barfday_taggedTemplateLiteral(["Synthesis: Greed"])))) > 1) {
+  (0,dist.adventureMacroAuto)((0,dist.$location)(_templateObject129 || (_templateObject129 = barfday_taggedTemplateLiteral(["Barf Mountain"]))), dist.Macro.externalIf(!(0,dist.have)((0,dist.$effect)(_templateObject130 || (_templateObject130 = barfday_taggedTemplateLiteral(["On the Trail"])))), dist.Macro.if_("monstername garbage tourist", dist.Macro.skill((0,dist.$skill)(_templateObject131 || (_templateObject131 = barfday_taggedTemplateLiteral(["Curse of Weaksauce"])))).skill((0,dist.$skill)(_templateObject132 || (_templateObject132 = barfday_taggedTemplateLiteral(["Transcendent Olfaction"])))).skill((0,dist.$skill)(_templateObject133 || (_templateObject133 = barfday_taggedTemplateLiteral(["Gallapagosian Mating Call"])))).skill((0,dist.$skill)(_templateObject134 || (_templateObject134 = barfday_taggedTemplateLiteral(["Sing Along"])))).skill((0,dist.$skill)(_templateObject135 || (_templateObject135 = barfday_taggedTemplateLiteral(["Summer Siesta"])))).skill((0,dist.$skill)(_templateObject136 || (_templateObject136 = barfday_taggedTemplateLiteral(["Candyblast"])))).repeat())).skill((0,dist.$skill)(_templateObject137 || (_templateObject137 = barfday_taggedTemplateLiteral(["Curse of Weaksauce"])))).skill((0,dist.$skill)(_templateObject138 || (_templateObject138 = barfday_taggedTemplateLiteral(["Sing Along"])))).skill((0,dist.$skill)(_templateObject139 || (_templateObject139 = barfday_taggedTemplateLiteral(["Summer Siesta"])))).skill((0,dist.$skill)(_templateObject140 || (_templateObject140 = barfday_taggedTemplateLiteral(["Candyblast"])))).repeat());
 }
 
 (0,external_kolmafia_.setAutoAttack)(0); // end of day shit
@@ -18490,8 +18490,8 @@ if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(_templateObject145 || 
   (0,external_kolmafia_.putStash)((0,dist.$item)(_templateObject146 || (_templateObject146 = barfday_taggedTemplateLiteral(["haiku katana"]))), 1);
 }
 
-if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(_templateObject147 || (_templateObject147 = barfday_taggedTemplateLiteral(["buddy bjorn"])))) > 0) {
-  (0,external_kolmafia_.putStash)((0,dist.$item)(_templateObject148 || (_templateObject148 = barfday_taggedTemplateLiteral(["buddy bjorn"]))), 1);
+if ((0,external_kolmafia_.availableAmount)((0,dist.$item)(_templateObject147 || (_templateObject147 = barfday_taggedTemplateLiteral(["Buddy Bjorn"])))) > 0) {
+  (0,external_kolmafia_.putStash)((0,dist.$item)(_templateObject148 || (_templateObject148 = barfday_taggedTemplateLiteral(["Buddy Bjorn"]))), 1);
 } // make cornucopias, this uses a mafia alias
 
 

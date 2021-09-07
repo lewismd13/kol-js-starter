@@ -7,11 +7,12 @@ module.exports = {
     // Point "entry" to scripts you want to be CLI-eligible.
     barfday: "./src/barfday.ts",
     postloop: "./src/postloop.ts",
-    test: "./src/test.ts",
     macroConsult: "./src/macroConsult.ts",
     hoboDay: "./src/hoboDay.ts",
     mannyRoll: "./src/mannyRoll.ts",
     mannyBreakfast: "./src/mannyBreakfast.ts",
+    testFile: "./src/testFile.ts",
+    vanDuffelFarm: "./src/vanDuffelFarm.ts",
   },
   mode: "production",
   devtool: false,

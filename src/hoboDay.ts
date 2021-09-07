@@ -7,13 +7,16 @@ import {
   drinksilent,
   eatsilent,
   equip,
+  fullnessLimit,
   getClanId,
   getProperty,
   haveEffect,
+  inebrietyLimit,
   itemAmount,
   maximize,
   myFullness,
   myInebriety,
+  print,
   putStash,
   retrieveItem,
   runCombat,
@@ -22,6 +25,8 @@ import {
   takeStash,
   use,
   useFamiliar,
+  userConfirm,
+  userPrompt,
   useSkill,
   wait,
 } from "kolmafia";
@@ -48,12 +53,10 @@ import {
 
 // TODO: split out digitize/winking witchess
 
-function hoboPrep() {
+export function hoboDiet(): void {
   if (getClanId() !== 40382) {
     cliExecute("/whitelist alliance from hell");
   }
-
-  cliExecute("ccs twiddle");
 
   if (get("boomBoxSong") !== "Food Vibrations") {
     cliExecute("boombox food");
@@ -107,6 +110,22 @@ function hoboPrep() {
     equip($item`tuxedo shirt`);
     drinksilent(2, $item`splendid martini`);
   }
+  // check if we should leave room for hobopolis marketplace food, if not, then the usual hobo diet
+  if (!userConfirm("Do you want to leave room for marketplace?")) {
+    if (myInebriety() - inebrietyLimit() > 4) {
+      useSkill($skill`The Ode to Booze`);
+      drinksilent(1, $item`Frosty's frosty mug`);
+      drinksilent(1, $item`jar of fermented pickle juice`);
+    }
+    if (myFullness() - fullnessLimit() > 4) {
+      eatsilent(1, $item`Ol' Scratch's salad fork`);
+      eatsilent(1, $item`extra-greasy slider`);
+    }
+  }
+}
+
+export function copyElves(): void {
+  cliExecute("ccs twiddle");
 
   if (
     !get("_photocopyUsed") &&
@@ -165,7 +184,8 @@ function hoboPrep() {
     runCombat(
       Macro.skill($skill`Curse of Weaksauce`)
         .if_("hascombatitem spooky putty sheet", Macro.item($item`Spooky Putty sheet`))
-        .trySkillRepeat($skill`Saucestorm`)
+        .skill($skill`Saucestorm`)
+        .repeat()
         .toString()
     );
   }
@@ -284,7 +304,20 @@ export function sewerPrep(): void {
   cliExecute("ccs default");
 }
 
-hoboPrep();
+const prepChoice = userPrompt("What would you like to do? (sewer, diet, copies, or all)");
+if (prepChoice === "sewer") {
+  sewerPrep();
+} else if (prepChoice === "diet") {
+  hoboDiet();
+} else if (prepChoice === "copies") {
+  copyElves();
+} else if (prepChoice === "all") {
+  hoboDiet();
+  copyElves();
+  sewerPrep();
+} else {
+  print("I'm sorry, I didn't understand you, please run me again, and enunciate this time.", "red");
+}
 
 /*
 function scobos() {
