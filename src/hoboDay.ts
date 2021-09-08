@@ -146,6 +146,8 @@ export function copyElves(): void {
   retrieveItem($item`toggle switch (Bartend)`);
   equip($item`toggle switch (Bartend)`);
   equip($slot`acc1`, $item`backup camera`);
+  equip($slot`acc2`, $item`Mr. Cheeng's spectacles`);
+  equip($slot`acc3`, $item`lucky gold ring`);
 
   if (
     have($item`photocopied monster`, 1) &&
@@ -175,6 +177,7 @@ export function copyElves(): void {
 
   setAutoAttack(0);
   // TODO: fix this combat. macro goes into infinite loop?
+  /*
   while (
     get("spookyPuttyCopiesMade") < 5 &&
     have($item`Spooky Putty monster`) &&
@@ -191,7 +194,7 @@ export function copyElves(): void {
   }
 
   putStash(1, $item`Spooky Putty sheet`);
-
+*/
   if (!get("_sourceTerminalDigitizeMonster")) {
     useFamiliar($familiar`Reanimated Reanimator`);
     Macro.trySkill($skill`Digitize`)

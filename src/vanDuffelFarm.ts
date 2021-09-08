@@ -1,17 +1,29 @@
 import {
   availableAmount,
+  buy,
+  chew,
   cliExecute,
-  containsText,
+  drinksilent,
+  eatsilent,
   equip,
+  fullnessLimit,
+  getClanId,
   haveEffect,
+  inebrietyLimit,
+  isBanished,
+  maximize,
   myAdventures,
+  myFullness,
+  myInebriety,
   mySpleenUse,
   putStash,
   retrieveItem,
   spleenLimit,
   sweetSynthesis,
   takeStash,
+  use,
   useFamiliar,
+  userConfirm,
   useSkill,
 } from "kolmafia";
 import {
@@ -19,6 +31,7 @@ import {
   $familiar,
   $item,
   $location,
+  $monster,
   $skill,
   $slot,
   adventureMacroAuto,
@@ -27,6 +40,86 @@ import {
 } from "libram";
 
 import { setChoice } from "./lib";
+
+if (getClanId() !== 40382) {
+  cliExecute("/whitelist alliance from hell");
+}
+
+if (get("boomBoxSong") !== "Food Vibrations") {
+  cliExecute("boombox food");
+}
+
+if (!get("_borrowedTimeUsed")) {
+  use($item`borrowed time`);
+}
+
+while (haveEffect($effect`Synthesis: Collection`) < 540 && mySpleenUse() < spleenLimit()) {
+  sweetSynthesis($item`Milk Studs`, $item`Milk Studs`);
+}
+
+if (myFullness() === 0 && myInebriety() === 0) {
+  // chew(5, $item`voodoo snuff`);
+  // useSkill($skill`cheat code: triple size`, 1);
+  maximize("HP", false);
+  use($item`milk of magnesium`);
+  eatsilent(2, $item`Ol' Scratch's salad fork`);
+  eatsilent(2, $item`extra-greasy slider`);
+  useSkill($skill`The Ode to Booze`, 1);
+  drinksilent(1, $item`Frosty's frosty mug`);
+  drinksilent(1, $item`jar of fermented pickle juice`);
+
+  while (haveEffect($effect`Synthesis: Collection`) < 540 && mySpleenUse() < spleenLimit()) {
+    sweetSynthesis($item`Milk Studs`, $item`Milk Studs`);
+  }
+  while (mySpleenUse() < spleenLimit() - 2) {
+    chew(1, $item`voodoo snuff`);
+  }
+  // chew(1, $item`antimatter wad`);
+  // chew(1, $item`beggin\' cologne`);
+  if (myFullness() === 10 && myInebriety() === 5) {
+    useSkill($skill`The Ode to Booze`, 1);
+    drinksilent(1, $item`Frosty's frosty mug`);
+    drinksilent(1, $item`jar of fermented pickle juice`);
+    eatsilent(1, $item`Ol' Scratch's salad fork`);
+    eatsilent(1, $item`extra-greasy slider`);
+    if (mySpleenUse() < 5) {
+      chew(2, $item`voodoo snuff`);
+    }
+    drinksilent(1, $item`Frosty's frosty mug`);
+    drinksilent(1, $item`jar of fermented pickle juice`);
+    // chew(1, $item`voodoo snuff`);
+    // chew(1, $item`antimatter wad`);
+    while (mySpleenUse() < spleenLimit() - 2) {
+      chew(1, $item`voodoo snuff`);
+    }
+  } else throw "Something went wrong with your diet";
+}
+
+// buy and use essential tofu (with price limit)
+if (get("_essentialTofuUsed") === false) {
+  buy(1, $item`essential tofu`, 5000);
+  use($item`essential tofu`);
+}
+
+//should probably put all this under individual if statements
+if (!get("_mimeArmyShotglassUsed") && !get("_syntheticDogHairPillUsed")) {
+  useSkill($skill`The Ode to Booze`, 1);
+  use(1, $item`synthetic dog hair pill`);
+  equip($item`tuxedo shirt`);
+  drinksilent(2, $item`splendid martini`);
+}
+// check if we should leave room for hobopolis marketplace food, if not, then the usual hobo diet
+if (!userConfirm("Do you want to leave room for marketplace?")) {
+  if (myInebriety() - inebrietyLimit() > 4) {
+    useSkill($skill`The Ode to Booze`);
+    drinksilent(1, $item`Frosty's frosty mug`);
+    drinksilent(1, $item`jar of fermented pickle juice`);
+  }
+  if (myFullness() - fullnessLimit() > 4) {
+    eatsilent(1, $item`Ol' Scratch's salad fork`);
+    eatsilent(1, $item`extra-greasy slider`);
+  }
+}
 
 if (availableAmount($item`navel ring of navel gazing`) === 0) {
   takeStash($item`navel ring of navel gazing`, 1);
@@ -44,9 +137,12 @@ equip($item`lucky gold ring`, $slot`acc3`);
 useFamiliar($familiar`Cat Burglar`);
 equip($item`burglar/sleep mask`);
 
+eatsilent($item`magical sausage`);
+
 while (haveEffect($effect`Fat Leon's Phat Loot Lyric`) < myAdventures()) {
   useSkill($skill`Fat Leon's Phat Loot Lyric`, 5);
 }
+eatsilent($item`magical sausage`);
 
 while (haveEffect($effect`Singer's Faithful Ocelot`) < myAdventures()) {
   useSkill($skill`Singer's Faithful Ocelot`, 5);
@@ -62,13 +158,35 @@ while (
 while (haveEffect($effect`Driving Observantly`) < myAdventures()) {
   cliExecute("asdonmartin drive observantly");
 }
-
+eatsilent($item`magical sausage`);
 while (haveEffect($effect`The Spirit of Taking`) < myAdventures()) {
   useSkill($skill`The Spirit of Taking`, 5);
 }
+eatsilent($item`magical sausage`);
 
 while (get("_sourceTerminalEnhanceUses") < 3) {
   cliExecute("terminal enhance item.enh");
+}
+while (haveEffect($effect`Leash of Linguini`) < myAdventures()) {
+  useSkill($skill`Leash of Linguini`, 5);
+}
+
+while (haveEffect($effect`Polka of Plenty`) < myAdventures()) {
+  useSkill($skill`The Polka of Plenty`, 5);
+}
+
+eatsilent($item`magical sausage`);
+
+while (haveEffect($effect`Empathy`) < myAdventures()) {
+  useSkill($skill`Empathy of the Newt`, 5);
+}
+
+while (get("_sausagesEaten") < 23) {
+  eatsilent($item`magical sausage`);
+}
+
+if (!get("_clanFortuneBuffUsed")) {
+  cliExecute("fortune buff item");
 }
 
 if (get("_tryptophanDartUsed") === false) {
@@ -82,10 +200,7 @@ if (get("_humanMuskUses") === 0) {
 // pick a fight
 setChoice(1324, 5);
 // need to account for stupid choice adv
-while (
-  !containsText(get("banishedMonsters"), "party girl") ||
-  !containsText(get("banishedMonsters"), '"plain" girl')
-) {
+while (!isBanished($monster`party girl`) || !isBanished($monster`"plain" girl`)) {
   adventureMacroAuto(
     $location`The Neverending Party`,
     Macro.step("pickpocket")
@@ -104,31 +219,9 @@ while (
       .repeat()
   );
 }
-/* cat burglar support, stolen from tourguide
-int CatBurglarChargesLeftToday()
-{
-    //FIXME this is totally wrong I think, fix this mafia
-    int charge = get_property_int("_catBurglarCharge");
 
-    int heists_gained_today = 0;
-    int limit = 10;
-    int c = charge;
-    while (c >= limit)
-    {
-        heists_gained_today += 1;
-        c -= limit;
-        limit *= 2;
-    }
-    int heists_complete = get_property_int("_catBurglarHeistsComplete");
-    //print_html("heists_gained_today = " + heists_gained_today + ", heists_complete = " + heists_complete);
-    return get_property_int("catBurglarBankHeists") + heists_gained_today - heists_complete;
-}
-*/
 while (myAdventures() > 10) {
-  if (
-    !containsText(get("banishedMonsters"), "party girl") ||
-    !containsText(get("banishedMonsters"), '"plain" girl')
-  ) {
+  if (!isBanished($monster`party girl`) || !isBanished($monster`"plain" girl`)) {
     throw "You don't have the right mobs banished, you shouldn't be here.";
   }
   adventureMacroAuto(
@@ -148,6 +241,10 @@ while (myAdventures() > 10) {
           haveEffect($effect`On the Trail`) === 0,
           Macro.trySkill($skill`Transcendent Olfaction`).trySkill($skill`Gallapagosian Mating Call`)
         )
+      )
+      .if_(
+        'monstername "biker" || monstername "party girl" || monsterid2090',
+        Macro.step("runaway")
       )
       .skill($skill`Stuffed Mortar Shell`)
       .skill($skill`Curse of Weaksauce`)

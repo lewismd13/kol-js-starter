@@ -105,14 +105,14 @@ if (myFullness() === 0) {
 
 if (myInebriety() === 0) {
   useSkill($skill`The Ode to Booze`, 2);
-  drinksilent(3, $item`frosty\'s frosty mug`);
+  drinksilent(3, $item`Frosty's frosty mug`);
   drinksilent(3, $item`jar of fermented pickle juice`);
   chew(4, $item`voodoo snuff`);
   sweetSynthesis($item`box of Dweebs`, $item`PEEZ dispenser`);
   sweetSynthesis($item`box of Dweebs`, $item`PEEZ dispenser`);
   sweetSynthesis($item`box of Dweebs`, $item`PEEZ dispenser`);
   if (inebrietyLimit() === 20 && myInebriety() === 15) {
-    drinksilent(1, $item`frosty\'s frosty mug`);
+    drinksilent(1, $item`Frosty's frosty mug`);
     drinksilent(1, $item`jar of fermented pickle juice`);
     chew(1, $item`voodoo snuff`);
     sweetSynthesis($item`box of Dweebs`, $item`PEEZ dispenser`);
@@ -122,13 +122,13 @@ if (myInebriety() === 0) {
 
 if (
   mySpleenUse() === spleenLimit() &&
-  haveEffect($effect`eau d\' clochard`) === 0 &&
+  haveEffect($effect`Eau d' Clochard`) === 0 &&
   get("currentMojoFilters") < 3
 ) {
   retrieveItem($item`mojo filter`);
   use($item`mojo filter`);
-  retrieveItem($item`beggin\' cologne`);
-  use($item`beggin\' cologne`);
+  retrieveItem($item`beggin' cologne`);
+  use($item`beggin' cologne`);
 }
 
 if (get("_loveChocolatesUsed") === 0) {
@@ -147,7 +147,7 @@ if (get("_essentialTofuUsed") === false) {
 
 //should probably put all this under individual if statements
 if (!get("_mimeArmyShotglassUsed") && !get("_syntheticDogHairPillUsed")) {
-  use(1, $item`synthetic doghair pill`);
+  use(1, $item`synthetic dog hair pill`);
   equip($item`mafia pinky ring`);
   if (haveEffect($effect`Ode to Booze`) > 1) {
     drinksilent(2, $item`Sacramento wine`);
@@ -201,8 +201,8 @@ if (get("_sausagesEaten") === 20) {
   eatsilent(3, $item`magical sausage`);
 }
 
-while (haveEffect($effect`Fat Leon\'s Phat Loot Lyric`) < calculateFarmingTurns()) {
-  useSkill($skill`Fat Leon\'s Phat Loot Lyric`, 5);
+while (haveEffect($effect`Fat Leon's Phat Loot Lyric`) < calculateFarmingTurns()) {
+  useSkill($skill`Fat Leon's Phat Loot Lyric`, 5);
 }
 
 while (haveEffect($effect`Leash of Linguini`) < calculateFarmingTurns()) {
@@ -367,6 +367,7 @@ if (
     $location`Noob Cave`,
     Macro.trySkill($skill`Back-Up to your Last Enemy`)
       .trySkill($skill`Digitize`)
+      // eslint-disable-next-line libram/verify-constants
       .trySkill($skill`7168`) // wink
       .trySkill($skill`Sing Along`)
       .skill($skill`Summer Siesta`)
