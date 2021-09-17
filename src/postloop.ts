@@ -1,4 +1,4 @@
-import { $effect, $familiar, $item, $location, $skill, get, Macro } from "libram";
+import { $effect, $familiar, $item, $location, $skill, Clan, get, Macro } from "libram";
 
 import {
   adv1,
@@ -138,6 +138,7 @@ cliExecute("pull * magical mystery juice");
 cliExecute("pull * toggle switch (bartend)");
 cliExecute("pull * toggle switch (bounce)");
 cliExecute("pull 1 etched hourglass");
+cliExecute("pull 1 tiny black hole");
 cliExecute("pull 1000000 meat");
 
 cliExecute("refresh all");
@@ -147,6 +148,16 @@ buy(1, $item`Queue Du Coq cocktailcrafting kit`);
 use(1, $item`Queue Du Coq cocktailcrafting kit`);
 
 cliExecute("ccs libramMacro");
+
+// cheesefax fortune, no longer doing this in loop
+if (get("_clanFortuneConsultUses") < 3) {
+  Clan.join("Bonus Adventures from Hell");
+  while (get("_clanFortuneConsultUses") < 3) {
+    cliExecute("fortune cheesefax");
+    cliExecute("wait 5");
+  }
+  Clan.join("Alliance from Hell");
+}
 
 if (get("_clipartSummons") === 0) {
   cliExecute("create 3 box of familiar jacks");

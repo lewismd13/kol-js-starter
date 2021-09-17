@@ -17355,7 +17355,7 @@ var dist = __webpack_require__(9803);
 // EXTERNAL MODULE: external "kolmafia"
 var external_kolmafia_ = __webpack_require__(1664);
 ;// CONCATENATED MODULE: ./src/lib.ts
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _ref, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96, _templateObject97, _templateObject98, _templateObject99, _templateObject100, _templateObject101, _templateObject102, _templateObject103, _templateObject104, _templateObject105, _templateObject106, _templateObject107, _templateObject108, _templateObject109, _templateObject110, _templateObject111, _templateObject112, _templateObject113, _templateObject114, _templateObject115, _templateObject116, _templateObject117, _templateObject118, _templateObject119, _templateObject120, _templateObject121;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _ref, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96, _templateObject97, _templateObject98, _templateObject99, _templateObject100, _templateObject101, _templateObject102, _templateObject103, _templateObject104, _templateObject105, _templateObject106, _templateObject107, _templateObject108, _templateObject109, _templateObject110, _templateObject111, _templateObject112, _templateObject113, _templateObject114, _templateObject115, _templateObject116, _templateObject117, _templateObject118, _templateObject119, _templateObject120;
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
@@ -17806,9 +17806,11 @@ function mannyRollover() {
   useFamiliar($familiar(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral(["Trick-or-Treating Tot"]))));
   maximize("adv", false); // equip($item`lil unicorn costume`);
 
-  while (availableAmount($item(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral(["Pok\xE9-Gro fertilizer"])))) > 1) {
+  /*
+  while (availableAmount($item`Poké-Gro fertilizer`) > 1) {
     cliExecute("grow");
   }
+  */
 
   if (get("boomBoxSong") !== "Food Vibrations") {
     cliExecute("boombox food");
@@ -17818,29 +17820,29 @@ function mannyRollover() {
     cliExecute("combbeach free");
   }
 
-  autosell($item(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral(["cheap sunglasses"]))), itemAmount($item(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral(["cheap sunglasses"])))) - 1);
-  autosell($item(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral(["filthy child leash"]))), itemAmount($item(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral(["filthy child leash"])))));
-  use(itemAmount($item(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral(["bag of park garbage"])))) - 30, $item(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral(["bag of park garbage"]))));
-  use(itemAmount($item(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral(["Gathered Meat-Clip"])))), $item(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral(["Gathered Meat-Clip"]))));
-  use(itemAmount($item(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral(["old coin purse"])))), $item(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral(["old coin purse"]))));
-  use(itemAmount($item(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral(["old leather wallet"])))), $item(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral(["old leather wallet"]))));
-  autosell($item(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral(["expensive camera"]))), itemAmount($item(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral(["expensive camera"])))));
-  autosell($item(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral(["bag of gross foreign snacks"]))), itemAmount($item(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral(["bag of gross foreign snacks"])))));
-  putShop(300, 0, itemAmount($item(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral(["gold nuggets"])))), $item(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral(["gold nuggets"]))));
-  putShop(0, 0, itemAmount($item(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral(["cornucopia"])))), $item(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral(["cornucopia"]))));
-  putShop(0, 0, itemAmount($item(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral(["elemental sugarcube"])))), $item(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral(["elemental sugarcube"]))));
-  putShop(0, 0, itemAmount($item(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral(["gingerbread cigarette"])))), $item(_templateObject85 || (_templateObject85 = _taggedTemplateLiteral(["gingerbread cigarette"]))));
-  putShop(0, 0, itemAmount($item(_templateObject86 || (_templateObject86 = _taggedTemplateLiteral(["abandoned candy"])))), $item(_templateObject87 || (_templateObject87 = _taggedTemplateLiteral(["abandoned candy"]))));
-  autosell($item(_templateObject88 || (_templateObject88 = _taggedTemplateLiteral(["meat stack"]))), itemAmount($item(_templateObject89 || (_templateObject89 = _taggedTemplateLiteral(["meat stack"])))));
+  autosell($item(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral(["cheap sunglasses"]))), itemAmount($item(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral(["cheap sunglasses"])))) - 1);
+  autosell($item(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral(["filthy child leash"]))), itemAmount($item(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral(["filthy child leash"])))));
+  use(itemAmount($item(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral(["bag of park garbage"])))) - 30, $item(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral(["bag of park garbage"]))));
+  use(itemAmount($item(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral(["Gathered Meat-Clip"])))), $item(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral(["Gathered Meat-Clip"]))));
+  use(itemAmount($item(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral(["old coin purse"])))), $item(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral(["old coin purse"]))));
+  use(itemAmount($item(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral(["old leather wallet"])))), $item(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral(["old leather wallet"]))));
+  autosell($item(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral(["expensive camera"]))), itemAmount($item(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral(["expensive camera"])))));
+  autosell($item(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral(["bag of gross foreign snacks"]))), itemAmount($item(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral(["bag of gross foreign snacks"])))));
+  putShop(300, 0, itemAmount($item(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral(["gold nuggets"])))), $item(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral(["gold nuggets"]))));
+  putShop(0, 0, itemAmount($item(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral(["cornucopia"])))), $item(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral(["cornucopia"]))));
+  putShop(0, 0, itemAmount($item(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral(["elemental sugarcube"])))), $item(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral(["elemental sugarcube"]))));
+  putShop(0, 0, itemAmount($item(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral(["gingerbread cigarette"])))), $item(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral(["gingerbread cigarette"]))));
+  putShop(0, 0, itemAmount($item(_templateObject85 || (_templateObject85 = _taggedTemplateLiteral(["abandoned candy"])))), $item(_templateObject86 || (_templateObject86 = _taggedTemplateLiteral(["abandoned candy"]))));
+  autosell($item(_templateObject87 || (_templateObject87 = _taggedTemplateLiteral(["meat stack"]))), itemAmount($item(_templateObject88 || (_templateObject88 = _taggedTemplateLiteral(["meat stack"])))));
 
   if (myGardenType() !== "grass") {
-    use(1, $item(_templateObject90 || (_templateObject90 = _taggedTemplateLiteral(["packet of tall grass seeds"]))));
+    use(1, $item(_templateObject89 || (_templateObject89 = _taggedTemplateLiteral(["packet of tall grass seeds"]))));
   }
 
   if (myGardenType() === "grass") {
-    use($item(_templateObject91 || (_templateObject91 = _taggedTemplateLiteral(["Pok\xE9-Gro fertilizer"])))); // fertilizer
+    use($item(_templateObject90 || (_templateObject90 = _taggedTemplateLiteral(["Pok\xE9-Gro fertilizer"])))); // fertilizer
 
-    use($item(_templateObject92 || (_templateObject92 = _taggedTemplateLiteral(["packet of thanksgarden seeds"]))));
+    use($item(_templateObject91 || (_templateObject91 = _taggedTemplateLiteral(["packet of thanksgarden seeds"]))));
   } // check for a dggt if we haven't
 
 
@@ -17857,7 +17859,7 @@ function mannyRollover() {
 }
 function checkFax() {
   cliExecute("fax receive");
-  if (get("photocopyMonster") === $monster(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral(["Knob Goblin Embezzler"])))) return true;
+  if (get("photocopyMonster") === $monster(_templateObject92 || (_templateObject92 = _taggedTemplateLiteral(["Knob Goblin Embezzler"])))) return true;
   cliExecute("fax send");
   return false;
 }
@@ -17876,15 +17878,15 @@ function faxEmbezzler() {
 }
 function bishopChain() {
   if (get("_pocketProfessorLectures") < 13 && get("_witchessFights") < 5) {
-    useFamiliar($familiar(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral(["Pocket Professor"]))));
-    equip($item(_templateObject95 || (_templateObject95 = _taggedTemplateLiteral(["Pocket Professor memory chip"]))));
+    useFamiliar($familiar(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral(["Pocket Professor"]))));
+    equip($item(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral(["Pocket Professor memory chip"]))));
     maximize("familiar weight +equip pocket professor memory chip", false);
-    useSkill(1, $skill(_templateObject96 || (_templateObject96 = _taggedTemplateLiteral(["Blood Bond"]))));
-    useSkill(1, $skill(_templateObject97 || (_templateObject97 = _taggedTemplateLiteral(["Leash of Linguini"]))));
-    useSkill(1, $skill(_templateObject98 || (_templateObject98 = _taggedTemplateLiteral(["Empathy of the Newt"]))));
+    useSkill(1, $skill(_templateObject95 || (_templateObject95 = _taggedTemplateLiteral(["Blood Bond"]))));
+    useSkill(1, $skill(_templateObject96 || (_templateObject96 = _taggedTemplateLiteral(["Leash of Linguini"]))));
+    useSkill(1, $skill(_templateObject97 || (_templateObject97 = _taggedTemplateLiteral(["Empathy of the Newt"]))));
     cliExecute("witchess");
     cliExecute("beach head 10");
-    Macro.trySkill($skill(_templateObject99 || (_templateObject99 = _taggedTemplateLiteral(["lecture on relativity"])))).skill($skill(_templateObject100 || (_templateObject100 = _taggedTemplateLiteral(["Candyblast"])))).repeat().setAutoAttack();
+    Macro.trySkill($skill(_templateObject98 || (_templateObject98 = _taggedTemplateLiteral(["lecture on relativity"])))).skill($skill(_templateObject99 || (_templateObject99 = _taggedTemplateLiteral(["Candyblast"])))).repeat().setAutoAttack();
     visitUrl("campground.php?action=witchess");
     runChoice(1);
     visitUrl("choice.php?option=1&pwd=".concat(myHash(), "&whichchoice=1182&piece=1942"), false);
@@ -17898,13 +17900,13 @@ function bishopChain() {
 }
 function embezzlerChain() {
   if (get("_pocketProfessorLectures") === 0 && get("_photocopyUsed") === false) {
-    useFamiliar($familiar(_templateObject101 || (_templateObject101 = _taggedTemplateLiteral(["Pocket Professor"]))));
-    equip($item(_templateObject102 || (_templateObject102 = _taggedTemplateLiteral(["Pocket Professor memory chip"]))));
+    useFamiliar($familiar(_templateObject100 || (_templateObject100 = _taggedTemplateLiteral(["Pocket Professor"]))));
+    equip($item(_templateObject101 || (_templateObject101 = _taggedTemplateLiteral(["Pocket Professor memory chip"]))));
     maximize("familiar weight +equip pocket professor memory chip", false);
-    equip($item(_templateObject103 || (_templateObject103 = _taggedTemplateLiteral(["duct tape shirt"]))));
-    useSkill(2, $skill(_templateObject104 || (_templateObject104 = _taggedTemplateLiteral(["Blood Bond"]))));
-    useSkill(2, $skill(_templateObject105 || (_templateObject105 = _taggedTemplateLiteral(["Leash of Linguini"]))));
-    useSkill(2, $skill(_templateObject106 || (_templateObject106 = _taggedTemplateLiteral(["Empathy of the Newt"])))); // useSkill(2, $skill`polka of plenty`);
+    equip($item(_templateObject102 || (_templateObject102 = _taggedTemplateLiteral(["duct tape shirt"]))));
+    useSkill(2, $skill(_templateObject103 || (_templateObject103 = _taggedTemplateLiteral(["Blood Bond"]))));
+    useSkill(2, $skill(_templateObject104 || (_templateObject104 = _taggedTemplateLiteral(["Leash of Linguini"]))));
+    useSkill(2, $skill(_templateObject105 || (_templateObject105 = _taggedTemplateLiteral(["Empathy of the Newt"])))); // useSkill(2, $skill`polka of plenty`);
     // useSkill(2, $skill`disco leer`);
     // sweetSynthesis($item`milk stud`, $item`swizzler`);
 
@@ -17915,12 +17917,12 @@ function embezzlerChain() {
       cliExecute("boombox meat");
     }
 
-    Macro.trySkill($skill(_templateObject107 || (_templateObject107 = _taggedTemplateLiteral(["lecture on relativity"])))).skill($skill(_templateObject108 || (_templateObject108 = _taggedTemplateLiteral(["Sing Along"])))).skill($skill(_templateObject109 || (_templateObject109 = _taggedTemplateLiteral(["Candyblast"])))).repeat().setAutoAttack();
+    Macro.trySkill($skill(_templateObject106 || (_templateObject106 = _taggedTemplateLiteral(["lecture on relativity"])))).skill($skill(_templateObject107 || (_templateObject107 = _taggedTemplateLiteral(["Sing Along"])))).skill($skill(_templateObject108 || (_templateObject108 = _taggedTemplateLiteral(["Candyblast"])))).repeat().setAutoAttack();
     faxEmbezzler(); // visitUrl("campground.php?action=witchess");
     // runChoice(1);
     // visitUrl("choice.php?option=1&pwd=" + myHash() + "&whichchoice=1182&piece=1942", false);
 
-    use(1, $item(_templateObject110 || (_templateObject110 = _taggedTemplateLiteral(["photocopied monster"]))));
+    use(1, $item(_templateObject109 || (_templateObject109 = _taggedTemplateLiteral(["photocopied monster"]))));
 
     while (inMultiFight()) {
       runCombat();
@@ -17935,32 +17937,32 @@ function mannyQuestVolcoino() {
   (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
 
   if ((0,dist.get)("_volcanoItem2") === 8425) {
-    (0,external_kolmafia_.retrieveItem)(5, (0,dist.$item)(_templateObject111 || (_templateObject111 = _taggedTemplateLiteral(["New Age healing crystal"]))));
+    (0,external_kolmafia_.retrieveItem)(5, (0,dist.$item)(_templateObject110 || (_templateObject110 = _taggedTemplateLiteral(["New Age healing crystal"]))));
     (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
     (0,external_kolmafia_.runChoice)(2);
   } else if ((0,dist.get)("_volcanoItem3") === 8446) {
-    (0,external_kolmafia_.retrieveItem)(1, (0,dist.$item)(_templateObject112 || (_templateObject112 = _taggedTemplateLiteral(["SMOOCH bottlecap"]))));
+    (0,external_kolmafia_.retrieveItem)(1, (0,dist.$item)(_templateObject111 || (_templateObject111 = _taggedTemplateLiteral(["SMOOCH bottlecap"]))));
     (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
     (0,external_kolmafia_.runChoice)(3);
   } else if ((0,dist.get)("_volcanoItem3") === 8517) {
-    (0,external_kolmafia_.retrieveItem)(3, (0,dist.$item)(_templateObject113 || (_templateObject113 = _taggedTemplateLiteral(["SMOOCH bracers"]))));
+    (0,external_kolmafia_.retrieveItem)(3, (0,dist.$item)(_templateObject112 || (_templateObject112 = _taggedTemplateLiteral(["SMOOCH bracers"]))));
     (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
     (0,external_kolmafia_.runChoice)(3);
   } else if ((0,dist.get)("_volcanoItem1") === 8470) {
-    (0,external_kolmafia_.retrieveItem)(5, (0,dist.$item)(_templateObject114 || (_templateObject114 = _taggedTemplateLiteral(["gooey lava globs"]))));
+    (0,external_kolmafia_.retrieveItem)(5, (0,dist.$item)(_templateObject113 || (_templateObject113 = _taggedTemplateLiteral(["gooey lava globs"]))));
     (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
     (0,external_kolmafia_.runChoice)(1);
   } else if ((0,dist.get)("_volcanoItem1") === 8516) {
-    (0,external_kolmafia_.retrieveItem)(3, (0,dist.$item)(_templateObject115 || (_templateObject115 = _taggedTemplateLiteral(["smooth velvet bra"]))));
+    (0,external_kolmafia_.retrieveItem)(3, (0,dist.$item)(_templateObject114 || (_templateObject114 = _taggedTemplateLiteral(["smooth velvet bra"]))));
     (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
     (0,external_kolmafia_.runChoice)(1);
   } else if ((0,dist.get)("_volcanoItem1") === 8523) {
-    if (!(0,dist.get)("_claraBellUsed") && (0,external_kolmafia_.itemAmount)((0,dist.$item)(_templateObject116 || (_templateObject116 = _taggedTemplateLiteral(["fused fuse"])))) === 0) {
-      (0,external_kolmafia_.use)((0,dist.$item)(_templateObject117 || (_templateObject117 = _taggedTemplateLiteral(["Clara's bell"]))));
+    if (!(0,dist.get)("_claraBellUsed") && (0,external_kolmafia_.itemAmount)((0,dist.$item)(_templateObject115 || (_templateObject115 = _taggedTemplateLiteral(["fused fuse"])))) === 0) {
+      (0,external_kolmafia_.use)((0,dist.$item)(_templateObject116 || (_templateObject116 = _taggedTemplateLiteral(["Clara's bell"]))));
       setChoice(1091, 7);
 
-      while ((0,external_kolmafia_.itemAmount)((0,dist.$item)(_templateObject118 || (_templateObject118 = _taggedTemplateLiteral(["fused fuse"])))) === 0) {
-        (0,external_kolmafia_.adv1)((0,dist.$location)(_templateObject119 || (_templateObject119 = _taggedTemplateLiteral(["LavaCo\u2122 Lamp Factory"]))), -1, "");
+      while ((0,external_kolmafia_.itemAmount)((0,dist.$item)(_templateObject117 || (_templateObject117 = _taggedTemplateLiteral(["fused fuse"])))) === 0) {
+        (0,external_kolmafia_.adv1)((0,dist.$location)(_templateObject118 || (_templateObject118 = _taggedTemplateLiteral(["LavaCo\u2122 Lamp Factory"]))), -1, "");
       }
 
       (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
@@ -17969,8 +17971,8 @@ function mannyQuestVolcoino() {
       (0,external_kolmafia_.cliExecute)("pillkeeper free noncombat");
       setChoice(1091, 7);
 
-      while ((0,external_kolmafia_.itemAmount)((0,dist.$item)(_templateObject120 || (_templateObject120 = _taggedTemplateLiteral(["fused fuse"])))) === 0) {
-        (0,external_kolmafia_.adv1)((0,dist.$location)(_templateObject121 || (_templateObject121 = _taggedTemplateLiteral(["LavaCo\u2122 Lamp Factory"]))), -1, "");
+      while ((0,external_kolmafia_.itemAmount)((0,dist.$item)(_templateObject119 || (_templateObject119 = _taggedTemplateLiteral(["fused fuse"])))) === 0) {
+        (0,external_kolmafia_.adv1)((0,dist.$location)(_templateObject120 || (_templateObject120 = _taggedTemplateLiteral(["LavaCo\u2122 Lamp Factory"]))), -1, "");
       }
 
       (0,external_kolmafia_.visitUrl)("place.php?whichplace=airport_hot&action=airport4_questhub");
@@ -18094,12 +18096,24 @@ function getFunFunds() {
 (0,external_kolmafia_.cliExecute)("pull * toggle switch (bartend)");
 (0,external_kolmafia_.cliExecute)("pull * toggle switch (bounce)");
 (0,external_kolmafia_.cliExecute)("pull 1 etched hourglass");
+(0,external_kolmafia_.cliExecute)("pull 1 tiny black hole");
 (0,external_kolmafia_.cliExecute)("pull 1000000 meat");
 (0,external_kolmafia_.cliExecute)("refresh all");
 (0,external_kolmafia_.setProperty)("autoSatisfyWithNPCs", "true");
 (0,external_kolmafia_.buy)(1, (0,dist.$item)(postloop_templateObject5 || (postloop_templateObject5 = postloop_taggedTemplateLiteral(["Queue Du Coq cocktailcrafting kit"]))));
 (0,external_kolmafia_.use)(1, (0,dist.$item)(postloop_templateObject6 || (postloop_templateObject6 = postloop_taggedTemplateLiteral(["Queue Du Coq cocktailcrafting kit"]))));
-(0,external_kolmafia_.cliExecute)("ccs libramMacro");
+(0,external_kolmafia_.cliExecute)("ccs libramMacro"); // cheesefax fortune, no longer doing this in loop
+
+if ((0,dist.get)("_clanFortuneConsultUses") < 3) {
+  dist.Clan.join("Bonus Adventures from Hell");
+
+  while ((0,dist.get)("_clanFortuneConsultUses") < 3) {
+    (0,external_kolmafia_.cliExecute)("fortune cheesefax");
+    (0,external_kolmafia_.cliExecute)("wait 5");
+  }
+
+  dist.Clan.join("Alliance from Hell");
+}
 
 if ((0,dist.get)("_clipartSummons") === 0) {
   (0,external_kolmafia_.cliExecute)("create 3 box of familiar jacks");

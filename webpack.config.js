@@ -11,7 +11,7 @@ module.exports = {
     hoboDay: "./src/hoboDay.ts",
     mannyRoll: "./src/mannyRoll.ts",
     mannyBreakfast: "./src/mannyBreakfast.ts",
-    testFile: "./src/testFile.ts",
+    // testFile: "./src/testFile.ts",
     vanDuffelFarm: "./src/vanDuffelFarm.ts",
   },
   mode: "production",

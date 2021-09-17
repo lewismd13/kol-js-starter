@@ -17546,7 +17546,7 @@ function sewerPrep() {
 
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.equip)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$item)(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral(["Powerful Glove"]))), (0,libram__WEBPACK_IMPORTED_MODULE_1__.$slot)(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral(["acc1"]))));
 
-  while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.haveEffect)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$effect)(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral(["Invisible Avatar"])))) < 30) {
+  while ((0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.haveEffect)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$effect)(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral(["Invisible Avatar"])))) < 30 && (0,libram__WEBPACK_IMPORTED_MODULE_1__.get)("_powerfulGloveBatteryPowerUsed") < 95) {
     (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.useSkill)((0,libram__WEBPACK_IMPORTED_MODULE_1__.$skill)(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral(["CHEAT CODE: Invisible Avatar"]))), 3);
   }
 
@@ -17602,6 +17602,7 @@ function sewerPrep() {
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.setAutoAttack)("sewers-banderrun");
   (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.cliExecute)("ccs default");
 }
+libram__WEBPACK_IMPORTED_MODULE_1__.Clan.join("Alliance from Hell");
 var prepChoice = (0,kolmafia__WEBPACK_IMPORTED_MODULE_0__.userPrompt)("What would you like to do? (sewer, diet, copies, or all)");
 
 if (prepChoice === "sewer") {

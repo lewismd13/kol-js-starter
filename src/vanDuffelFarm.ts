@@ -96,11 +96,12 @@ if (myFullness() === 0 && myInebriety() === 0) {
 }
 
 // buy and use essential tofu (with price limit)
+/*
 if (get("_essentialTofuUsed") === false) {
   buy(1, $item`essential tofu`, 5000);
   use($item`essential tofu`);
 }
-
+*/
 //should probably put all this under individual if statements
 if (!get("_mimeArmyShotglassUsed") && !get("_syntheticDogHairPillUsed")) {
   useSkill($skill`The Ode to Booze`, 1);
@@ -128,7 +129,7 @@ if (availableAmount($item`navel ring of navel gazing`) === 0) {
 equip($item`bounty-hunting helmet`);
 equip($item`balsam barrel`);
 equip($item`sea salt scrubs`);
-equip($item`runed taper candle`);
+equip($item`extra-large utility candle`);
 equip($item`tiny black hole`);
 equip($item`bounty-hunting pants`);
 equip($item`navel ring of navel gazing`, $slot`acc1`);

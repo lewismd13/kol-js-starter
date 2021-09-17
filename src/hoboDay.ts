@@ -17,9 +17,7 @@ import {
   myFullness,
   myInebriety,
   print,
-  putStash,
   retrieveItem,
-  runCombat,
   setAutoAttack,
   takeCloset,
   takeStash,
@@ -39,6 +37,7 @@ import {
   $skill,
   $slot,
   adventureMacroAuto,
+  Clan,
   get,
   have,
   Macro,
@@ -249,7 +248,7 @@ export function sewerPrep(): void {
   }
 
   equip($item`Powerful Glove`, $slot`acc1`);
-  while (haveEffect($effect`Invisible Avatar`) < 30) {
+  while (haveEffect($effect`Invisible Avatar`) < 30 && get("_powerfulGloveBatteryPowerUsed") < 95) {
     useSkill($skill`CHEAT CODE: Invisible Avatar`, 3);
   }
 
@@ -306,6 +305,8 @@ export function sewerPrep(): void {
   setAutoAttack("sewers-banderrun");
   cliExecute("ccs default");
 }
+
+Clan.join("Alliance from Hell");
 
 const prepChoice = userPrompt("What would you like to do? (sewer, diet, copies, or all)");
 if (prepChoice === "sewer") {

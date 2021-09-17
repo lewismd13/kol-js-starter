@@ -532,11 +532,11 @@ export function mannyRollover(): void {
   useFamiliar($familiar`Trick-or-Treating Tot`);
   maximize("adv", false);
   // equip($item`lil unicorn costume`);
-
+  /*
   while (availableAmount($item`Poké-Gro fertilizer`) > 1) {
     cliExecute("grow");
   }
-
+*/
   if (get("boomBoxSong") !== "Food Vibrations") {
     cliExecute("boombox food");
   }

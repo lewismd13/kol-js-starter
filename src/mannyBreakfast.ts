@@ -266,7 +266,7 @@ if (get("_questPartyFairQuest") === "") {
 }
 
 if (get("_questPartyFairQuest") === "food") {
-  print("Hey, go talk to Geraldine, time for another sliderpocalypse!", "blue");
+  print("Hey, go talk to Geraldine, time for another sliderpocalypse!", "yellow");
 } else if (get("_questPartyFairQuest") === "booze") {
-  print("Hey, go talk to Gerald, get that jarmageddon!", "blue");
+  print("Hey, go talk to Gerald, get that jarmageddon!", "yellow");
 }
